@@ -1,0 +1,77 @@
+import { z } from "zod";
+
+export const VisibilitySchema = z
+  .enum(["public", "private", "dm", "login_gated", "unknown"])
+  .default("public");
+
+export const ConferenceEventSchema = z.object({
+  id: z.string().min(1),
+  series: z.string().min(1).default("Conference"),
+  name: z.string().min(1),
+  edition: z.string().min(1),
+  city: z.string().min(1),
+  country: z.string().min(1),
+  region: z.string().min(1),
+  venue: z.string().optional().default(""),
+  startDate: z.string().min(10),
+  endDate: z.string().min(10),
+  url: z.string().url(),
+  tags: z.array(z.string()).default([]),
+  airports: z.array(z.string()).default([]),
+  directFlightFrom: z.array(z.string()).default([])
+});
+
+export const PublicSignalSchema = z.object({
+  id: z.string().optional(),
+  platform: z.string().min(1),
+  sourceUrl: z.string().min(1),
+  publicName: z.string().optional().default(""),
+  excerpt: z.string().min(1),
+  postedAt: z.string().optional().default(""),
+  locationHint: z.string().optional().default("unknown"),
+  topics: z.array(z.string()).optional().default([]),
+  visibility: VisibilitySchema
+});
+
+export const BuildMetaSchema = z.object({
+  builtAt: z.string(),
+  eventCount: z.number(),
+  signalInputCount: z.number(),
+  matchCount: z.number(),
+  sourceMode: z.string()
+});
+
+export type ConferenceEvent = z.infer<typeof ConferenceEventSchema>;
+export type PublicSignal = z.infer<typeof PublicSignalSchema>;
+export type BuildMeta = z.infer<typeof BuildMetaSchema>;
+
+export type GateClass = "public_ok" | "public_ambiguous" | "blocked_private";
+export type TravelMatch = "local" | "direct_flight_seed" | "same_region" | "unknown";
+
+export interface SignalMatch {
+  matchId: string;
+  signalId: string;
+  eventId: string;
+  eventName: string;
+  eventEdition: string;
+  eventCity: string;
+  eventCountry: string;
+  eventDates: string;
+  eventUrl: string;
+  platform: string;
+  sourceUrl: string;
+  publicName: string;
+  excerpt: string;
+  postedAt: string;
+  locationHint: string;
+  topics: string[];
+  topicMatch: string[];
+  travelMatch: TravelMatch;
+  gate: GateClass;
+  score: number;
+  scoreBreakdown: string;
+  approvalStatus: "needs_human_review" | "blocked_private";
+  reachPath: string;
+  draftPublicReply: string;
+}
+

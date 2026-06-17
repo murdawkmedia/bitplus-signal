@@ -1,0 +1,63 @@
+[
+  {
+    "platform": "nostr",
+    "sourceUrl": "nostr:note1sampleberlinpayments",
+    "publicName": "npub...payments-builder",
+    "excerpt": "Working on Lightning wallet UX in Berlin this fall. Looking for builder events where I can compare payment flows with other Bitcoin devs.",
+    "postedAt": "2026-06-16",
+    "locationHint": "Berlin",
+    "topics": ["bitcoin", "lightning", "payments"],
+    "visibility": "public"
+  },
+  {
+    "platform": "reddit",
+    "sourceUrl": "https://www.reddit.com/r/Bitcoin/comments/sample-consensus-devs",
+    "publicName": "u/protocol-curious",
+    "excerpt": "Any good technical Bitcoin protocol conferences in Canada this summer? Interested in consensus cleanup and ossifying responsibly.",
+    "postedAt": "2026-06-15",
+    "locationHint": "Montreal",
+    "topics": ["bitcoin", "consensus", "protocol"],
+    "visibility": "public"
+  },
+  {
+    "platform": "x",
+    "sourceUrl": "https://x.com/example/status/1000000001",
+    "publicName": "@afribitdev",
+    "excerpt": "Open source Bitcoin tooling in Africa needs more contributors. Nairobi meetups have been on fire lately.",
+    "postedAt": "2026-06-14",
+    "locationHint": "Nairobi",
+    "topics": ["bitcoin", "open source", "africa"],
+    "visibility": "public"
+  },
+  {
+    "platform": "instagram",
+    "sourceUrl": "https://www.instagram.com/p/exampleprivacy",
+    "publicName": "@privacyworkshop",
+    "excerpt": "Seoul cryptography meetup recap: Bitcoin privacy, coinswaps, and better wallet defaults.",
+    "postedAt": "2026-06-09",
+    "locationHint": "Seoul",
+    "topics": ["bitcoin", "privacy", "cryptography"],
+    "visibility": "public"
+  },
+  {
+    "platform": "facebook",
+    "sourceUrl": "https://www.facebook.com/groups/publicbitcoinbuilders/posts/example",
+    "publicName": "Public group post",
+    "excerpt": "Looking for beginner-friendly Bitcoin developer workshops near Toronto. Prefer events with long-form lectures.",
+    "postedAt": "2026-06-12",
+    "locationHint": "Toronto",
+    "topics": ["bitcoin", "developer tools"],
+    "visibility": "public"
+  },
+  {
+    "platform": "facebook",
+    "sourceUrl": "https://www.facebook.com/messages/t/private-example",
+    "publicName": "blocked fixture",
+    "excerpt": "Private message asking about a conference.",
+    "postedAt": "2026-06-12",
+    "locationHint": "Toronto",
+    "topics": ["bitcoin"],
+    "visibility": "dm"
+  }
+]
+

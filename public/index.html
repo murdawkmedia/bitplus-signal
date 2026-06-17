@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Bitplus Signal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="mast">
+    <div class="brand">
+      <span class="spark"></span>
+      <h1>Bitplus Signal</h1>
+      <span class="tag">BTC++ pack</span>
+    </div>
+    <div class="statline" id="statline">Loading...</div>
+  </header>
+
+  <main>
+    <section class="rail" aria-label="Filters">
+      <label>
+        Event
+        <select id="eventFilter"></select>
+      </label>
+      <label>
+        Source
+        <select id="platformFilter"></select>
+      </label>
+      <label>
+        Travel
+        <select id="travelFilter">
+          <option value="">Any travel fit</option>
+          <option value="local">Local</option>
+          <option value="direct_flight_seed">Direct-flight seed</option>
+          <option value="same_region">Same region</option>
+          <option value="unknown">Unknown</option>
+        </select>
+      </label>
+      <label>
+        Search
+        <input id="search" type="search" placeholder="privacy, Toronto, Nostr">
+      </label>
+    </section>
+
+    <section class="board" aria-label="Ranked public signals">
+      <table>
+        <thead>
+          <tr>
+            <th>Score</th>
+            <th>Event</th>
+            <th>Signal</th>
+            <th>Travel</th>
+            <th>Topics</th>
+            <th>Gate</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty" id="empty" hidden>No matching public signals.</div>
+    </section>
+  </main>
+
+  <aside class="drawer" id="drawer" aria-live="polite" aria-label="Signal detail">
+    <button class="close" id="closeDrawer" aria-label="Close">x</button>
+    <div id="drawerBody"></div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
