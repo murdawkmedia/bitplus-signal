@@ -35,6 +35,8 @@ const ADJACENT_EVENTS: Array<{ pattern: RegExp; ref: string }> = [
   { pattern: /\bhack canada\b/i, ref: "adjacent:hack-canada" },
   { pattern: /\beth\s*toronto\b|\bethtoronto\b/i, ref: "adjacent:ethtoronto" },
   { pattern: /\bblockchain futurist\b/i, ref: "adjacent:blockchain-futurist" },
+  { pattern: /\bcanada crypto week\b/i, ref: "adjacent:canada-crypto-week" },
+  { pattern: /\bai futurist\b/i, ref: "adjacent:ai-futurist" },
   { pattern: /\bethwomen\b/i, ref: "adjacent:ethwomen" },
   { pattern: /\btoronto bitcoin\b|\bbitdevs\b/i, ref: "adjacent:toronto-bitcoin" }
 ];

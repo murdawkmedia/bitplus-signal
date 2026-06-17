@@ -3,6 +3,7 @@ const selectedFilters = {
   sourceLanes: new Set(),
   geoTiers: new Set(),
   audienceScopes: new Set(),
+  evidenceLevels: new Set(),
   travelMatches: new Set(),
   topicMatches: new Set()
 };
@@ -16,6 +17,7 @@ const state = {
   q: "",
   sortKey: "score",
   sortDir: "desc",
+  showTrustCandidates: false,
   selectedFilters
 };
 
@@ -70,6 +72,15 @@ function audienceLabel(value) {
   }[value] || formatLabel(value);
 }
 
+function evidenceLabel(value) {
+  return {
+    public_content: "Public content",
+    official_event_page: "Official event",
+    crossover_event_page: "Crossover event",
+    trust_candidate: "Trust candidate"
+  }[value] || formatLabel(value);
+}
+
 function gateLabel(value) {
   if (value === "blocked_private") return '<span class="gate-blocked">Blocked</span>';
   if (value === "public_ambiguous") return '<span class="gate-blocked">Review gate</span>';
@@ -106,6 +117,10 @@ function rowAudienceScope(row) {
   return row.audienceScope || "bitcoin_only";
 }
 
+function rowEvidenceLevel(row) {
+  return row.evidenceLevel || (row.sourceLane === "nostr_graph" ? "trust_candidate" : "public_content");
+}
+
 function matchesSet(set, value) {
   return set.size === 0 || set.has(String(value || ""));
 }
@@ -119,10 +134,12 @@ function filtered() {
   const q = state.q.toLowerCase();
   return state.signals.filter((row) => {
     if (state.event && row.eventId !== state.event) return false;
+    if (!state.showTrustCandidates && rowEvidenceLevel(row) === "trust_candidate") return false;
     if (!matchesSet(state.selectedFilters.platforms, row.platform)) return false;
     if (!matchesSet(state.selectedFilters.sourceLanes, row.sourceLane)) return false;
     if (!matchesSet(state.selectedFilters.geoTiers, rowGeoTier(row))) return false;
     if (!matchesSet(state.selectedFilters.audienceScopes, rowAudienceScope(row))) return false;
+    if (!matchesSet(state.selectedFilters.evidenceLevels, rowEvidenceLevel(row))) return false;
     if (!matchesSet(state.selectedFilters.travelMatches, row.travelMatch)) return false;
     if (!matchesAny(state.selectedFilters.topicMatches, row.topicMatch || [])) return false;
     if (!q) return true;
@@ -134,7 +151,8 @@ function filtered() {
       row.topicMatch?.join(" "),
       row.sourceLane,
       rowGeoTier(row),
-      rowAudienceScope(row)
+      rowAudienceScope(row),
+      rowEvidenceLevel(row)
     ].some((value) => String(value || "").toLowerCase().includes(q));
   });
 }
@@ -205,6 +223,7 @@ function populateFilters() {
   renderCheckboxGroup("sourceLaneFilters", "sourceLanes", state.signals, (row) => row.sourceLane, sourceLaneLabel);
   renderCheckboxGroup("geoFilters", "geoTiers", state.signals, rowGeoTier, geoLabel);
   renderCheckboxGroup("audienceFilters", "audienceScopes", state.signals, rowAudienceScope, audienceLabel);
+  renderCheckboxGroup("evidenceFilters", "evidenceLevels", state.signals, rowEvidenceLevel, evidenceLabel);
   renderCheckboxGroup("travelFilters", "travelMatches", state.signals, (row) => row.travelMatch, travelLabel);
   renderCheckboxGroup("topicFilters", "topicMatches", state.signals, (row) => row.topicMatch || [], formatLabel);
 }
@@ -234,6 +253,7 @@ function renderTargeting(row) {
     <div class="targeting">
       <span>${esc(geoLabel(rowGeoTier(row)))}</span>
       <span>${esc(audienceLabel(rowAudienceScope(row)))}</span>
+      <span>${esc(evidenceLabel(rowEvidenceLevel(row)))}</span>
     </div>
   `;
 }
@@ -285,6 +305,7 @@ function exportCsv() {
     ["location", (row) => row.locationHint],
     ["geo_tier", (row) => rowGeoTier(row)],
     ["audience_scope", (row) => rowAudienceScope(row)],
+    ["evidence_level", (row) => rowEvidenceLevel(row)],
     ["topics", (row) => (row.topicMatch || []).join("; ")],
     ["travel", (row) => row.travelMatch],
     ["gate", (row) => row.gate],
@@ -318,7 +339,7 @@ function openDrawer(row) {
     <p class="draft">${esc(row.excerpt)}</p>
     <h3>Score</h3>
     <p><span class="score ${scoreClass(row.score)}">${esc(row.score)}</span> ${esc(row.scoreBreakdown)}</p>
-    <p>${esc(geoLabel(rowGeoTier(row)))} / ${esc(audienceLabel(rowAudienceScope(row)))} from ${esc(row.locationHint || "unknown")}.</p>
+    <p>${esc(geoLabel(rowGeoTier(row)))} / ${esc(audienceLabel(rowAudienceScope(row)))} / ${esc(evidenceLabel(rowEvidenceLevel(row)))} from ${esc(row.locationHint || "unknown")}.</p>
     <p class="draft">${esc(row.geoReason || "No geo policy reason recorded.")}</p>
     <h3>Trust proximity</h3>
     <p><span class="trust-score">${esc((row.trustScore || 0) + (row.conferenceAffinityScore || 0))}</span> W${esc(row.trustScore || 0)} C${esc(row.conferenceAffinityScore || 0)}</p>
@@ -351,6 +372,10 @@ async function load() {
 }
 
 $("eventFilter").addEventListener("change", (event) => { state.event = event.target.value; render(); });
+$("includeTrustCandidates").addEventListener("change", (event) => {
+  state.showTrustCandidates = event.target.checked;
+  render();
+});
 $("filterRail").addEventListener("change", (event) => {
   const target = event.target;
   if (!target.matches('input[type="checkbox"][data-filter-key]')) return;

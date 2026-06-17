@@ -1,5 +1,6 @@
 import {
   ConferenceEvent,
+  EvidenceLevel,
   GateClass,
   PublicSignal,
   SignalMatch,
@@ -108,6 +109,17 @@ function engagementScore(signal: PublicSignal): number {
   return 3;
 }
 
+function evidenceLevel(signal: PublicSignal): EvidenceLevel {
+  if (signal.sourceLane === "nostr_graph") return "trust_candidate";
+  if (signal.sourceLane === "conference_window_crossover") return "crossover_event_page";
+  if (signal.sourceLane === "adjacent_event_official") return "official_event_page";
+  return "public_content";
+}
+
+function evidencePenalty(level: EvidenceLevel): number {
+  return level === "trust_candidate" ? 50 : 0;
+}
+
 function datesLabel(event: ConferenceEvent): string {
   return `${event.startDate} to ${event.endDate}`;
 }
@@ -148,6 +160,16 @@ function draft(signal: PublicSignal, event: ConferenceEvent, matches: string[]):
   const text = clean(`${signal.platform} ${signal.sourceLane} ${signal.excerpt} ${topics.join(" ")} ${conferenceRefs.join(" ")}`);
   const eventName = eventMention(event);
   const name = publicName(signal, "this public signal");
+
+  if (signal.sourceLane === "conference_window_crossover") {
+    if (includesAny(text, ["canada crypto week", "side event", "side events", "community partners", "sponsors"])) {
+      return `${name} is right in the same Toronto week, so the useful overlap is finding builders already in town who care about open systems, custody, privacy, or Bitcoin protocol work.`;
+    }
+    if (includesAny(text, ["ai futurist", "artificial intelligence", "ai"])) {
+      return `${name} brings the AI crowd into the same venue window. From the BTC++ side, the interesting overlap is builders thinking about open infrastructure, trust, and systems that need careful technical review.`;
+    }
+    return `${name} lands close enough to ${eventName} that crossover is worth watching. The goal is to spot technical attendees already nearby, not spray everyone with a conference pitch.`;
+  }
 
   if (signal.sourceLane === "adjacent_event_official") {
     if (includesAny(text, ["btc++", "btcplusplus", "btcpp", "bitcoin++"])) {
@@ -205,6 +227,7 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
   const topics = topicMatches(signal, event);
   const travel = travelMatch(signal, event);
   const geo = classifyGeoAudience(signal, event);
+  const evidence = evidenceLevel(signal);
   const trust = gate === "blocked_private"
     ? { trustScore: 0, conferenceAffinityScore: 0, trustReasons: [] }
     : trustSignalForEvent(signal, event, graph);
@@ -213,7 +236,8 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
   const fresh = freshnessScore(signal.postedAt);
   const engage = engagementScore(signal);
   const blockedPenalty = gate === "blocked_private" ? 100 : gate === "public_ambiguous" ? 12 : 0;
-  const score = Math.max(0, Math.min(100, topic + geoPoints + fresh + engage + trust.trustScore + trust.conferenceAffinityScore - blockedPenalty));
+  const evidencePoints = evidencePenalty(evidence);
+  const score = Math.max(0, Math.min(100, topic + geoPoints + fresh + engage + trust.trustScore + trust.conferenceAffinityScore - blockedPenalty - evidencePoints));
   const signalId = signal.id ?? "sig-unknown";
   const matchId = `${signalId}-${event.id}`;
   return {
@@ -240,6 +264,7 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
     topicPolicy: geo.topicPolicy,
     normalizedLocation: geo.normalizedLocation,
     geoReason: geo.geoReason,
+    evidenceLevel: evidence,
     gate,
     dataMode: signal.dataMode,
     sourceLane: signal.sourceLane,
@@ -248,10 +273,10 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
     conferenceAffinityScore: trust.conferenceAffinityScore,
     trustReasons: trust.trustReasons,
     score,
-    scoreBreakdown: `v3:T${topic}+G${geoPoints}+F${fresh}+E${engage}+W${trust.trustScore}+C${trust.conferenceAffinityScore}-B${blockedPenalty}=${score}`,
+    scoreBreakdown: `v4:T${topic}+G${geoPoints}+F${fresh}+E${engage}+W${trust.trustScore}+C${trust.conferenceAffinityScore}-B${blockedPenalty}-Q${evidencePoints}=${score}`,
     approvalStatus: gate === "blocked_private" ? "blocked_private" : "needs_human_review",
     reachPath: gate === "blocked_private" ? "" : signal.sourceUrl,
-    draftPublicReply: gate === "blocked_private" ? "" : draft(signal, event, topics)
+    draftPublicReply: gate === "blocked_private" || evidence === "trust_candidate" ? "" : draft(signal, event, topics)
   };
 }
 

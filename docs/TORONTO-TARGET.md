@@ -48,6 +48,13 @@ Bitplus Signal now separates location fit from audience breadth:
   console only when the signal is Bitcoin/freedom-tech specific: Bitcoin,
   Lightning, Nostr, self-custody, protocol, consensus, privacy, cryptography, or
   censorship resistance.
+- Same-week crossover conference pages in the July 15-31, 2026 window are kept
+  as event evidence and used to seed searches for public speaker, sponsor,
+  attendee, and side-event posts. Event pages alone are not treated like direct
+  buyer intent.
+- Graph-only Nostr profiles are trust candidates, hidden from the default board
+  and draftless until recent public notes or profile metadata provide topical
+  evidence.
 - The three-hour band is a targeting heuristic, not a live airline schedule or
   travel promise.
 - Unknown Nostr/social rows are kept visible as Bitcoin-only/needs-location-

@@ -94,6 +94,7 @@ export type TravelMatch = "local" | "direct_flight_seed" | "same_region" | "unkn
 export type GeoTier = "local_area" | "near_direct_3h" | "long_direct_or_far" | "unknown_location";
 export type AudienceScope = "broad_builder_crypto" | "bitcoin_only";
 export type TopicPolicy = "broad_allowed" | "bitcoin_required" | "needs_location_review";
+export type EvidenceLevel = "public_content" | "official_event_page" | "crossover_event_page" | "trust_candidate";
 export type DataMode = z.infer<typeof DataModeSchema>;
 
 export interface SignalMatch {
@@ -120,6 +121,7 @@ export interface SignalMatch {
   topicPolicy: TopicPolicy;
   normalizedLocation: string;
   geoReason: string;
+  evidenceLevel: EvidenceLevel;
   gate: GateClass;
   dataMode: DataMode;
   sourceLane: string;

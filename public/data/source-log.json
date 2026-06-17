@@ -110,6 +110,15 @@
       "status": "published_reviewed"
     },
     {
+      "sourceLane": "conference_window_crossover",
+      "query": "Official public pages for semi-related Toronto events in the July 15-31, 2026 BTC++ crossover window: Canada Crypto Week and AI Futurist",
+      "rawSource": "data/reviewed/toronto-adjacent-event-signals.json",
+      "yielded": 2,
+      "reviewed": 2,
+      "published": 2,
+      "status": "published_reviewed"
+    },
+    {
       "sourceLane": "apify_x",
       "query": "Expanded Xquik MVP canary for BTC++ Toronto, ETHToronto 2026, Blockchain Futurist Toronto 2026",
       "rawSource": "data/real/apify-xquik-expanded-social.json",

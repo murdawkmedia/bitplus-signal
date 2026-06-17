@@ -9,7 +9,9 @@ describe("public dashboard organizer filters", () => {
     expect(html).toContain('id="sourceLaneFilters"');
     expect(html).toContain('id="geoFilters"');
     expect(html).toContain('id="audienceFilters"');
+    expect(html).toContain('id="evidenceFilters"');
     expect(html).toContain('id="topicFilters"');
+    expect(html).toContain('id="includeTrustCandidates"');
   });
 
   it("uses multi-select state instead of single platform and travel values", () => {
@@ -20,7 +22,10 @@ describe("public dashboard organizer filters", () => {
     expect(app).toContain("sourceLanes: new Set()");
     expect(app).toContain("geoTiers: new Set()");
     expect(app).toContain("audienceScopes: new Set()");
+    expect(app).toContain("evidenceLevels: new Set()");
     expect(app).toContain("topicMatches: new Set()");
+    expect(app).toContain("showTrustCandidates: false");
+    expect(app).toContain('rowEvidenceLevel(row) === "trust_candidate"');
     expect(app).not.toContain("state.platform && row.platform");
     expect(app).not.toContain("state.travel && row.travelMatch");
   });

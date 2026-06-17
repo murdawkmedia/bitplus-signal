@@ -124,16 +124,52 @@ describe("scoring", () => {
     const nostr = scoreSignalForEvent(signal({
       platform: "nostr",
       publicName: "nostr:abc",
-      excerpt: "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds.",
+      excerpt: "Public Nostr note about trust graph overlap near Bitcoin builders and BTC++ Toronto seeds.",
       topics: ["bitcoin", "developer tools"],
       profileRefs: ["nostr:abc"],
-      sourceLane: "nostr_graph"
+      sourceLane: "nostr_notes"
     }), toronto);
 
     expect(nostr.draftPublicReply).toContain("Nostr");
     expect(nostr.draftPublicReply).toContain("overlap");
     expect(nostr.draftPublicReply).not.toContain("http");
     expect(nostr.draftPublicReply).not.toContain("Details:");
+  });
+
+  it("demotes graph-only Nostr profiles to non-draft trust candidates", () => {
+    const graphOnly = scoreSignalForEvent(signal({
+      platform: "nostr",
+      publicName: "nostr:abc",
+      excerpt: "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 4 seed-adjacent profile(s), follows 900 public profile(s).",
+      topics: ["bitcoin", "developer tools"],
+      profileRefs: ["nostr:abc"],
+      conferenceRefs: [],
+      sourceLane: "nostr_graph"
+    }), toronto);
+
+    expect(graphOnly.evidenceLevel).toBe("trust_candidate");
+    expect(graphOnly.draftPublicReply).toBe("");
+    expect(graphOnly.score).toBeLessThan(55);
+    expect(graphOnly.scoreBreakdown).toContain("Q");
+  });
+
+  it("marks same-week crossover conference pages as event evidence", () => {
+    const crossover = scoreSignalForEvent(signal({
+      id: "sig-crossover-canada-crypto-week",
+      platform: "official_web",
+      publicName: "Canada Crypto Week",
+      sourceUrl: "https://www.canadacryptoweek.com/",
+      sourceLane: "conference_window_crossover",
+      excerpt: "Canada Crypto Week runs July 20-26, 2026 in Toronto with Web3, AI, side events, sponsors, and community partners.",
+      postedAt: "2026-06-17",
+      locationHint: "Toronto",
+      topics: ["crypto", "AI", "Web3", "developer tools"],
+      conferenceRefs: ["adjacent:canada-crypto-week"]
+    }), toronto);
+
+    expect(crossover.evidenceLevel).toBe("crossover_event_page");
+    expect(crossover.geoTier).toBe("local_area");
+    expect(crossover.draftPublicReply).toContain("Canada Crypto Week");
   });
 
   it("keeps drafts distinct for similar public rows", () => {
@@ -173,7 +209,10 @@ describe("scoring", () => {
     expect(ndc.draftPublicReply).toContain("NDC Toronto");
     expect(waterloo.draftPublicReply).toContain("Waterloo Tech Week");
     expect(ndc.draftPublicReply).not.toBe(waterloo.draftPublicReply);
-    expect(nostrA.draftPublicReply).not.toBe(nostrB.draftPublicReply);
+    expect(nostrA.evidenceLevel).toBe("trust_candidate");
+    expect(nostrB.evidenceLevel).toBe("trust_candidate");
+    expect(nostrA.draftPublicReply).toBe("");
+    expect(nostrB.draftPublicReply).toBe("");
   });
 
   it("varies direct BTC++ mention drafts by post content", () => {
