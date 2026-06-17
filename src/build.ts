@@ -1,4 +1,5 @@
 import path from "node:path";
+import fs from "node:fs/promises";
 import { readEvents, readSignals, readTrustGraph, writeJson } from "./io.js";
 import { buildMatches } from "./scoring.js";
 import { BuildMeta, TrustGraph } from "./types.js";
@@ -9,6 +10,7 @@ export interface BuildOptions {
   outDir: string;
   eventId?: string;
   trustGraphFile?: string | string[];
+  sourceLogFile?: string;
 }
 
 function mergeTrustGraphs(graphs: TrustGraph[]): TrustGraph | undefined {
@@ -36,6 +38,27 @@ function mergeTrustGraphs(graphs: TrustGraph[]): TrustGraph | undefined {
   return { profiles: [...profiles.values()], conferences: [...conferences.values()] };
 }
 
+function sourceLaneCounts(signals: Array<{ sourceLane: string }>): Array<{ sourceLane: string; inputCount: number }> {
+  const counts = new Map<string, number>();
+  for (const signal of signals) {
+    counts.set(signal.sourceLane, (counts.get(signal.sourceLane) ?? 0) + 1);
+  }
+  return [...counts.entries()].map(([sourceLane, inputCount]) => ({ sourceLane, inputCount }));
+}
+
+async function readSourceLog(file: string | undefined, signals: Array<{ sourceLane: string }>): Promise<unknown> {
+  if (file) return JSON.parse(await fs.readFile(file, "utf8"));
+  return {
+    lanes: sourceLaneCounts(signals).map((lane) => ({
+      sourceLane: lane.sourceLane,
+      query: "build input",
+      yielded: lane.inputCount,
+      published: lane.inputCount,
+      status: "published_reviewed"
+    }))
+  };
+}
+
 export async function buildStaticData(options: BuildOptions): Promise<BuildMeta> {
   const allEvents = await readEvents(options.eventsFile);
   const events = options.eventId
@@ -50,10 +73,15 @@ export async function buildStaticData(options: BuildOptions): Promise<BuildMeta>
     : options.trustGraphFile ? [options.trustGraphFile] : [];
   const graph = mergeTrustGraphs(await Promise.all(graphFiles.map((file) => readTrustGraph(file))));
   const matches = buildMatches(events, signals, graph);
+  const sourceLog = await readSourceLog(options.sourceLogFile, signals);
   const meta: BuildMeta = {
     builtAt: process.env.BITPLUS_SIGNAL_BUILD_AT ?? "2026-06-17T00:00:00.000Z",
     eventCount: events.length,
     signalInputCount: signals.length,
+    realSignalCount: signals.filter((signal) => signal.dataMode === "real_public").length,
+    sampleSignalCount: signals.filter((signal) => signal.dataMode === "sample_synthetic").length,
+    blockedInputCount: signals.filter((signal) => ["private", "dm", "login_gated"].includes(signal.visibility)).length,
+    sourceLaneCounts: sourceLaneCounts(signals),
     matchCount: matches.length,
     sourceMode: "csv-json-imports-plus-nostr"
   };
@@ -61,5 +89,6 @@ export async function buildStaticData(options: BuildOptions): Promise<BuildMeta>
   await writeJson(path.join(options.outDir, "events.json"), events);
   await writeJson(path.join(options.outDir, "signals.json"), matches);
   await writeJson(path.join(options.outDir, "meta.json"), meta);
+  await writeJson(path.join(options.outDir, "source-log.json"), sourceLog);
   return meta;
 }

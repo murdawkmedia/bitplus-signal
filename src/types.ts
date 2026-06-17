@@ -4,6 +4,10 @@ export const VisibilitySchema = z
   .enum(["public", "private", "dm", "login_gated", "unknown"])
   .default("public");
 
+export const DataModeSchema = z
+  .enum(["real_public", "sample_synthetic", "source_log"])
+  .default("real_public");
+
 export const ConferenceEventSchema = z.object({
   id: z.string().min(1),
   series: z.string().min(1).default("Conference"),
@@ -32,6 +36,9 @@ export const PublicSignalSchema = z.object({
   topics: z.array(z.string()).optional().default([]),
   profileRefs: z.array(z.string()).optional().default([]),
   conferenceRefs: z.array(z.string()).optional().default([]),
+  dataMode: DataModeSchema.optional().default("real_public"),
+  sourceLane: z.string().optional().default("unknown"),
+  provenanceNote: z.string().optional().default(""),
   visibility: VisibilitySchema
 });
 
@@ -64,6 +71,13 @@ export const BuildMetaSchema = z.object({
   builtAt: z.string(),
   eventCount: z.number(),
   signalInputCount: z.number(),
+  realSignalCount: z.number().optional().default(0),
+  sampleSignalCount: z.number().optional().default(0),
+  blockedInputCount: z.number().optional().default(0),
+  sourceLaneCounts: z.array(z.object({
+    sourceLane: z.string(),
+    inputCount: z.number()
+  })).optional().default([]),
   matchCount: z.number(),
   sourceMode: z.string()
 });
@@ -77,6 +91,7 @@ export type TrustGraph = z.infer<typeof TrustGraphSchema>;
 
 export type GateClass = "public_ok" | "public_ambiguous" | "blocked_private";
 export type TravelMatch = "local" | "direct_flight_seed" | "same_region" | "unknown";
+export type DataMode = z.infer<typeof DataModeSchema>;
 
 export interface SignalMatch {
   matchId: string;
@@ -98,6 +113,9 @@ export interface SignalMatch {
   topicMatch: string[];
   travelMatch: TravelMatch;
   gate: GateClass;
+  dataMode: DataMode;
+  sourceLane: string;
+  provenanceNote: string;
   trustScore: number;
   conferenceAffinityScore: number;
   trustReasons: string[];

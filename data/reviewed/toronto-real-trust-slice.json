@@ -1,0 +1,714 @@
+{
+  "profiles": [
+    {
+      "id": "nostr:1e7229ab0b18d1e8eb8097b6ce97f0e398fb0e9d84aac659c698ddfbb0c929d7",
+      "label": "nostr:1e7229ab0b18d1e8eb8097b6ce97f0e398fb0e9d84aac659c698ddfbb0c929d7",
+      "platform": "nostr",
+      "trustSeed": true,
+      "follows": [
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:03612b0ebae0ec8d30031c440ba087ff9bd162962dffba4b6e021ec4afd71216"
+      ],
+      "followedBy": [
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+      "label": "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+      "platform": "nostr",
+      "trustSeed": true,
+      "follows": [
+        "nostr:0d8c556f4f8580508a057ee24000ab63aef89ae2c3efdc8018ae4d2c73dfd4d7",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:0114bb11dd8eb89bfb40669509b2a5a473d27126e27acae58257f2fd7cd95776",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf"
+      ],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+      "label": "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+      "platform": "nostr",
+      "trustSeed": true,
+      "follows": [
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:000000000652e452ee68a01187fb08c899496cb46cb51d1aa0803d063acedba7",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2"
+      ],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:1e7229ab0b18d1e8eb8097b6ce97f0e398fb0e9d84aac659c698ddfbb0c929d7",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+      "label": "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+      "platform": "nostr",
+      "trustSeed": true,
+      "follows": [
+        "nostr:001892e9b48b430d7e37c27051ff7bf414cbc52a7f48f451d857409ce7839dde",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:045745ac0e90a436141a3addd95575c2ead47b613f45287283e5802ff7fd99fd",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:0062f507c321de639838ea7756d6020998221c7e7fc8cca225459e64130ee469",
+        "nostr:021d7ef7aafc034a8fefba4de07622d78fd369df1e5f9dd7d41dc2cffa74ae02",
+        "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2",
+        "nostr:0b9de7c5e82d26c285690a13cd164149a5a0ee3131b9912e1c0bb36c66b471ab"
+      ],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:feb842e2e624cb58e364f8f7cb363c03407be9519ad48326f518f976b3551059",
+      "label": "nostr:feb842e2e624cb58e364f8f7cb363c03407be9519ad48326f518f976b3551059",
+      "platform": "nostr",
+      "trustSeed": true,
+      "follows": [],
+      "followedBy": [
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:000000000652e452ee68a01187fb08c899496cb46cb51d1aa0803d063acedba7",
+      "label": "nostr:000000000652e452ee68a01187fb08c899496cb46cb51d1aa0803d063acedba7",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:001892e9b48b430d7e37c27051ff7bf414cbc52a7f48f451d857409ce7839dde",
+      "label": "nostr:001892e9b48b430d7e37c27051ff7bf414cbc52a7f48f451d857409ce7839dde",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:0062f507c321de639838ea7756d6020998221c7e7fc8cca225459e64130ee469",
+      "label": "nostr:0062f507c321de639838ea7756d6020998221c7e7fc8cca225459e64130ee469",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:0114bb11dd8eb89bfb40669509b2a5a473d27126e27acae58257f2fd7cd95776",
+      "label": "nostr:0114bb11dd8eb89bfb40669509b2a5a473d27126e27acae58257f2fd7cd95776",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+      "label": "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:021d7ef7aafc034a8fefba4de07622d78fd369df1e5f9dd7d41dc2cffa74ae02",
+      "label": "nostr:021d7ef7aafc034a8fefba4de07622d78fd369df1e5f9dd7d41dc2cffa74ae02",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2",
+      "label": "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:03612b0ebae0ec8d30031c440ba087ff9bd162962dffba4b6e021ec4afd71216",
+      "label": "nostr:03612b0ebae0ec8d30031c440ba087ff9bd162962dffba4b6e021ec4afd71216",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:1e7229ab0b18d1e8eb8097b6ce97f0e398fb0e9d84aac659c698ddfbb0c929d7",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:045745ac0e90a436141a3addd95575c2ead47b613f45287283e5802ff7fd99fd",
+      "label": "nostr:045745ac0e90a436141a3addd95575c2ead47b613f45287283e5802ff7fd99fd",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+      "label": "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf"
+      ],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+      "label": "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:1e7229ab0b18d1e8eb8097b6ce97f0e398fb0e9d84aac659c698ddfbb0c929d7",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:0b9de7c5e82d26c285690a13cd164149a5a0ee3131b9912e1c0bb36c66b471ab",
+      "label": "nostr:0b9de7c5e82d26c285690a13cd164149a5a0ee3131b9912e1c0bb36c66b471ab",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:0d8c556f4f8580508a057ee24000ab63aef89ae2c3efdc8018ae4d2c73dfd4d7",
+      "label": "nostr:0d8c556f4f8580508a057ee24000ab63aef89ae2c3efdc8018ae4d2c73dfd4d7",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+      "label": "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:0b9de7c5e82d26c285690a13cd164149a5a0ee3131b9912e1c0bb36c66b471ab",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:0d8c556f4f8580508a057ee24000ab63aef89ae2c3efdc8018ae4d2c73dfd4d7",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c"
+      ],
+      "followedBy": [
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+      "label": "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:021d7ef7aafc034a8fefba4de07622d78fd369df1e5f9dd7d41dc2cffa74ae02",
+        "nostr:1e7229ab0b18d1e8eb8097b6ce97f0e398fb0e9d84aac659c698ddfbb0c929d7",
+        "nostr:03612b0ebae0ec8d30031c440ba087ff9bd162962dffba4b6e021ec4afd71216",
+        "nostr:0b9de7c5e82d26c285690a13cd164149a5a0ee3131b9912e1c0bb36c66b471ab",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:000000000652e452ee68a01187fb08c899496cb46cb51d1aa0803d063acedba7",
+        "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2",
+        "nostr:feb842e2e624cb58e364f8f7cb363c03407be9519ad48326f518f976b3551059",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb"
+      ],
+      "followedBy": [
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+      "label": "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:0114bb11dd8eb89bfb40669509b2a5a473d27126e27acae58257f2fd7cd95776",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9"
+      ],
+      "followedBy": [
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+      "label": "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:0114bb11dd8eb89bfb40669509b2a5a473d27126e27acae58257f2fd7cd95776",
+        "nostr:0d8c556f4f8580508a057ee24000ab63aef89ae2c3efdc8018ae4d2c73dfd4d7",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf"
+      ],
+      "followedBy": [
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+      "label": "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:000000000652e452ee68a01187fb08c899496cb46cb51d1aa0803d063acedba7",
+        "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc"
+      ],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+      "label": "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:03612b0ebae0ec8d30031c440ba087ff9bd162962dffba4b6e021ec4afd71216",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd"
+      ],
+      "followedBy": [
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+      "label": "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:001892e9b48b430d7e37c27051ff7bf414cbc52a7f48f451d857409ce7839dde",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:0114bb11dd8eb89bfb40669509b2a5a473d27126e27acae58257f2fd7cd95776",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:0b9de7c5e82d26c285690a13cd164149a5a0ee3131b9912e1c0bb36c66b471ab",
+        "nostr:03612b0ebae0ec8d30031c440ba087ff9bd162962dffba4b6e021ec4afd71216",
+        "nostr:0d8c556f4f8580508a057ee24000ab63aef89ae2c3efdc8018ae4d2c73dfd4d7",
+        "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+        "nostr:feb842e2e624cb58e364f8f7cb363c03407be9519ad48326f518f976b3551059",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:045745ac0e90a436141a3addd95575c2ead47b613f45287283e5802ff7fd99fd",
+        "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2",
+        "nostr:021d7ef7aafc034a8fefba4de07622d78fd369df1e5f9dd7d41dc2cffa74ae02",
+        "nostr:000000000652e452ee68a01187fb08c899496cb46cb51d1aa0803d063acedba7"
+      ],
+      "followedBy": [
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+      "label": "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:000000000652e452ee68a01187fb08c899496cb46cb51d1aa0803d063acedba7",
+        "nostr:0114bb11dd8eb89bfb40669509b2a5a473d27126e27acae58257f2fd7cd95776",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2"
+      ],
+      "followedBy": [
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+      "label": "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:1e7229ab0b18d1e8eb8097b6ce97f0e398fb0e9d84aac659c698ddfbb0c929d7",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:045745ac0e90a436141a3addd95575c2ead47b613f45287283e5802ff7fd99fd",
+        "nostr:021d7ef7aafc034a8fefba4de07622d78fd369df1e5f9dd7d41dc2cffa74ae02",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd"
+      ],
+      "followedBy": [
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+      "label": "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:02d9f5676fffc339ffe94dfab38bebe21ce117c6f1509d9922a82d454f420da2",
+        "nostr:045745ac0e90a436141a3addd95575c2ead47b613f45287283e5802ff7fd99fd",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:0d8c556f4f8580508a057ee24000ab63aef89ae2c3efdc8018ae4d2c73dfd4d7",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc"
+      ],
+      "followedBy": [
+        "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+      "label": "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:0d8c556f4f8580508a057ee24000ab63aef89ae2c3efdc8018ae4d2c73dfd4d7",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:021d7ef7aafc034a8fefba4de07622d78fd369df1e5f9dd7d41dc2cffa74ae02",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf"
+      ],
+      "followedBy": [
+        "nostr:4488b678a4504bc2377e9f89533e271a037f9ce20cb0362b4dd39e12fba53889",
+        "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+        "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+        "nostr:0461fcbecc4c3374439932d6b8f11269ccdb7cc973ad7a50ae362db135a474dd",
+        "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+        "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+        "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    },
+    {
+      "id": "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+      "label": "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+      "platform": "nostr",
+      "trustSeed": false,
+      "follows": [
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+        "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+        "nostr:04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+        "nostr:020f2d21ae09bf35fcdfb65decf1478b846f5f728ab30c5eaabcd6d081a81c3e",
+        "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+        "nostr:03612b0ebae0ec8d30031c440ba087ff9bd162962dffba4b6e021ec4afd71216",
+        "nostr:021d7ef7aafc034a8fefba4de07622d78fd369df1e5f9dd7d41dc2cffa74ae02",
+        "nostr:0062f507c321de639838ea7756d6020998221c7e7fc8cca225459e64130ee469",
+        "nostr:cbc5ef6b01cbd1ffa2cb95a954f04c385a936c1a86e1bb9ccdf2cf0f4ebeaccb",
+        "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+        "nostr:000000000652e452ee68a01187fb08c899496cb46cb51d1aa0803d063acedba7"
+      ],
+      "followedBy": [
+        "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46"
+      ],
+      "conferenceRefs": [],
+      "topics": [],
+      "locationHints": []
+    }
+  ],
+  "conferences": []
+}

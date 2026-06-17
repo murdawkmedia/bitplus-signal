@@ -30,24 +30,29 @@ function nearestSeedReason(
   profiles: Map<string, TrustProfile>,
   seeds: Set<string>
 ): { points: number; reason: string } {
+  const follows = profile.follows ?? [];
+  const followedBy = profile.followedBy ?? [];
+
   if (profile.trustSeed || seeds.has(profile.id)) {
     return { points: 30, reason: `${profile.label} is a trust seed` };
   }
 
   for (const seedId of seeds) {
     const seed = profiles.get(seedId);
-    if (profile.follows.includes(seedId)) {
+    if (follows.includes(seedId)) {
       return { points: 22, reason: `${profile.label} follows ${labelFor(seed, seedId)}` };
     }
-    if (profile.followedBy.includes(seedId)) {
+    if (followedBy.includes(seedId)) {
       return { points: 20, reason: `${profile.label} is followed by ${labelFor(seed, seedId)}` };
     }
   }
 
-  for (const midId of profile.follows) {
+  for (const midId of [...follows, ...followedBy]) {
     const mid = profiles.get(midId);
     if (!mid) continue;
-    const connectsToSeed = mid.trustSeed || mid.follows.some((id) => seeds.has(id)) || mid.followedBy.some((id) => seeds.has(id));
+    const midFollows = mid.follows ?? [];
+    const midFollowedBy = mid.followedBy ?? [];
+    const connectsToSeed = mid.trustSeed || midFollows.some((id) => seeds.has(id)) || midFollowedBy.some((id) => seeds.has(id));
     if (connectsToSeed) {
       return { points: 12, reason: `${profile.label} is two hops from ${labelFor(mid, midId)}` };
     }

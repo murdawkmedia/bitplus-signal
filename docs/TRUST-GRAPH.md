@@ -31,8 +31,11 @@ The checked-in seed graph is `data/trust/toronto-trust-seeds.json`. It contains:
 - Synthetic demo profiles.
 - Similar conference nodes such as BTC Prague, TABConf, Bitcoin++, Toronto
   Bitcoin Meetups, and adjacent developer events.
+- A separate reviewed real public slice lives at
+  `data/reviewed/toronto-real-trust-slice.json`.
 
-Do not commit real collected profile graphs until they have been reviewed.
+Do not commit raw collected profile graphs. Keep them under ignored `data/real/`
+and publish only a compact reviewed slice.
 
 ## Nostr Graph Imports
 
@@ -45,15 +48,16 @@ npx tsx src/cli.ts scan-nostr-graph `
   --out data/real/nostr-trust-graph.json
 ```
 
-Then build with both the seed graph and the local graph:
+Then review the raw graph into publishable artifacts:
 
 ```powershell
-node dist/cli.js build `
-  --events data/events/btcplusplus-2026.json `
-  --signals data/real/merged-signals.json `
-  --out public/data `
-  --event-id btcpp-toronto-2026 `
-  --trust-graph data/trust/toronto-trust-seeds.json data/real/nostr-trust-graph.json
+npm run review:nostr-graph
+```
+
+Then build with the seed graph and reviewed slice:
+
+```powershell
+npm run build
 ```
 
 ## X, Instagram, Facebook, Reddit, and Apify
@@ -69,9 +73,9 @@ The output path is `data/real/apify-toronto.json`, which is ignored by git.
 
 ## OpenRouter Models
 
-OpenRouter is optional. The default model is `moonshotai/kimi-k2.6`, with
-`z-ai/glm-5.2` and `z-ai/glm-5-turbo` documented as stronger/faster fallback
-options.
+OpenRouter is optional. The default model is `z-ai/glm-5.1`, with
+`moonshotai/kimi-k2.6`, `z-ai/glm-5.2`, and `z-ai/glm-5-turbo` documented as
+open-model alternatives.
 
 ```powershell
 npm run models:check

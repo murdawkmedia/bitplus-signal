@@ -2,6 +2,7 @@ const state = {
   events: [],
   signals: [],
   meta: null,
+  sourceLog: null,
   event: "",
   platform: "",
   travel: "",
@@ -42,6 +43,16 @@ function gateLabel(value) {
   return '<span class="gate-ok">Public</span>';
 }
 
+function dataBadge(value) {
+  if (value === "real_public") return '<span class="data-badge real">Real public</span>';
+  if (value === "sample_synthetic") return '<span class="data-badge sample">Sample</span>';
+  return `<span class="data-badge">${esc(value || "Unknown")}</span>`;
+}
+
+function sourceLaneLabel(value) {
+  return String(value || "unknown").replaceAll("_", " ");
+}
+
 function trustLabel(row) {
   const total = Number(row.trustScore || 0) + Number(row.conferenceAffinityScore || 0);
   if (!total) return '<span class="trust-zero">0</span>';
@@ -74,9 +85,29 @@ function populateFilters() {
     platforms.map((platform) => `<option value="${esc(platform)}">${esc(platform)}</option>`).join("");
 }
 
+function renderSourcePanel() {
+  const panel = $("sourcePanel");
+  if (!panel) return;
+  const lanes = state.sourceLog?.lanes || [];
+  const totalPublished = lanes.reduce((sum, lane) => sum + Number(lane.published || 0), 0);
+  panel.innerHTML = `
+    <div class="source-title">Public source run</div>
+    <div class="source-total">${esc(totalPublished)} published / ${esc(state.meta?.realSignalCount || 0)} real rows</div>
+    <div class="source-list">
+      ${lanes.map((lane) => `
+        <div class="source-lane">
+          <span>${esc(sourceLaneLabel(lane.sourceLane))}</span>
+          <strong>${esc(lane.published || 0)}/${esc(lane.yielded || 0)}</strong>
+          <em>${esc(lane.status || "unknown")}</em>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
 function render() {
   const rows = filtered();
-  $("statline").textContent = `${rows.length} shown / ${state.signals.length} matches - ${state.meta?.eventCount || 0} events`;
+  $("statline").textContent = `${rows.length} shown / ${state.signals.length} matches - ${state.meta?.realSignalCount || 0} real - ${state.meta?.sampleSignalCount || 0} sample`;
   $("empty").hidden = rows.length !== 0;
   $("rows").innerHTML = rows.map((row, index) => `
     <tr data-index="${index}">
@@ -86,9 +117,10 @@ function render() {
         <div class="event-sub">${esc(row.eventEdition)} - ${esc(row.eventDates)}</div>
       </td>
       <td>
-        <span class="platform">${esc(row.platform)}</span>
+        <span class="platform">${esc(row.platform)}</span>${dataBadge(row.dataMode)}
         <div class="excerpt">${esc(row.excerpt)}</div>
         <div class="meta">${esc(row.publicName || "public signal")} - ${esc(row.locationHint || "unknown")}</div>
+        <div class="meta source-meta">${esc(sourceLaneLabel(row.sourceLane))} - ${esc(row.provenanceNote || "public source")}</div>
       </td>
       <td>${esc(travelLabel(row.travelMatch))}</td>
       <td>${trustLabel(row)}</td>
@@ -102,6 +134,10 @@ function openDrawer(row) {
   $("drawerBody").innerHTML = `
     <h2>${esc(row.eventName)}</h2>
     <div class="meta">${esc(row.eventEdition)} - ${esc(row.eventCity)}, ${esc(row.eventCountry)} - ${esc(row.eventDates)}</div>
+    <h3>Provenance</h3>
+    <p>${dataBadge(row.dataMode)} <span class="source-pill">${esc(sourceLaneLabel(row.sourceLane))}</span> ${gateLabel(row.gate)}</p>
+    <p class="draft">${esc(row.provenanceNote || "Public source row.")}</p>
+    <p><a href="${esc(row.sourceUrl)}" target="_blank" rel="noopener">${esc(row.sourceUrl)}</a></p>
     <h3>Signal</h3>
     <p class="draft">${esc(row.excerpt)}</p>
     <h3>Score</h3>
@@ -113,6 +149,7 @@ function openDrawer(row) {
     <h3>Public reach path</h3>
     <p>${reachPathHtml(row.reachPath)}</p>
     <h3>Draft</h3>
+    <p class="meta">${esc(row.approvalStatus || "needs_human_review")}</p>
     <p class="draft">${esc(row.draftPublicReply || "No draft generated.")}</p>
     <h3>Event</h3>
     <p><a href="${esc(row.eventUrl)}" target="_blank" rel="noopener">${esc(row.eventUrl)}</a></p>
@@ -121,15 +158,18 @@ function openDrawer(row) {
 }
 
 async function load() {
-  const [events, signals, meta] = await Promise.all([
+  const [events, signals, meta, sourceLog] = await Promise.all([
     fetch("./data/events.json").then((res) => res.json()),
     fetch("./data/signals.json").then((res) => res.json()),
-    fetch("./data/meta.json").then((res) => res.json())
+    fetch("./data/meta.json").then((res) => res.json()),
+    fetch("./data/source-log.json").then((res) => res.json()).catch(() => ({ lanes: [] }))
   ]);
   state.events = events;
   state.signals = signals;
   state.meta = meta;
+  state.sourceLog = sourceLog;
   populateFilters();
+  renderSourcePanel();
   render();
 }
 

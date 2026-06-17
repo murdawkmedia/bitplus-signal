@@ -13,7 +13,10 @@ const FIELD_ALIASES: Record<string, string[]> = {
   visibility: ["visibility", "privacy_review", "channel_class"],
   topics: ["topics", "intent_keywords", "tags", "keywords"],
   profileRefs: ["profileRefs", "profile_refs", "profile_ref", "author_ref", "trust_profile_refs"],
-  conferenceRefs: ["conferenceRefs", "conference_refs", "conference_ref", "event_refs", "similar_conference_refs"]
+  conferenceRefs: ["conferenceRefs", "conference_refs", "conference_ref", "event_refs", "similar_conference_refs"],
+  dataMode: ["dataMode", "data_mode", "mode"],
+  sourceLane: ["sourceLane", "source_lane", "lane"],
+  provenanceNote: ["provenanceNote", "provenance_note", "provenance", "source_note"]
 };
 
 function pick(row: RawRow, key: string): unknown {
@@ -61,6 +64,9 @@ export function normalizeSignal(row: RawRow): PublicSignal {
     topics: splitTopics(pick(row, "topics")),
     profileRefs: splitTopics(pick(row, "profileRefs")),
     conferenceRefs: splitTopics(pick(row, "conferenceRefs")),
+    dataMode: String(pick(row, "dataMode") ?? "real_public"),
+    sourceLane: String(pick(row, "sourceLane") ?? "unknown"),
+    provenanceNote: String(pick(row, "provenanceNote") ?? ""),
     visibility: normalizeVisibility(pick(row, "visibility"))
   };
   const parsed = PublicSignalSchema.parse(candidate);

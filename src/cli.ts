@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 import { Command } from "commander";
 import { buildStaticData } from "./build.js";
-import { readSignals, writeJson } from "./io.js";
+import { readSignals, readTrustGraph, writeJson } from "./io.js";
 import { scanNostr } from "./nostr.js";
 import { refineDraft } from "./llm.js";
 import { SignalMatch } from "./types.js";
 import { checkOpenRouterModels } from "./models.js";
 import { normalizeApifyItems, runApifyActor } from "./apify.js";
 import { scanNostrTrustGraph } from "./nostrGraph.js";
+import { signalsFromTrustGraph, trustGraphSliceForSignals } from "./reviewed.js";
 
 const program = new Command();
 
@@ -24,15 +25,40 @@ program
   .requiredOption("--out <dir>", "Output directory for static JSON")
   .option("--event-id <id>", "Only build matches for one event")
   .option("--trust-graph <file...>", "Optional trust graph JSON file(s)")
-  .action(async (options: { events: string; signals: string; out: string; eventId?: string; trustGraph?: string[] }) => {
+  .option("--source-log <file>", "Optional source/run log JSON file")
+  .action(async (options: { events: string; signals: string; out: string; eventId?: string; trustGraph?: string[]; sourceLog?: string }) => {
     const meta = await buildStaticData({
       eventsFile: options.events,
       signalsFile: options.signals,
       outDir: options.out,
       eventId: options.eventId,
-      trustGraphFile: options.trustGraph
+      trustGraphFile: options.trustGraph,
+      sourceLogFile: options.sourceLog
     });
     console.log(`Built ${meta.matchCount} matches from ${meta.signalInputCount} public signals.`);
+  });
+
+program
+  .command("review-nostr-graph")
+  .description("Convert a raw public Nostr trust graph into a small reviewed signal file.")
+  .requiredOption("--graph <file>", "Raw trust graph JSON, normally under data/real/")
+  .requiredOption("--out <file>", "Reviewed signal JSON output")
+  .option("--limit <number>", "Maximum reviewed rows", "12")
+  .option("--source-lane <lane>", "Source lane label", "nostr_graph")
+  .option("--posted-at <date>", "Review/publication date", "2026-06-17")
+  .option("--trust-slice-out <file>", "Optional reviewed trust-graph slice output")
+  .action(async (options: { graph: string; out: string; limit: string; sourceLane: string; postedAt: string; trustSliceOut?: string }) => {
+    const graph = await readTrustGraph(options.graph);
+    const rows = signalsFromTrustGraph(graph, {
+      limit: Number.parseInt(options.limit, 10),
+      sourceLane: options.sourceLane,
+      postedAt: options.postedAt
+    });
+    await writeJson(options.out, rows);
+    if (options.trustSliceOut) {
+      await writeJson(options.trustSliceOut, trustGraphSliceForSignals(graph, rows));
+    }
+    console.log(`Wrote ${rows.length} reviewed real public signal rows.`);
   });
 
 program
@@ -57,11 +83,13 @@ program
     "wss://relay.primal.net"
   ])
   .option("--limit <number>", "Maximum notes", "25")
-  .action(async (options: { query: string; out: string; relay: string[]; limit: string }) => {
+  .option("--timeout-ms <number>", "Public relay search timeout in milliseconds", "15000")
+  .action(async (options: { query: string; out: string; relay: string[]; limit: string; timeoutMs: string }) => {
     const signals = await scanNostr({
       query: options.query,
       relays: options.relay,
-      limit: Number.parseInt(options.limit, 10)
+      limit: Number.parseInt(options.limit, 10),
+      timeoutMs: Number.parseInt(options.timeoutMs, 10)
     });
     await writeJson(options.out, signals);
     console.log(`Wrote ${signals.length} Nostr signals.`);

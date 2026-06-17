@@ -88,4 +88,34 @@ describe("scoring", () => {
     expect(trusted.trustReasons.join(" ")).toContain("BTC++");
     expect(trusted.trustReasons.join(" ")).toContain("BTC Prague");
   });
+
+  it("counts public follower paths through seed-adjacent profiles", () => {
+    const graph: TrustGraph = {
+      profiles: [
+        { id: "nostr:btcplusplus", label: "BTC++", platform: "nostr", trustSeed: true },
+        {
+          id: "nostr:seed-adjacent",
+          label: "Seed adjacent dev",
+          platform: "nostr",
+          follows: ["nostr:btcplusplus"]
+        },
+        {
+          id: "nostr:candidate",
+          label: "Candidate",
+          platform: "nostr",
+          followedBy: ["nostr:seed-adjacent"]
+        }
+      ],
+      conferences: []
+    };
+
+    const trusted = scoreSignalForEvent(
+      signal({ profileRefs: ["nostr:candidate"] }),
+      toronto,
+      graph
+    );
+
+    expect(trusted.trustScore).toBeGreaterThan(0);
+    expect(trusted.trustReasons.join(" ")).toContain("Seed adjacent dev");
+  });
 });

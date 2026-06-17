@@ -25,5 +25,6 @@ rows may be used only as aggregate content inspiration; they never receive a dra
 ## Public Repo Data Rule
 
 The public repository should contain event metadata, source plans, code, tests,
-and synthetic sample rows. Put live public-source leads under `data/real/` or in a
-reviewed CRM, then explicitly approve any row before publishing it.
+synthetic sample rows, and reviewed public rows. Put raw public-source imports
+under ignored `data/real/` or in a reviewed CRM, then explicitly approve any row
+before publishing it under `data/reviewed/` or `public/data/`.

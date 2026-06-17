@@ -1,0 +1,254 @@
+[
+  {
+    "id": "sig-nostr-6e9b372ed5420c38f729c61095fedaa31894eebcab",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub1d6dnwtk4ggxr3aefccgftlk65vvffm4u4dnj3ckzpxkvktf9ye7qlznv7s",
+    "publicName": "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 9 seed-adjacent profile(s), follows 1885 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:6e9b372ed5420c38f729c61095fedaa31894eebcab6728e2c209accb2d25267c"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-1e067bfb58820576df3daf7cb051d4411b80a0b8fa",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub1rcr8h76csgzhdhea4a7tq5w5gydcpg9clgf0cffu6z45rnc6yp5sj7cfuz",
+    "publicName": "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 8 seed-adjacent profile(s), follows 1828 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:1e067bfb58820576df3daf7cb051d4411b80a0b8fa12fc253cd0ab41cf1a2069"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-339db62c91c8cfa8f085f89f115f1ad95df10ce749",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub1xwwmvty3er863uy9lz03zhc6m9wlzr88f9esywdkq4xjg5en9yyqktl3nz",
+    "publicName": "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 6 seed-adjacent profile(s), follows 1616 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:339db62c91c8cfa8f085f89f115f1ad95df10ce749730239b6054d2453332908"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-7bc3506a0e3031fc9d194b4deb327cb73e0beb56be",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub100p4q6swxqcle8gefdx7kvnukulqh66khcg8jgvx9sc4fn9k2teq2npn2p",
+    "publicName": "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 2 seed-adjacent profile(s), follows 1491 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:7bc3506a0e3031fc9d194b4deb327cb73e0beb56be107921862c3154ccb652f2"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-3f770d65d3a764a9c5cb503ae123e62ec7598ad035",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424",
+    "publicName": "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 43 seed-adjacent profile(s), follows 1280 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub14g0eda596zkru2999l4c0gsrnx5347e6cvfh4l4hdxxlejvmc32qfv3trj",
+    "publicName": "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 4 seed-adjacent profile(s), follows 1345 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3137afeb7698dfcc99bc454"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-15f70ebd30f69b85bba87c3ec45645300dc2835a6d",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub1zhmsa0fs76dctwag0slvg4j9xqxu9q66dkkzxh7ls9pu4d0f9qkqgvs67x",
+    "publicName": "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 4 seed-adjacent profile(s), follows 965 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:15f70ebd30f69b85bba87c3ec45645300dc2835a6dac235fdf8143cab5e9282c"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub1al9wl7han3nnh4zv78qm2r8lhu3frmysps948ctxdzzkfztu06hswjuds8",
+    "publicName": "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 8 seed-adjacent profile(s), follows 910 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c0b53e166688564897c7eaf"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce5",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub183awu7kse4kcu0wl92uwywq4x5luec7vu55dfnn4q4j5aw7w8dhsuaqvuq",
+    "publicName": "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 2 seed-adjacent profile(s), follows 816 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce528d4ce7505654ebbce3b6f"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987a",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub17gzxegev5z7t7cduu0k4tjtlhhrrayyc0t8egacwlnjwqh7j43rqk9cv8l",
+    "publicName": "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 2 seed-adjacent profile(s), follows 807 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987acf94770efce4e05fd2ac46"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-84fede4c35eb36028b56b4832beeaf91ff9864dd75",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub1snldunp4avmq9z6kkjpjhm40j8lesexawkv6tfejjwl5ccqe598s8sjqkx",
+    "publicName": "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 3 seed-adjacent profile(s), follows 799 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:84fede4c35eb36028b56b4832beeaf91ff9864dd7599a5a73293bf4c6019a14f"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-nostr-bb7c7a92f5819faafa91a375d88898a8d60c0dbb3c",
+    "platform": "nostr",
+    "sourceUrl": "https://njump.me/npub1hd784yh4sx0647535d6a3zyc4rtqcrdm8ny83rx7nmtskn0d6vss2x9d24",
+    "publicName": "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321",
+    "excerpt": "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds. Public graph evidence: followed by 3 seed-adjacent profile(s), follows 788 public profile(s).",
+    "postedAt": "2026-06-17",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "nostr:bb7c7a92f5819faafa91a375d88898a8d60c0dbb3cc8788cde9ed70b4dedd321"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "nostr_graph",
+    "provenanceNote": "reviewed public Nostr kind-3 follow graph",
+    "visibility": "public"
+  }
+]

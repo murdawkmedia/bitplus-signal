@@ -5,6 +5,7 @@ export interface NostrScanOptions {
   query: string;
   relays: string[];
   limit: number;
+  timeoutMs?: number;
 }
 
 interface NostrEventLike {
@@ -23,7 +24,10 @@ export async function scanNostr(options: NostrScanOptions): Promise<PublicSignal
   };
   const pool = new SimplePool();
   try {
-    const events = await pool.querySync(options.relays, { kinds: [1], search: options.query, limit: options.limit });
+    const events = await Promise.race([
+      pool.querySync(options.relays, { kinds: [1], search: options.query, limit: options.limit }),
+      new Promise<NostrEventLike[]>((resolve) => setTimeout(() => resolve([]), options.timeoutMs ?? 15_000))
+    ]);
     return normalizeSignals(
       events.map((event) => ({
         platform: "nostr",

@@ -26,10 +26,13 @@ Sources:
 
 ## Data Reality
 
-- Real data in the public repo: BTC++ event metadata and public source plans.
-- Synthetic data in the public repo: demo signal rows under `data/samples/`.
-- Real lead imports: store under `data/real/` or a reviewed CRM. `data/real/` is
-  ignored by git so public-source leads do not get published by accident.
+- Real data in the public repo: BTC++ event metadata, reviewed public Nostr
+  signal rows under `data/reviewed/`, a small reviewed trust slice, and the
+  public run log under `data/sources/real-data-run-log.json`.
+- Synthetic data in the public repo: sample fixtures under `data/samples/` for
+  tests and demos.
+- Raw real imports: store under `data/real/`. That folder is ignored by git so
+  raw public-source pulls do not get published by accident.
 
 ## Safety Model
 
@@ -46,7 +49,9 @@ npm run verify
 npm run dev
 ```
 
-Open the local URL from `serve` and review the ranked sample signals.
+Open the local URL from `serve` and review the ranked public signals.
+The default build targets reviewed real public BTC++ Toronto rows. Use
+`npm run build:sample` to rebuild the older synthetic-only console.
 
 ## Optional OpenRouter Drafting
 
@@ -65,12 +70,7 @@ Do not paste real keys into repo files.
 Build static data:
 
 ```powershell
-node dist/cli.js build `
-  --events data/events/btcplusplus-2026.json `
-  --signals data/samples/toronto-signals.json `
-  --out public/data `
-  --event-id btcpp-toronto-2026 `
-  --trust-graph data/trust/toronto-trust-seeds.json
+npm run build
 ```
 
 Import public signals from CSV or JSON:
@@ -84,6 +84,16 @@ Search public Nostr relays:
 ```powershell
 node dist/cli.js scan-nostr --query "bitcoin++" --out data/samples/nostr.json
 ```
+
+Review a raw public Nostr trust graph into publishable static artifacts:
+
+```powershell
+npm run review:nostr-graph
+```
+
+That command reads the ignored raw graph from `data/real/`, writes reviewed
+signal rows to `data/reviewed/toronto-real-signals.json`, and writes a compact
+trust slice to `data/reviewed/toronto-real-trust-slice.json`.
 
 Toronto target notes live in [`docs/TORONTO-TARGET.md`](docs/TORONTO-TARGET.md).
 Trust graph notes live in [`docs/TRUST-GRAPH.md`](docs/TRUST-GRAPH.md).

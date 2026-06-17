@@ -1,8 +1,13 @@
 export const OPEN_SOURCE_MODELS = [
   {
+    id: "z-ai/glm-5.1",
+    label: "GLM 5.1",
+    role: "default hackathon enrichment and draft refinement"
+  },
+  {
     id: "moonshotai/kimi-k2.6",
     label: "Kimi K2.6",
-    role: "default open-source drafting and classification"
+    role: "alternate open-source drafting and classification"
   },
   {
     id: "z-ai/glm-5.2",

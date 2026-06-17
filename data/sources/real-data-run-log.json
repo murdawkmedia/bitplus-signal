@@ -1,0 +1,80 @@
+{
+  "runId": "btc-toronto-public-data-2026-06-17",
+  "targetEventId": "btcpp-toronto-2026",
+  "reviewedAt": "2026-06-17",
+  "policy": "public sources only; raw imports stay in ignored data/real; published rows are reviewed real public rows or documented zero-yield lanes",
+  "lanes": [
+    {
+      "sourceLane": "nostr_graph",
+      "query": "kind-3 follow graph from 5 public npub seeds on the BTC++ Toronto page",
+      "rawSource": "data/real/nostr-trust-graph.json",
+      "yielded": 9762,
+      "reviewed": 12,
+      "published": 12,
+      "status": "published_reviewed"
+    },
+    {
+      "sourceLane": "nostr_notes",
+      "query": "BTC++ Toronto",
+      "rawSource": "data/real/nostr-notes-btc-plus-plus-toronto.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "zero_yield"
+    },
+    {
+      "sourceLane": "nostr_notes",
+      "query": "Bitcoin consensus",
+      "rawSource": "data/real/nostr-notes-bitcoin-consensus.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "zero_yield"
+    },
+    {
+      "sourceLane": "nostr_notes",
+      "query": "Bitcoin protocol",
+      "rawSource": "data/real/nostr-notes-bitcoin-protocol.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "zero_yield"
+    },
+    {
+      "sourceLane": "nostr_notes",
+      "query": "Bitcoin developer Toronto",
+      "rawSource": "data/real/nostr-notes-bitcoin-developer-toronto.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "zero_yield"
+    },
+    {
+      "sourceLane": "nostr_notes",
+      "query": "BTC Prague",
+      "rawSource": "data/real/nostr-notes-btc-prague.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "zero_yield"
+    },
+    {
+      "sourceLane": "nostr_notes",
+      "query": "TABConf",
+      "rawSource": "data/real/nostr-notes-tabconf.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "zero_yield"
+    },
+    {
+      "sourceLane": "apify_optional",
+      "query": "public X/Reddit-style actor imports",
+      "rawSource": "data/real/apify-toronto.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "skipped_no_apify_token"
+    }
+  ]
+}
