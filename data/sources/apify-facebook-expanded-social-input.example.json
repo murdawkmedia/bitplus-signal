@@ -1,0 +1,15 @@
+{
+  "startUrls": [
+    {
+      "url": "https://www.facebook.com/ndcconferences"
+    },
+    {
+      "url": "https://www.facebook.com/BlockchainFuturistConference"
+    },
+    {
+      "url": "https://www.facebook.com/ETHWomen"
+    }
+  ],
+  "resultsLimit": 40,
+  "onlyPostsNewerThan": "2026-04-18"
+}

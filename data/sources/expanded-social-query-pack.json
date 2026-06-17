@@ -1,0 +1,64 @@
+{
+  "dateWindows": {
+    "primary": "2026-05-18/2026-06-17",
+    "fallback": "2026-04-18/2026-06-17"
+  },
+  "direct": [
+    "BTC++ Toronto",
+    "btcplusplus Toronto",
+    "btcpp.dev Toronto",
+    "bitcoin++ Toronto"
+  ],
+  "themes": [
+    "freedom tech",
+    "privacy tech",
+    "cryptography",
+    "open source AI",
+    "Nostr",
+    "self custody",
+    "Bitcoin Core",
+    "protocol",
+    "consensus",
+    "zk",
+    "Ethereum",
+    "Web3",
+    "hackathon"
+  ],
+  "regionalCities": [
+    "Toronto",
+    "Mississauga",
+    "Brampton",
+    "Hamilton",
+    "Kitchener",
+    "Waterloo",
+    "Guelph",
+    "London Ontario",
+    "Windsor",
+    "Niagara",
+    "Markham",
+    "Richmond Hill",
+    "Oakville",
+    "Burlington",
+    "Barrie",
+    "Kingston",
+    "Ottawa",
+    "Buffalo",
+    "Rochester",
+    "Detroit",
+    "Cleveland"
+  ],
+  "adjacentEvents": [
+    "NDC Toronto",
+    "Toronto Tech Week",
+    "Waterloo Tech Week",
+    "JAMHacks",
+    "ConHacks",
+    "BearHacks",
+    "Hack Canada",
+    "ETHToronto",
+    "Blockchain Futurist",
+    "ETHWomen",
+    "Toronto Bitcoin",
+    "BitDevs"
+  ]
+}

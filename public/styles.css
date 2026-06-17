@@ -130,6 +130,42 @@ select:focus, input:focus {
   overflow: auto;
 }
 
+.board-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #fffef9;
+  border-bottom: 2px solid var(--coal);
+}
+
+.sort-status {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.board-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.board-actions button {
+  min-height: 30px;
+  border: 1px solid var(--coal);
+  background: var(--coal);
+  color: var(--paper);
+  padding: 6px 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -137,7 +173,7 @@ table {
 
 th {
   position: sticky;
-  top: 0;
+  top: 52px;
   z-index: 5;
   text-align: left;
   padding: 10px 12px;
@@ -147,6 +183,26 @@ th {
   font-size: 10px;
   letter-spacing: .12em;
   text-transform: uppercase;
+}
+
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.sort-button span {
+  display: inline-block;
+  width: 8px;
 }
 
 td {
@@ -402,7 +458,16 @@ body.drawer-open .scrim { opacity: 1; pointer-events: auto; }
 
 @media (max-width: 560px) {
   .rail { grid-template-columns: 1fr; }
+  .board-toolbar { align-items: flex-start; flex-direction: column; }
   th:nth-child(4), td:nth-child(4) { display: none; }
   th:nth-child(5), td:nth-child(5) { display: none; }
   td { padding: 10px 8px; }
+}
+
+@media print {
+  body { background: #fff; }
+  .mast, .rail, .board-toolbar, .drawer, .scrim { display: none !important; }
+  main { display: block; padding: 0; }
+  .board { border: 0; box-shadow: none; overflow: visible; }
+  th { position: static; }
 }

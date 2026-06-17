@@ -3,6 +3,12 @@
   "targetEventId": "btcpp-toronto-2026",
   "reviewedAt": "2026-06-17",
   "policy": "public sources only; raw imports stay in ignored data/real; published rows are reviewed real public rows or documented zero-yield lanes",
+  "expandedSocialSweep": {
+    "primaryWindow": "2026-05-18/2026-06-17",
+    "fallbackWindow": "2026-04-18/2026-06-17",
+    "rankingPreference": "builder/crypto broad; bitcoin/freedom-tech strongest; ethereum, web3, zk, AI, privacy, security, open-source, and hackathons allowed when local and technical",
+    "reviewOutcome": "official adjacent-event seeds plus one public LinkedIn post published; broad Reddit hits blocked; X, TikTok, and Facebook canaries blocked by remaining Apify usage balance"
+  },
   "lanes": [
     {
       "sourceLane": "nostr_graph",
@@ -93,6 +99,69 @@
       "reviewed": 0,
       "published": 0,
       "status": "blocked_low_target_quality"
+    },
+    {
+      "sourceLane": "adjacent_event_official",
+      "query": "Official public pages for BTC++ Toronto, NDC Toronto, Toronto Tech Week, Waterloo-area hackathons, ETHToronto, Blockchain Futurist, ETHWomen, Waterloo Tech Week",
+      "rawSource": "data/reviewed/toronto-adjacent-event-signals.json",
+      "yielded": 10,
+      "reviewed": 10,
+      "published": 10,
+      "status": "published_reviewed"
+    },
+    {
+      "sourceLane": "apify_x",
+      "query": "Expanded Xquik MVP canary for BTC++ Toronto, ETHToronto 2026, Blockchain Futurist Toronto 2026",
+      "rawSource": "data/real/apify-xquik-expanded-social.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_apify_usage_balance"
+    },
+    {
+      "sourceLane": "apify_reddit",
+      "query": "Expanded Reddit canary for BTC++ Toronto, ETHToronto, Blockchain Futurist Toronto, Toronto BitDevs",
+      "rawSource": "data/real/apify-reddit-expanded-social.raw.json",
+      "yielded": 7,
+      "reviewed": 7,
+      "published": 0,
+      "status": "blocked_low_target_quality"
+    },
+    {
+      "sourceLane": "apify_linkedin",
+      "query": "Public/no-cookie LinkedIn post canary for BTC++ Toronto, ETHToronto 2026, Toronto Tech Week hackathon crypto",
+      "rawSource": "data/real/apify-linkedin-expanded-social.raw.json",
+      "yielded": 1,
+      "reviewed": 1,
+      "published": 1,
+      "status": "published_reviewed"
+    },
+    {
+      "sourceLane": "apify_instagram",
+      "query": "Public Instagram hashtag canary for #ethtoronto",
+      "rawSource": "data/real/apify-instagram-expanded-social.raw.json",
+      "yielded": 1,
+      "reviewed": 0,
+      "published": 0,
+      "status": "zero_yield_search_mismatch"
+    },
+    {
+      "sourceLane": "apify_tiktok",
+      "query": "Public TikTok canary for ETHToronto 2026 plus torontotechweek/ethtoronto hashtags",
+      "rawSource": "data/real/apify-tiktok-expanded-social.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_apify_usage_balance"
+    },
+    {
+      "sourceLane": "apify_facebook",
+      "query": "Public Facebook page canary for NDC Conferences",
+      "rawSource": "data/real/apify-facebook-expanded-social.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_apify_usage_balance"
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "search": "#btcplusplus, #torontotechweek, #ethtoronto, #blockchainfuturist, #ethwomen, #jamhacks, #conhacks, #bearhacks",
+  "searchType": "hashtag",
+  "searchLimit": 8,
+  "resultsType": "posts",
+  "resultsLimit": 40,
+  "onlyPostsNewerThan": "2026-04-18"
+}

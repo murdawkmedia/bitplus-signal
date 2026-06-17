@@ -1,0 +1,30 @@
+{
+  "startUrls": [
+    "https://x.com/btcplusplus",
+    "https://x.com/Futurist_conf",
+    "https://x.com/Ethereum_Women"
+  ],
+  "searchTerms": [
+    "BTC++ Toronto",
+    "btcplusplus Toronto",
+    "btcpp.dev Toronto",
+    "bitcoin++ Toronto",
+    "Toronto Bitcoin Core",
+    "Toronto Bitcoin protocol",
+    "Toronto Nostr",
+    "Toronto privacy tech",
+    "Toronto cryptography meetup",
+    "Toronto open source AI hackathon",
+    "Toronto Ethereum hackathon",
+    "ETHToronto 2026",
+    "Blockchain Futurist Toronto 2026",
+    "ETHWomen Toronto 2026",
+    "JAMHacks Waterloo 2026",
+    "ConHacks Waterloo 2026",
+    "BearHacks Mississauga 2026"
+  ],
+  "maxItems": 60,
+  "includeSearchTerms": true,
+  "queryType": "Latest",
+  "lang": "en"
+}

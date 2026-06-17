@@ -9,6 +9,7 @@ import { checkOpenRouterModels } from "./models.js";
 import { normalizeApifyItems, runApifyActor } from "./apify.js";
 import { scanNostrTrustGraph } from "./nostrGraph.js";
 import { signalsFromTrustGraph, trustGraphSliceForSignals } from "./reviewed.js";
+import { dedupeSignalsBySourceUrl, reviewSocialSignals } from "./socialReview.js";
 
 const program = new Command();
 
@@ -158,15 +159,74 @@ program
   .requiredOption("--input <file>", "Actor input JSON file")
   .requiredOption("--out <file>", "Output JSON file, preferably under data/real/")
   .option("--timeout <seconds>", "Apify run timeout seconds", "120")
-  .action(async (options: { actor: string; input: string; out: string; timeout: string }) => {
+  .option("--raw-out <file>", "Optional raw Apify dataset output, preferably under data/real/")
+  .option("--max-charged-items <number>", "Maximum paid dataset items allowed for pay-per-result actors", "100")
+  .action(async (options: { actor: string; input: string; out: string; timeout: string; rawOut?: string; maxChargedItems: string }) => {
     const items = await runApifyActor({
       actorId: options.actor,
       inputFile: options.input,
-      timeoutSeconds: Number.parseInt(options.timeout, 10)
+      timeoutSeconds: Number.parseInt(options.timeout, 10),
+      maxChargedItems: Number.parseInt(options.maxChargedItems, 10)
     });
+    if (options.rawOut) await writeJson(options.rawOut, items);
     const rows = normalizeApifyItems(items);
     await writeJson(options.out, rows);
     console.log(`Wrote ${rows.length} normalized public rows from Apify.`);
+  });
+
+program
+  .command("apify-normalize")
+  .description("Normalize a saved raw Apify dataset JSON without launching an actor.")
+  .requiredOption("--input <file>", "Raw Apify dataset JSON")
+  .requiredOption("--out <file>", "Output normalized JSON")
+  .action(async (options: { input: string; out: string }) => {
+    const raw = JSON.parse(await import("node:fs/promises").then((fs) => fs.readFile(options.input, "utf8")));
+    const rows = normalizeApifyItems(Array.isArray(raw) ? raw : []);
+    await writeJson(options.out, rows);
+    console.log(`Wrote ${rows.length} normalized public rows from saved Apify raw data.`);
+  });
+
+program
+  .command("review-social")
+  .description("Review expanded social imports and merge high-fit public rows into a reviewed signal file.")
+  .requiredOption("--input <file...>", "Normalized social JSON input file(s)")
+  .requiredOption("--out <file>", "Reviewed signal JSON output")
+  .option("--base <file>", "Existing reviewed signal JSON file to preserve")
+  .option("--blocked-out <file>", "Optional rejected-row audit JSON, preferably under data/real/")
+  .option("--reference-date <date>", "Reference date for rolling windows", "2026-06-17")
+  .option("--primary-window-days <number>", "Primary lookback days", "30")
+  .option("--fallback-window-days <number>", "Fallback lookback days", "60")
+  .option("--fallback-threshold <number>", "Use fallback when primary published count is below this", "10")
+  .action(async (options: {
+    input: string[];
+    out: string;
+    base?: string;
+    blockedOut?: string;
+    referenceDate: string;
+    primaryWindowDays: string;
+    fallbackWindowDays: string;
+    fallbackThreshold: string;
+  }) => {
+    const base = options.base ? await readSignals(options.base) : [];
+    const socialRows = (await Promise.all(options.input.map((file) => readSignals(file)))).flat();
+    const result = reviewSocialSignals(socialRows, {
+      referenceDate: options.referenceDate,
+      primaryWindowDays: Number.parseInt(options.primaryWindowDays, 10),
+      fallbackWindowDays: Number.parseInt(options.fallbackWindowDays, 10),
+      fallbackThreshold: Number.parseInt(options.fallbackThreshold, 10)
+    });
+    const merged = dedupeSignalsBySourceUrl([...base, ...result.published]);
+    await writeJson(options.out, merged);
+    if (options.blockedOut) {
+      await writeJson(options.blockedOut, {
+        reviewedAt: options.referenceDate,
+        usedWindowDays: result.usedWindowDays,
+        inputCount: socialRows.length,
+        publishedCount: result.published.length,
+        blocked: result.blocked
+      });
+    }
+    console.log(`Merged ${result.published.length} reviewed social rows into ${merged.length} total signals; ${result.blocked.length} blocked.`);
   });
 
 program.parseAsync().catch((error: unknown) => {

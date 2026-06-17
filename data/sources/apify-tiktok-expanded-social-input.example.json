@@ -1,0 +1,30 @@
+{
+  "searchQueries": [
+    "BTC++ Toronto",
+    "btcplusplus Toronto",
+    "bitcoin++ Toronto",
+    "Toronto Tech Week hackathon",
+    "ETHToronto 2026",
+    "Blockchain Futurist Toronto 2026",
+    "ETHWomen Toronto 2026",
+    "JAMHacks Waterloo",
+    "ConHacks Waterloo",
+    "BearHacks Mississauga"
+  ],
+  "hashtags": [
+    "btcplusplus",
+    "torontotechweek",
+    "ethtoronto",
+    "blockchainfuturist",
+    "ethwomen",
+    "jamhacks",
+    "conhacks",
+    "bearhacks"
+  ],
+  "resultsPerPage": 5,
+  "maxItems": 40,
+  "shouldDownloadVideos": false,
+  "shouldDownloadCovers": false,
+  "shouldDownloadSubtitles": false,
+  "shouldDownloadSlideshowImages": false
+}

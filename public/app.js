@@ -6,7 +6,9 @@ const state = {
   event: "",
   platform: "",
   travel: "",
-  q: ""
+  q: "",
+  sortKey: "score",
+  sortDir: "desc"
 };
 
 const $ = (id) => document.getElementById(id);
@@ -77,6 +79,39 @@ function filtered() {
   });
 }
 
+function sortValue(row, key) {
+  if (key === "score") return Number(row.score || 0);
+  if (key === "event") return `${row.eventCity || ""} ${row.eventEdition || ""}`;
+  if (key === "signal") return `${row.publicName || ""} ${row.excerpt || ""}`;
+  if (key === "travel") return travelLabel(row.travelMatch);
+  if (key === "trust") return Number(row.trustScore || 0) + Number(row.conferenceAffinityScore || 0);
+  if (key === "topics") return (row.topicMatch || []).join(" ");
+  if (key === "gate") return gateLabel(row.gate).replace(/<[^>]+>/g, "");
+  return "";
+}
+
+function sortedRows() {
+  const dir = state.sortDir === "asc" ? 1 : -1;
+  return [...filtered()].sort((a, b) => {
+    const left = sortValue(a, state.sortKey);
+    const right = sortValue(b, state.sortKey);
+    if (typeof left === "number" && typeof right === "number") return (left - right) * dir;
+    return String(left).localeCompare(String(right)) * dir;
+  });
+}
+
+function updateSortUi() {
+  document.querySelectorAll("[data-sort-th]").forEach((th) => {
+    const key = th.dataset.sortTh;
+    const active = key === state.sortKey;
+    th.setAttribute("aria-sort", active ? (state.sortDir === "asc" ? "ascending" : "descending") : "none");
+    const marker = th.querySelector("[aria-hidden]");
+    if (marker) marker.textContent = active ? (state.sortDir === "asc" ? "^" : "v") : "";
+  });
+  const label = state.sortKey.replaceAll("_", " ");
+  $("sortStatus").textContent = `Sort: ${label} ${state.sortDir}`;
+}
+
 function populateFilters() {
   $("eventFilter").innerHTML = '<option value="">All BTC++ events</option>' +
     state.events.map((event) => `<option value="${esc(event.id)}">${esc(event.city)} - ${esc(event.edition)}</option>`).join("");
@@ -106,9 +141,10 @@ function renderSourcePanel() {
 }
 
 function render() {
-  const rows = filtered();
+  const rows = sortedRows();
   $("statline").textContent = `${rows.length} shown / ${state.signals.length} matches - ${state.meta?.realSignalCount || 0} real - ${state.meta?.sampleSignalCount || 0} sample`;
   $("empty").hidden = rows.length !== 0;
+  updateSortUi();
   $("rows").innerHTML = rows.map((row, index) => `
     <tr data-index="${index}">
       <td><span class="score ${scoreClass(row.score)}">${esc(row.score)}</span></td>
@@ -128,6 +164,42 @@ function render() {
       <td>${gateLabel(row.gate)}</td>
     </tr>
   `).join("");
+}
+
+function csvCell(value) {
+  return `"${String(value ?? "").replaceAll('"', '""')}"`;
+}
+
+function exportCsv() {
+  const rows = sortedRows();
+  const columns = [
+    ["score", (row) => row.score],
+    ["event", (row) => row.eventName],
+    ["edition", (row) => row.eventEdition],
+    ["platform", (row) => row.platform],
+    ["public_name", (row) => row.publicName],
+    ["source_url", (row) => row.sourceUrl],
+    ["excerpt", (row) => row.excerpt],
+    ["location", (row) => row.locationHint],
+    ["topics", (row) => (row.topicMatch || []).join("; ")],
+    ["travel", (row) => row.travelMatch],
+    ["gate", (row) => row.gate],
+    ["source_lane", (row) => row.sourceLane],
+    ["approval_status", (row) => row.approvalStatus]
+  ];
+  const csv = [
+    columns.map(([label]) => csvCell(label)).join(","),
+    ...rows.map((row) => columns.map(([, getter]) => csvCell(getter(row))).join(","))
+  ].join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `bitplus-signal-${rows.length}-rows.csv`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
 }
 
 function openDrawer(row) {
@@ -177,10 +249,24 @@ $("eventFilter").addEventListener("change", (event) => { state.event = event.tar
 $("platformFilter").addEventListener("change", (event) => { state.platform = event.target.value; render(); });
 $("travelFilter").addEventListener("change", (event) => { state.travel = event.target.value; render(); });
 $("search").addEventListener("input", (event) => { state.q = event.target.value.trim(); render(); });
+document.querySelectorAll("[data-sort]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const key = button.dataset.sort;
+    if (state.sortKey === key) {
+      state.sortDir = state.sortDir === "asc" ? "desc" : "asc";
+    } else {
+      state.sortKey = key;
+      state.sortDir = key === "score" || key === "trust" ? "desc" : "asc";
+    }
+    render();
+  });
+});
+$("exportCsv").addEventListener("click", exportCsv);
+$("printView").addEventListener("click", () => window.print());
 $("rows").addEventListener("click", (event) => {
   const tr = event.target.closest("tr[data-index]");
   if (!tr) return;
-  openDrawer(filtered()[Number(tr.dataset.index)]);
+  openDrawer(sortedRows()[Number(tr.dataset.index)]);
 });
 $("closeDrawer").addEventListener("click", () => document.body.classList.remove("drawer-open"));
 $("scrim").addEventListener("click", () => document.body.classList.remove("drawer-open"));

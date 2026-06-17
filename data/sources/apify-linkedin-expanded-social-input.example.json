@@ -1,0 +1,24 @@
+{
+  "searchQueries": [
+    "BTC++ Toronto",
+    "btcplusplus Toronto",
+    "btcpp.dev Toronto",
+    "bitcoin++ Toronto",
+    "Toronto Tech Week hackathon crypto",
+    "NDC Toronto security AI open source",
+    "ETHToronto 2026 builders",
+    "Blockchain Futurist Toronto 2026 Web3 AI",
+    "ETHWomen Toronto 2026 Web3",
+    "JAMHacks Waterloo 2026",
+    "ConHacks Waterloo 2026",
+    "BearHacks Mississauga 2026"
+  ],
+  "maxPosts": 60,
+  "datePosted": "past-month",
+  "maxSearchPages": 5,
+  "providerOrder": "scrapecreators-first",
+  "enrichPostDetails": false,
+  "includeComments": false,
+  "outputMode": "compact",
+  "includeRawData": false
+}

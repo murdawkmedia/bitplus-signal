@@ -48,16 +48,23 @@
     </section>
 
     <section class="board" aria-label="Ranked public signals">
+      <div class="board-toolbar">
+        <div class="sort-status" id="sortStatus">Sort: score desc</div>
+        <div class="board-actions">
+          <button type="button" id="exportCsv">Export CSV</button>
+          <button type="button" id="printView">Print</button>
+        </div>
+      </div>
       <table>
         <thead>
           <tr>
-            <th>Score</th>
-            <th>Event</th>
-            <th>Signal</th>
-            <th>Travel</th>
-            <th>Trust</th>
-            <th>Topics</th>
-            <th>Gate</th>
+            <th data-sort-th="score" aria-sort="descending"><button type="button" class="sort-button" data-sort="score">Score <span aria-hidden="true">v</span></button></th>
+            <th data-sort-th="event"><button type="button" class="sort-button" data-sort="event">Event <span aria-hidden="true"></span></button></th>
+            <th data-sort-th="signal"><button type="button" class="sort-button" data-sort="signal">Signal <span aria-hidden="true"></span></button></th>
+            <th data-sort-th="travel"><button type="button" class="sort-button" data-sort="travel">Travel <span aria-hidden="true"></span></button></th>
+            <th data-sort-th="trust"><button type="button" class="sort-button" data-sort="trust">Trust <span aria-hidden="true"></span></button></th>
+            <th data-sort-th="topics"><button type="button" class="sort-button" data-sort="topics">Topics <span aria-hidden="true"></span></button></th>
+            <th data-sort-th="gate"><button type="button" class="sort-button" data-sort="gate">Gate <span aria-hidden="true"></span></button></th>
           </tr>
         </thead>
         <tbody id="rows"></tbody>

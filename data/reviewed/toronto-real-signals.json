@@ -322,5 +322,281 @@
     "sourceLane": "apify_x",
     "provenanceNote": "reviewed public Apify X scraper output",
     "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-btcpp-toronto",
+    "platform": "official_web",
+    "sourceUrl": "https://btcpp.dev/toronto",
+    "publicName": "BTC++ Toronto",
+    "excerpt": "bitcoin++ Toronto is the consensus edition at The Great Hall in Toronto on July 22-24, 2026.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Toronto",
+    "topics": [
+      "bitcoin",
+      "consensus",
+      "protocol",
+      "developer tools",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "btcpp-toronto-2026",
+      "adjacent:toronto-bitcoin"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-ndc-toronto",
+    "platform": "official_web",
+    "sourceUrl": "https://ndctoronto.com/",
+    "publicName": "NDC Toronto",
+    "excerpt": "NDC Toronto is a software developer conference at The Westin Harbour Castle in Toronto on May 5-8, 2026, with security, AI, architecture, and tooling sessions.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Toronto",
+    "topics": [
+      "developer tools",
+      "security",
+      "AI",
+      "open source",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:ndc-toronto"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-toronto-tech-week",
+    "platform": "official_web",
+    "sourceUrl": "https://www.torontotechweek.com/",
+    "publicName": "Toronto Tech Week",
+    "excerpt": "Toronto Tech Week is a citywide builder event from May 25-29, 2026, focused on founders, operators, investors, and people building what is next.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Toronto",
+    "topics": [
+      "developer tools",
+      "open source",
+      "AI",
+      "builder",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:toronto-tech-week"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-jamhacks",
+    "platform": "official_web",
+    "sourceUrl": "https://www.jamhacks.ca/",
+    "publicName": "JAMHacks 10",
+    "excerpt": "JAMHacks 10 is a Waterloo hackathon running June 12-14, 2026, for students building technology projects.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Waterloo",
+    "topics": [
+      "hackathon",
+      "developer tools",
+      "open source",
+      "builder",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:jamhacks"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-mlh-conhacks",
+    "platform": "official_web",
+    "sourceUrl": "https://www.mlh.com/seasons/2026/events",
+    "publicName": "MLH 2026 Ontario Hackathons",
+    "excerpt": "Major League Hacking lists nearby Ontario hackathons including ConHacks 2026 in Waterloo, BearHacks 2026 in Mississauga, MasseyHacks in Windsor, and JAMHacks 10 in Waterloo.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Waterloo; Mississauga; Windsor",
+    "topics": [
+      "hackathon",
+      "developer tools",
+      "builder",
+      "open source",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:conhacks",
+      "adjacent:bearhacks",
+      "adjacent:jamhacks"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public MLH events page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-hack-canada",
+    "platform": "official_web",
+    "sourceUrl": "https://hackcanada.org/",
+    "publicName": "Hack Canada",
+    "excerpt": "Hack Canada 2026 is an in-person Waterloo hackathon focused on solving Canadian challenges and extending prototypes through follow-up build support.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Waterloo",
+    "topics": [
+      "hackathon",
+      "developer tools",
+      "builder",
+      "open source",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:hack-canada"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-ethtoronto",
+    "platform": "official_web",
+    "sourceUrl": "https://www.ethtoronto.ca/",
+    "publicName": "ETHToronto",
+    "excerpt": "ETHToronto runs July 21-22, 2026 in Toronto as part of Blockchain Futurist Conference, connecting Web3 and Ethereum builders.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Toronto",
+    "topics": [
+      "Ethereum",
+      "Web3",
+      "hackathon",
+      "developer tools",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:ethtoronto",
+      "adjacent:blockchain-futurist"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-blockchain-futurist",
+    "platform": "official_web",
+    "sourceUrl": "https://futuristconference.com/",
+    "publicName": "Blockchain Futurist Conference",
+    "excerpt": "Blockchain Futurist Conference Toronto runs July 21-22, 2026 at Rebel and Cabana in Toronto with blockchain, crypto, AI, DeFi, and Web3 technology themes.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Toronto",
+    "topics": [
+      "Web3",
+      "crypto",
+      "AI",
+      "developer tools",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:blockchain-futurist"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-ethwomen",
+    "platform": "official_web",
+    "sourceUrl": "https://www.ethwomen.com/",
+    "publicName": "ETHWomen",
+    "excerpt": "ETHWomen is a Toronto Web3 community event on July 21-22, 2026 for women in the Ethereum and Web3 ecosystem.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Toronto",
+    "topics": [
+      "Ethereum",
+      "Web3",
+      "builder",
+      "developer tools",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:ethwomen"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-adjacent-waterloo-tech-week",
+    "platform": "official_web",
+    "sourceUrl": "https://waterlootechweek.ca/",
+    "publicName": "Waterloo Tech Week",
+    "excerpt": "Waterloo Tech Week is a decentralized collection of events celebrating Waterloo innovation, tech talent, and builder community.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Waterloo",
+    "topics": [
+      "developer tools",
+      "open source",
+      "AI",
+      "builder",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:waterloo-tech-week"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "adjacent_event_official",
+    "provenanceNote": "public official event page reviewed 2026-06-17",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-dce9a6cc7c",
+    "platform": "linkedin",
+    "sourceUrl": "https://www.linkedin.com/posts/aliaboudaya_who-picks-up-the-phone-when-a-transaction-activity-7467247415541182464-qB10",
+    "publicName": "Ali Abou Daya",
+    "excerpt": "\"Who picks up the phone when a transaction goes wrong?\" Closing out Toronto Tech week last Friday, I had the chance to speak at the Digital Asset Summit by Web3 Toronto (Web3TO) and one thing I noticed is that the anxiety around stablecoins is mostly misplaced. What stablecoins actually enable is private issuers competing to provide better banking services to consumers. That competition is good. It drives down fees, improves user experience, and forces innovation that incumbents are not incentivized enough to pursue. The trust question answers itself. Nobody holds a stablecoin issued by someone they don't trust with their money. The market solves this. On retail CBDCs, I keep coming back to a simple question: who picks up the phone when something goes wrong? With a bank payment, you call your bank. With a stablecoin, you call the issuer. Both have someone accountable on the other end. With a retail CBDC, who exactly is serving the user? The central bank is not set up to handle retail customer complaints at scale. The infrastructure required to support millions of retail users is enormous...and the privacy concerns are real. Wholesale CBDCs have a stronger use case because they are a more efficient means of intraday settlement than current high speed rails. There may be overlap between wholesale CBDCs and tokenized deposits given that their use cases are mostly inter-FI settlements. Tokenized deposits are a different instrument for a different purpose. Their real value is in how banks move money amongst each other and in domestic payment rails. That distinction matters and it gets lost in most conversations that treat all digital money as the same thing. The bigger point underneath all of this: tokenized money is the future of financial infrastructure because it replaces dinosaur technology that has no business running a 21st century financial system. - Thank you to Doug Heintzman, Blockchain Research Institute for moderating along with fellow panelists: Peter MacKenzie, PhD, C.D. Howe Institute, Kesem Frank, Stablecorp Inc.",
+    "postedAt": "2026-06-01T16:15:18.592Z",
+    "locationHint": "unknown",
+    "topics": [
+      "developer tools",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:toronto-tech-week"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "apify_linkedin",
+    "provenanceNote": "reviewed public Apify LinkedIn scraper output",
+    "visibility": "public"
   }
 ]

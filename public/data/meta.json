@@ -1,8 +1,8 @@
 {
   "builtAt": "2026-06-17T00:00:00.000Z",
   "eventCount": 1,
-  "signalInputCount": 15,
-  "realSignalCount": 15,
+  "signalInputCount": 26,
+  "realSignalCount": 26,
   "sampleSignalCount": 0,
   "blockedInputCount": 0,
   "sourceLaneCounts": [
@@ -13,8 +13,16 @@
     {
       "sourceLane": "apify_x",
       "inputCount": 3
+    },
+    {
+      "sourceLane": "adjacent_event_official",
+      "inputCount": 10
+    },
+    {
+      "sourceLane": "apify_linkedin",
+      "inputCount": 1
     }
   ],
-  "matchCount": 15,
+  "matchCount": 26,
   "sourceMode": "csv-json-imports-plus-nostr"
 }

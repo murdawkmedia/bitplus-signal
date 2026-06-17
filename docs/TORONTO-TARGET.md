@@ -7,11 +7,12 @@ July 22-24, 2026 at The Great Hall in Toronto, Canada.
 
 - Event metadata comes from the public BTC++ Toronto page.
 - The adjacent source plan references public pages and search queries.
-- The default public console uses 15 reviewed real public rows for BTC++ Toronto:
-  12 Nostr graph rows and 3 Apify X rows.
+- The default public console uses 26 reviewed real public rows for BTC++ Toronto:
+  12 Nostr graph rows, 3 Apify X rows, 10 official adjacent-event rows, and
+  1 public LinkedIn row.
 - `data/sources/real-data-run-log.json` records the public source lanes, yielded
-  counts, zero-yield searches, published Apify X rows, and Reddit rows blocked
-  for low target quality.
+  counts, zero-yield searches, published rows, low-quality blocks, and Apify
+  lanes blocked by the current usage balance.
 - The checked-in trust graph for real rows is a compact reviewed slice, not the
   raw graph import.
 
@@ -75,6 +76,18 @@ Scan public Apify X and Reddit lanes into ignored local files:
 ```powershell
 npm run scan:toronto:apify
 npm run scan:toronto:apify:reddit
+```
+
+Run the expanded public social canaries after loading `APIFY_TOKEN` locally:
+
+```powershell
+npm run scan:toronto:apify:x-expanded
+npm run scan:toronto:apify:reddit-expanded
+npm run scan:toronto:apify:linkedin
+npm run scan:toronto:apify:tiktok
+npm run scan:toronto:apify:instagram
+npm run scan:toronto:apify:facebook
+npm run review:social-expanded
 ```
 
 Check OpenRouter's preferred open-source model set:
