@@ -1,0 +1,15 @@
+{
+  "searchTerms": [
+    "@btcplusplus Toronto",
+    "btcplusplus Toronto",
+    "btcpp.dev Toronto",
+    "bitcoin++ Toronto",
+    "BTC++ Toronto",
+    "from:btcplusplus",
+    "@btcplusplus"
+  ],
+  "maxItems": 40,
+  "sort": "Latest",
+  "tweetLanguage": "en",
+  "customMapFunction": "(object) => { return {...object} }"
+}

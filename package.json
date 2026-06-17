@@ -17,7 +17,8 @@
     "models:check": "tsx src/cli.ts model-check",
     "scan:toronto:nostr": "tsx src/cli.ts scan-nostr --query \"BTC++ Toronto\" --out data/real/nostr-toronto.json --timeout-ms 15000",
     "review:nostr-graph": "tsx src/cli.ts review-nostr-graph --graph data/real/nostr-trust-graph.json --out data/reviewed/toronto-real-signals.json --trust-slice-out data/reviewed/toronto-real-trust-slice.json --limit 12 --source-lane nostr_graph --posted-at 2026-06-17",
-    "scan:toronto:apify": "tsx src/cli.ts apify-import --actor apify/twitter-scraper --input data/sources/apify-toronto-search-input.example.json --out data/real/apify-toronto.json",
+    "scan:toronto:apify": "tsx src/cli.ts apify-import --actor xquik/x-tweet-scraper --input data/sources/apify-xquik-btcplusplus-input.example.json --out data/real/apify-xquik-btcplusplus.json --timeout 180",
+    "scan:toronto:apify:reddit": "tsx src/cli.ts apify-import --actor automation-lab/reddit-scraper --input data/sources/apify-reddit-toronto-search-input.example.json --out data/real/apify-reddit-toronto.json --timeout 180",
     "scan:private": "node scripts/private-scan.mjs",
     "verify": "npm run lint && npm test && npm run build && npm run scan:private"
   },

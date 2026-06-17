@@ -26,9 +26,9 @@ Sources:
 
 ## Data Reality
 
-- Real data in the public repo: BTC++ event metadata, reviewed public Nostr
-  signal rows under `data/reviewed/`, a small reviewed trust slice, and the
-  public run log under `data/sources/real-data-run-log.json`.
+- Real data in the public repo: BTC++ event metadata, reviewed public Nostr and
+  Apify X signal rows under `data/reviewed/`, a small reviewed trust slice, and
+  the public run log under `data/sources/real-data-run-log.json`.
 - Synthetic data in the public repo: sample fixtures under `data/samples/` for
   tests and demos.
 - Raw real imports: store under `data/real/`. That folder is ignored by git so
@@ -83,6 +83,14 @@ Search public Nostr relays:
 
 ```powershell
 node dist/cli.js scan-nostr --query "bitcoin++" --out data/samples/nostr.json
+```
+
+Import public Apify X or Reddit rows into ignored `data/real/`:
+
+```powershell
+$env:APIFY_TOKEN = "paste-your-apify-token-here"
+npm run scan:toronto:apify
+npm run scan:toronto:apify:reddit
 ```
 
 Review a raw public Nostr trust graph into publishable static artifacts:

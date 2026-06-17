@@ -1,0 +1,32 @@
+{
+  "startUrls": [
+    {
+      "url": "https://x.com/btcplusplus/status/2066605743495619001"
+    },
+    {
+      "url": "https://x.com/niftynei/status/2066597742151860604"
+    },
+    {
+      "url": "https://x.com/conduition_io/status/2065107647683072215"
+    },
+    {
+      "url": "https://x.com/btcplusplus"
+    },
+    {
+      "url": "https://x.com/laurier_bitcoin"
+    },
+    {
+      "url": "https://x.com/bitcointoronto_"
+    }
+  ],
+  "searchTerms": [
+    "@btcplusplus Toronto",
+    "btcplusplus Toronto",
+    "btcpp.dev Toronto",
+    "bitcoin++ Toronto"
+  ],
+  "maxItems": 25,
+  "includeSearchTerms": true,
+  "queryType": "Latest",
+  "lang": "en"
+}

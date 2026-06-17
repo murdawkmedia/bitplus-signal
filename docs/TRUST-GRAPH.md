@@ -67,9 +67,12 @@ Use public/export/API data only. Apify imports are generic and require
 
 ```powershell
 npm run scan:toronto:apify
+npm run scan:toronto:apify:reddit
 ```
 
-The output path is `data/real/apify-toronto.json`, which is ignored by git.
+The output paths are under `data/real/`, which is ignored by git. The current
+reviewed public build publishes 3 Apify X rows and logs the low-quality Reddit
+results without publishing them as leads.
 
 ## OpenRouter Models
 

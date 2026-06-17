@@ -68,13 +68,31 @@
       "status": "zero_yield"
     },
     {
-      "sourceLane": "apify_optional",
-      "query": "public X/Reddit-style actor imports",
-      "rawSource": "data/real/apify-toronto.json",
-      "yielded": 0,
+      "sourceLane": "apify_x",
+      "query": "Apify API Dojo X search/startUrl attempts for BTC++ Toronto / Bitcoin protocol / BTC Prague / TABConf / public BTC++ X URLs",
+      "rawSource": "data/real/apify-x-toronto.raw.json; data/real/apify-x-btcplusplus-toronto.raw.json; data/real/apify-x-btcplusplus-starturls.raw.json",
+      "yielded": 30,
       "reviewed": 0,
       "published": 0,
-      "status": "skipped_no_apify_token"
+      "status": "zero_yield_no_results_placeholders"
+    },
+    {
+      "sourceLane": "apify_x",
+      "query": "Apify Xquik startUrls/search for public BTC++ and Toronto X posts",
+      "rawSource": "data/real/apify-xquik-btcplusplus.raw.json",
+      "yielded": 3,
+      "reviewed": 3,
+      "published": 3,
+      "status": "published_reviewed"
+    },
+    {
+      "sourceLane": "apify_reddit",
+      "query": "Apify Reddit public search for BTC++ Toronto and Bitcoin protocol conference Canada terms",
+      "rawSource": "data/real/apify-reddit-toronto.raw.json",
+      "yielded": 2,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_low_target_quality"
     }
   ]
 }

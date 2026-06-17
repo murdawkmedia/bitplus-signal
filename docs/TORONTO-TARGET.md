@@ -7,10 +7,11 @@ July 22-24, 2026 at The Great Hall in Toronto, Canada.
 
 - Event metadata comes from the public BTC++ Toronto page.
 - The adjacent source plan references public pages and search queries.
-- The default public console uses 12 reviewed real public Nostr graph rows for
-  BTC++ Toronto.
+- The default public console uses 15 reviewed real public rows for BTC++ Toronto:
+  12 Nostr graph rows and 3 Apify X rows.
 - `data/sources/real-data-run-log.json` records the public source lanes, yielded
-  counts, zero-yield searches, and skipped optional Apify lane.
+  counts, zero-yield searches, published Apify X rows, and Reddit rows blocked
+  for low target quality.
 - The checked-in trust graph for real rows is a compact reviewed slice, not the
   raw graph import.
 
@@ -67,6 +68,13 @@ Scan public Nostr relays into an ignored local file:
 
 ```powershell
 npm run scan:toronto:nostr
+```
+
+Scan public Apify X and Reddit lanes into ignored local files:
+
+```powershell
+npm run scan:toronto:apify
+npm run scan:toronto:apify:reddit
 ```
 
 Check OpenRouter's preferred open-source model set:

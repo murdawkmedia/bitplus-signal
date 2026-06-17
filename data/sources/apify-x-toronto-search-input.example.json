@@ -1,0 +1,15 @@
+{
+  "searchTerms": [
+    "BTC++ Toronto",
+    "bitcoin consensus Toronto",
+    "Bitcoin protocol conference Canada",
+    "Bitcoin Core Toronto",
+    "bitcoin developer Toronto",
+    "BTC Prague developer bitcoin",
+    "TABConf bitcoin protocol"
+  ],
+  "maxItems": 25,
+  "sort": "Latest",
+  "tweetLanguage": "en",
+  "customMapFunction": "(object) => { return {...object} }"
+}

@@ -1,0 +1,14 @@
+{
+  "startUrls": [
+    "https://x.com/btcplusplus/status/2066605743495619001",
+    "https://x.com/niftynei/status/2066597742151860604",
+    "https://x.com/conduition_io/status/2065107647683072215",
+    "https://x.com/laurier_bitcoin",
+    "https://x.com/bitcointoronto_",
+    "https://x.com/btcplusplus"
+  ],
+  "maxItems": 40,
+  "sort": "Latest",
+  "tweetLanguage": "en",
+  "customMapFunction": "(object) => { return {...object} }"
+}
