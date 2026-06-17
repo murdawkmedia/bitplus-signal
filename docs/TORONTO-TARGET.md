@@ -7,6 +7,7 @@ July 22-24, 2026 at The Great Hall in Toronto, Canada.
 
 - Event metadata comes from the public BTC++ Toronto page.
 - The adjacent source plan references public pages and search queries.
+- The trust graph seed file uses public entities plus synthetic demo profiles.
 - The public demo rows are synthetic fixtures, not real people or real posts.
 
 ## Why Keep Demo Leads Synthetic
@@ -56,4 +57,10 @@ Scan public Nostr relays into an ignored local file:
 
 ```powershell
 npm run scan:toronto:nostr
+```
+
+Check OpenRouter's preferred open-source model set:
+
+```powershell
+npm run models:check
 ```

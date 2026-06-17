@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildMatches, gateSignal, scoreSignalForEvent, travelMatch } from "../src/scoring.js";
-import { ConferenceEvent, PublicSignal } from "../src/types.js";
+import { ConferenceEvent, PublicSignal, TrustGraph } from "../src/types.js";
 
 const toronto: ConferenceEvent = {
   id: "toronto",
@@ -57,5 +57,35 @@ describe("scoring", () => {
     expect(rows).toHaveLength(2);
     expect(rows.every((row) => row.signalId === "sig-test")).toBe(true);
   });
-});
 
+  it("adds explainable trust proximity for profiles near BTC++ seeds", () => {
+    const graph: TrustGraph = {
+      profiles: [
+        { id: "nostr:btcplusplus", label: "BTC++", platform: "nostr", trustSeed: true },
+        {
+          id: "nostr:toronto-dev",
+          label: "Toronto protocol dev",
+          platform: "nostr",
+          follows: ["nostr:btcplusplus"],
+          conferenceRefs: ["btc-prague"]
+        }
+      ],
+      conferences: [
+        { id: "btc-prague", name: "BTC Prague", city: "Prague", topics: ["bitcoin", "developer"] }
+      ]
+    };
+
+    const trusted = scoreSignalForEvent(
+      signal({ profileRefs: ["nostr:toronto-dev"], conferenceRefs: ["btc-prague"] }),
+      toronto,
+      graph
+    );
+    const untrusted = scoreSignalForEvent(signal({ profileRefs: ["nostr:unknown"] }), toronto, graph);
+
+    expect(trusted.trustScore).toBeGreaterThan(0);
+    expect(trusted.conferenceAffinityScore).toBeGreaterThan(0);
+    expect(trusted.score).toBeGreaterThan(untrusted.score);
+    expect(trusted.trustReasons.join(" ")).toContain("BTC++");
+    expect(trusted.trustReasons.join(" ")).toContain("BTC Prague");
+  });
+});

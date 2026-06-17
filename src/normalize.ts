@@ -11,7 +11,9 @@ const FIELD_ALIASES: Record<string, string[]> = {
   postedAt: ["postedAt", "posted_at", "date_of_message", "date_of_post", "created_at", "date"],
   locationHint: ["locationHint", "location_hint", "location", "city", "geo_town"],
   visibility: ["visibility", "privacy_review", "channel_class"],
-  topics: ["topics", "intent_keywords", "tags", "keywords"]
+  topics: ["topics", "intent_keywords", "tags", "keywords"],
+  profileRefs: ["profileRefs", "profile_refs", "profile_ref", "author_ref", "trust_profile_refs"],
+  conferenceRefs: ["conferenceRefs", "conference_refs", "conference_ref", "event_refs", "similar_conference_refs"]
 };
 
 function pick(row: RawRow, key: string): unknown {
@@ -57,6 +59,8 @@ export function normalizeSignal(row: RawRow): PublicSignal {
     postedAt: String(pick(row, "postedAt") ?? ""),
     locationHint: String(pick(row, "locationHint") ?? "unknown"),
     topics: splitTopics(pick(row, "topics")),
+    profileRefs: splitTopics(pick(row, "profileRefs")),
+    conferenceRefs: splitTopics(pick(row, "conferenceRefs")),
     visibility: normalizeVisibility(pick(row, "visibility"))
   };
   const parsed = PublicSignalSchema.parse(candidate);
@@ -69,4 +73,3 @@ export function normalizeSignal(row: RawRow): PublicSignal {
 export function normalizeSignals(rows: RawRow[]): PublicSignal[] {
   return rows.map(normalizeSignal);
 }
-

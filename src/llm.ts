@@ -1,9 +1,10 @@
 import { SignalMatch } from "./types.js";
+import { DEFAULT_OPENROUTER_MODEL } from "./models.js";
 
 export async function refineDraft(match: SignalMatch): Promise<string> {
   const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) return match.draftPublicReply;
-  const model = process.env.OPENROUTER_MODEL || "z-ai/glm-5.1";
+  const model = process.env.OPENROUTER_MODEL || DEFAULT_OPENROUTER_MODEL;
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -29,7 +30,10 @@ export async function refineDraft(match: SignalMatch): Promise<string> {
             dates: match.eventDates,
             url: match.eventUrl,
             publicExcerpt: match.excerpt,
-            matchedTopics: match.topicMatch
+            matchedTopics: match.topicMatch,
+            trustReasons: match.trustReasons,
+            trustScore: match.trustScore,
+            conferenceAffinityScore: match.conferenceAffinityScore
           })
         }
       ],

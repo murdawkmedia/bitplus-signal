@@ -3,8 +3,10 @@ import {
   GateClass,
   PublicSignal,
   SignalMatch,
+  TrustGraph,
   TravelMatch
 } from "./types.js";
+import { trustSignalForEvent } from "./trust.js";
 
 const TOPIC_KEYWORDS = [
   "bitcoin",
@@ -22,7 +24,10 @@ const TOPIC_KEYWORDS = [
   "cryptography",
   "wallet",
   "hackathon",
-  "workshop"
+  "workshop",
+  "zk",
+  "ethereum",
+  "defi"
 ];
 
 const REGION_HINTS: Record<string, string[]> = {
@@ -105,16 +110,19 @@ function draft(signal: PublicSignal, event: ConferenceEvent, matches: string[]):
   return `Public draft, human review required: This looks right up the ${event.name} alley. ${event.name} is the ${event.edition} edition in ${event.city}, ${event.country} (${datesLabel(event)}), with a focus around ${topics}. Details: ${event.url}`;
 }
 
-export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent): SignalMatch {
+export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent, graph?: TrustGraph): SignalMatch {
   const gate = gateSignal(signal);
   const topics = topicMatches(signal, event);
   const travel = travelMatch(signal, event);
+  const trust = gate === "blocked_private"
+    ? { trustScore: 0, conferenceAffinityScore: 0, trustReasons: [] }
+    : trustSignalForEvent(signal, event, graph);
   const topic = topicScore(topics);
   const travelPoints = travelScore(travel);
   const fresh = freshnessScore(signal.postedAt);
   const engage = engagementScore(signal);
   const blockedPenalty = gate === "blocked_private" ? 100 : gate === "public_ambiguous" ? 12 : 0;
-  const score = Math.max(0, Math.min(100, topic + travelPoints + fresh + engage - blockedPenalty));
+  const score = Math.max(0, Math.min(100, topic + travelPoints + fresh + engage + trust.trustScore + trust.conferenceAffinityScore - blockedPenalty));
   const signalId = signal.id ?? "sig-unknown";
   const matchId = `${signalId}-${event.id}`;
   return {
@@ -137,23 +145,25 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
     topicMatch: topics,
     travelMatch: travel,
     gate,
+    trustScore: trust.trustScore,
+    conferenceAffinityScore: trust.conferenceAffinityScore,
+    trustReasons: trust.trustReasons,
     score,
-    scoreBreakdown: `v1:T${topic}+R${travelPoints}+F${fresh}+E${engage}-B${blockedPenalty}=${score}`,
+    scoreBreakdown: `v2:T${topic}+R${travelPoints}+F${fresh}+E${engage}+W${trust.trustScore}+C${trust.conferenceAffinityScore}-B${blockedPenalty}=${score}`,
     approvalStatus: gate === "blocked_private" ? "blocked_private" : "needs_human_review",
     reachPath: gate === "blocked_private" ? "" : signal.sourceUrl,
     draftPublicReply: gate === "blocked_private" ? "" : draft(signal, event, topics)
   };
 }
 
-export function buildMatches(events: ConferenceEvent[], signals: PublicSignal[]): SignalMatch[] {
+export function buildMatches(events: ConferenceEvent[], signals: PublicSignal[], graph?: TrustGraph): SignalMatch[] {
   const rows: SignalMatch[] = [];
   for (const signal of signals) {
     const scored = events
-      .map((event) => scoreSignalForEvent(signal, event))
+      .map((event) => scoreSignalForEvent(signal, event, graph))
       .sort((a, b) => b.score - a.score)
       .slice(0, 2);
     rows.push(...scored);
   }
   return rows.sort((a, b) => b.score - a.score || a.eventName.localeCompare(b.eventName));
 }
-

@@ -42,6 +42,12 @@ function gateLabel(value) {
   return '<span class="gate-ok">Public</span>';
 }
 
+function trustLabel(row) {
+  const total = Number(row.trustScore || 0) + Number(row.conferenceAffinityScore || 0);
+  if (!total) return '<span class="trust-zero">0</span>';
+  return `<span class="trust-score">${esc(total)}</span><span class="trust-sub">W${esc(row.trustScore || 0)} C${esc(row.conferenceAffinityScore || 0)}</span>`;
+}
+
 function reachPathHtml(value) {
   if (!value) return "Blocked by gate.";
   if (!String(value).startsWith("http")) return esc(value);
@@ -85,6 +91,7 @@ function render() {
         <div class="meta">${esc(row.publicName || "public signal")} - ${esc(row.locationHint || "unknown")}</div>
       </td>
       <td>${esc(travelLabel(row.travelMatch))}</td>
+      <td>${trustLabel(row)}</td>
       <td>${(row.topicMatch || []).map((topic) => `<span class="chip">${esc(topic)}</span>`).join("")}</td>
       <td>${gateLabel(row.gate)}</td>
     </tr>
@@ -100,6 +107,9 @@ function openDrawer(row) {
     <h3>Score</h3>
     <p><span class="score ${scoreClass(row.score)}">${esc(row.score)}</span> ${esc(row.scoreBreakdown)}</p>
     <p>${esc(travelLabel(row.travelMatch))} from ${esc(row.locationHint || "unknown")}.</p>
+    <h3>Trust proximity</h3>
+    <p><span class="trust-score">${esc((row.trustScore || 0) + (row.conferenceAffinityScore || 0))}</span> W${esc(row.trustScore || 0)} C${esc(row.conferenceAffinityScore || 0)}</p>
+    <p class="draft">${esc((row.trustReasons || []).join("\n") || "No public trust graph match.")}</p>
     <h3>Public reach path</h3>
     <p>${reachPathHtml(row.reachPath)}</p>
     <h3>Draft</h3>
@@ -137,5 +147,5 @@ $("scrim").addEventListener("click", () => document.body.classList.remove("drawe
 
 load().catch((error) => {
   $("statline").textContent = "Data load failed";
-  $("rows").innerHTML = `<tr><td colspan="6">${esc(error.message || error)}</td></tr>`;
+  $("rows").innerHTML = `<tr><td colspan="7">${esc(error.message || error)}</td></tr>`;
 });

@@ -215,6 +215,27 @@ tbody tr:hover { background: #fff4d2; }
 .gate-blocked { color: var(--red); font-weight: 700; }
 .gate-ok { color: var(--green); font-weight: 700; }
 
+.trust-score {
+  display: inline-block;
+  min-width: 30px;
+  padding: 4px 7px;
+  background: var(--violet);
+  color: #fffef9;
+  font-weight: 700;
+  text-align: center;
+}
+
+.trust-sub {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.trust-zero {
+  color: var(--muted);
+}
+
 .empty {
   padding: 50px;
   text-align: center;
@@ -289,12 +310,12 @@ body.drawer-open .scrim { opacity: 1; pointer-events: auto; }
   .mast { align-items: flex-start; flex-direction: column; }
   main { grid-template-columns: 1fr; }
   .rail { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  th:nth-child(5), td:nth-child(5) { display: none; }
+  th:nth-child(6), td:nth-child(6) { display: none; }
 }
 
 @media (max-width: 560px) {
   .rail { grid-template-columns: 1fr; }
   th:nth-child(4), td:nth-child(4) { display: none; }
+  th:nth-child(5), td:nth-child(5) { display: none; }
   td { padding: 10px 8px; }
 }
-

@@ -8,12 +8,14 @@
     "bitplus-signal": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsc && node dist/cli.js build --events data/events/btcplusplus-2026.json --signals data/samples/toronto-signals.json --out public/data --event-id btcpp-toronto-2026",
+    "build": "tsc && node dist/cli.js build --events data/events/btcplusplus-2026.json --signals data/samples/toronto-signals.json --out public/data --event-id btcpp-toronto-2026 --trust-graph data/trust/toronto-trust-seeds.json",
     "build:all": "tsc && node dist/cli.js build --events data/events/btcplusplus-2026.json --signals data/samples/signals.json --out public/data",
     "dev": "npm run build && npx serve public",
     "lint": "tsc --noEmit",
     "test": "vitest run",
+    "models:check": "tsx src/cli.ts model-check",
     "scan:toronto:nostr": "tsx src/cli.ts scan-nostr --query \"BTC++ Toronto\" --out data/real/nostr-toronto.json",
+    "scan:toronto:apify": "tsx src/cli.ts apify-import --actor apify/twitter-scraper --input data/sources/apify-toronto-search-input.example.json --out data/real/apify-toronto.json",
     "scan:private": "node scripts/private-scan.mjs",
     "verify": "npm run lint && npm test && npm run build && npm run scan:private"
   },

@@ -7,6 +7,9 @@ generates human-reviewed public reply drafts.
 The default demo now targets BTC++ Toronto: consensus edition, July 22-24, 2026
 at The Great Hall in Toronto, Canada.
 
+It also includes trust-proximity scoring: public graph nearness to BTC++ /
+Bitcoin-dev seeds, plus similar-conference affinity.
+
 The first event pack is BTC++ 2026:
 
 - Nairobi, open source edition, June 17-19, 2026
@@ -66,7 +69,8 @@ node dist/cli.js build `
   --events data/events/btcplusplus-2026.json `
   --signals data/samples/toronto-signals.json `
   --out public/data `
-  --event-id btcpp-toronto-2026
+  --event-id btcpp-toronto-2026 `
+  --trust-graph data/trust/toronto-trust-seeds.json
 ```
 
 Import public signals from CSV or JSON:
@@ -82,6 +86,7 @@ node dist/cli.js scan-nostr --query "bitcoin++" --out data/samples/nostr.json
 ```
 
 Toronto target notes live in [`docs/TORONTO-TARGET.md`](docs/TORONTO-TARGET.md).
+Trust graph notes live in [`docs/TRUST-GRAPH.md`](docs/TRUST-GRAPH.md).
 
 ## Data Contract
 

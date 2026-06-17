@@ -31,8 +31,14 @@
     ],
     "travelMatch": "local",
     "gate": "public_ok",
-    "score": 83,
-    "scoreBreakdown": "v1:T35+R30+F15+E3-B0=83",
+    "trustScore": 22,
+    "conferenceAffinityScore": 8,
+    "trustReasons": [
+      "Synthetic Toronto protocol dev follows BTC++",
+      "Toronto Bitcoin Meetups affinity (bitcoin)"
+    ],
+    "score": 100,
+    "scoreBreakdown": "v2:T35+R30+F15+E3+W22+C8-B0=100",
     "approvalStatus": "needs_human_review",
     "reachPath": "sample://toronto/local-consensus",
     "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
@@ -68,11 +74,59 @@
     ],
     "travelMatch": "direct_flight_seed",
     "gate": "public_ok",
-    "score": 77,
-    "scoreBreakdown": "v1:T35+R24+F15+E3-B0=77",
+    "trustScore": 22,
+    "conferenceAffinityScore": 8,
+    "trustReasons": [
+      "Synthetic Edmonton builder follows BTC++ GitHub",
+      "BTC Prague affinity (bitcoin)"
+    ],
+    "score": 100,
+    "scoreBreakdown": "v2:T35+R24+F15+E3+W22+C8-B0=100",
     "approvalStatus": "needs_human_review",
     "reachPath": "sample://toronto/edmonton-direct-flight",
     "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, open source, developer. Details: https://btcplusplus.dev/conf/toronto"
+  },
+  {
+    "matchId": "sample-new-york-protocol-btcpp-toronto-2026",
+    "signalId": "sample-new-york-protocol",
+    "eventId": "btcpp-toronto-2026",
+    "eventName": "BTC++ Toronto",
+    "eventEdition": "consensus",
+    "eventCity": "Toronto",
+    "eventCountry": "Canada",
+    "eventDates": "2026-07-22 to 2026-07-24",
+    "eventUrl": "https://btcplusplus.dev/conf/toronto",
+    "platform": "sample",
+    "sourceUrl": "sample://toronto/new-york-protocol",
+    "publicName": "synthetic New York wallet engineer",
+    "excerpt": "Wallet engineer near New York is looking for deep Bitcoin protocol workshops after too many broad Web3 conference panels.",
+    "postedAt": "2026-06-12",
+    "locationHint": "New York",
+    "topics": [
+      "bitcoin",
+      "wallet",
+      "protocol",
+      "workshop"
+    ],
+    "topicMatch": [
+      "bitcoin",
+      "protocol",
+      "wallet",
+      "workshop"
+    ],
+    "travelMatch": "direct_flight_seed",
+    "gate": "public_ok",
+    "trustScore": 20,
+    "conferenceAffinityScore": 8,
+    "trustReasons": [
+      "Synthetic New York wallet engineer is followed by BTC++ on X",
+      "Bitcoin++ Austin affinity (bitcoin, developer tools, protocol)"
+    ],
+    "score": 100,
+    "scoreBreakdown": "v2:T35+R24+F15+E3+W20+C8-B0=100",
+    "approvalStatus": "needs_human_review",
+    "reachPath": "sample://toronto/new-york-protocol",
+    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, protocol, wallet. Details: https://btcplusplus.dev/conf/toronto"
   },
   {
     "matchId": "sample-montreal-consensus-btcpp-toronto-2026",
@@ -105,47 +159,17 @@
     ],
     "travelMatch": "direct_flight_seed",
     "gate": "public_ok",
-    "score": 77,
-    "scoreBreakdown": "v1:T35+R24+F15+E3-B0=77",
+    "trustScore": 12,
+    "conferenceAffinityScore": 8,
+    "trustReasons": [
+      "Synthetic Montreal researcher is two hops from Synthetic Toronto protocol dev",
+      "TABConf affinity (bitcoin, protocol)"
+    ],
+    "score": 97,
+    "scoreBreakdown": "v2:T35+R24+F15+E3+W12+C8-B0=97",
     "approvalStatus": "needs_human_review",
     "reachPath": "sample://toronto/montreal-consensus",
     "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, oss, protocol. Details: https://btcplusplus.dev/conf/toronto"
-  },
-  {
-    "matchId": "sample-new-york-protocol-btcpp-toronto-2026",
-    "signalId": "sample-new-york-protocol",
-    "eventId": "btcpp-toronto-2026",
-    "eventName": "BTC++ Toronto",
-    "eventEdition": "consensus",
-    "eventCity": "Toronto",
-    "eventCountry": "Canada",
-    "eventDates": "2026-07-22 to 2026-07-24",
-    "eventUrl": "https://btcplusplus.dev/conf/toronto",
-    "platform": "sample",
-    "sourceUrl": "sample://toronto/new-york-protocol",
-    "publicName": "synthetic New York wallet engineer",
-    "excerpt": "Wallet engineer near New York is looking for deep Bitcoin protocol workshops after too many broad Web3 conference panels.",
-    "postedAt": "2026-06-12",
-    "locationHint": "New York",
-    "topics": [
-      "bitcoin",
-      "wallet",
-      "protocol",
-      "workshop"
-    ],
-    "topicMatch": [
-      "bitcoin",
-      "protocol",
-      "wallet",
-      "workshop"
-    ],
-    "travelMatch": "direct_flight_seed",
-    "gate": "public_ok",
-    "score": 77,
-    "scoreBreakdown": "v1:T35+R24+F15+E3-B0=77",
-    "approvalStatus": "needs_human_review",
-    "reachPath": "sample://toronto/new-york-protocol",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, protocol, wallet. Details: https://btcplusplus.dev/conf/toronto"
   },
   {
     "matchId": "sample-vancouver-builder-btcpp-toronto-2026",
@@ -178,8 +202,14 @@
     ],
     "travelMatch": "direct_flight_seed",
     "gate": "public_ok",
-    "score": 77,
-    "scoreBreakdown": "v1:T35+R24+F15+E3-B0=77",
+    "trustScore": 12,
+    "conferenceAffinityScore": 4,
+    "trustReasons": [
+      "Synthetic Vancouver builder is two hops from Synthetic Edmonton builder",
+      "ETHGlobal Waterloo affinity"
+    ],
+    "score": 93,
+    "scoreBreakdown": "v2:T35+R24+F15+E3+W12+C4-B0=93",
     "approvalStatus": "needs_human_review",
     "reachPath": "sample://toronto/vancouver-builder",
     "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
@@ -209,8 +239,11 @@
     ],
     "travelMatch": "local",
     "gate": "blocked_private",
+    "trustScore": 0,
+    "conferenceAffinityScore": 0,
+    "trustReasons": [],
     "score": 0,
-    "scoreBreakdown": "v1:T20+R30+F15+E3-B100=0",
+    "scoreBreakdown": "v2:T20+R30+F15+E3+W0+C0-B100=0",
     "approvalStatus": "blocked_private",
     "reachPath": "",
     "draftPublicReply": ""

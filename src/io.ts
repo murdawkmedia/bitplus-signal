@@ -4,7 +4,9 @@ import { parse } from "csv-parse/sync";
 import {
   ConferenceEvent,
   ConferenceEventSchema,
-  PublicSignal
+  PublicSignal,
+  TrustGraph,
+  TrustGraphSchema
 } from "./types.js";
 import { normalizeSignals } from "./normalize.js";
 
@@ -30,8 +32,11 @@ export async function readSignals(file: string): Promise<PublicSignal[]> {
   return normalizeSignals(rows as Record<string, unknown>[]);
 }
 
+export async function readTrustGraph(file: string): Promise<TrustGraph> {
+  return TrustGraphSchema.parse(await readJson(file));
+}
+
 export async function writeJson(file: string, value: unknown): Promise<void> {
   await fs.mkdir(path.dirname(file), { recursive: true });
   await fs.writeFile(file, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
-

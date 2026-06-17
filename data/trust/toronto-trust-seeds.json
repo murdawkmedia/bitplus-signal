@@ -1,0 +1,107 @@
+{
+  "profiles": [
+    {
+      "id": "nostr:btcplusplus",
+      "label": "BTC++",
+      "platform": "nostr",
+      "trustSeed": true,
+      "topics": ["bitcoin", "developer tools", "consensus"]
+    },
+    {
+      "id": "x:btcplusplus",
+      "label": "BTC++ on X",
+      "platform": "x",
+      "trustSeed": true,
+      "topics": ["bitcoin", "developer tools", "consensus"]
+    },
+    {
+      "id": "github:btcplusplus",
+      "label": "BTC++ GitHub",
+      "platform": "github",
+      "trustSeed": true,
+      "topics": ["bitcoin", "open source", "developer tools"]
+    },
+    {
+      "id": "profile:toronto-protocol-dev",
+      "label": "Synthetic Toronto protocol dev",
+      "platform": "sample",
+      "follows": ["nostr:btcplusplus", "x:btcplusplus"],
+      "conferenceRefs": ["toronto-bitcoin-meetups"],
+      "topics": ["bitcoin", "consensus", "protocol"],
+      "locationHints": ["Toronto"]
+    },
+    {
+      "id": "profile:edmonton-builder",
+      "label": "Synthetic Edmonton builder",
+      "platform": "sample",
+      "follows": ["github:btcplusplus"],
+      "conferenceRefs": ["btc-prague"],
+      "topics": ["bitcoin", "open source", "developer"],
+      "locationHints": ["Edmonton"]
+    },
+    {
+      "id": "profile:montreal-researcher",
+      "label": "Synthetic Montreal researcher",
+      "platform": "sample",
+      "follows": ["profile:toronto-protocol-dev"],
+      "conferenceRefs": ["tabconf"],
+      "topics": ["bitcoin", "cryptography", "consensus"],
+      "locationHints": ["Montreal"]
+    },
+    {
+      "id": "profile:new-york-wallet-engineer",
+      "label": "Synthetic New York wallet engineer",
+      "platform": "sample",
+      "followedBy": ["x:btcplusplus"],
+      "conferenceRefs": ["bitcoin-plus-plus-austin"],
+      "topics": ["bitcoin", "wallet", "protocol"],
+      "locationHints": ["New York"]
+    },
+    {
+      "id": "profile:vancouver-builder",
+      "label": "Synthetic Vancouver builder",
+      "platform": "sample",
+      "follows": ["profile:edmonton-builder"],
+      "conferenceRefs": ["ethglobal-waterloo"],
+      "topics": ["bitcoin", "developer tools", "zk"],
+      "locationHints": ["Vancouver"]
+    }
+  ],
+  "conferences": [
+    {
+      "id": "btc-prague",
+      "name": "BTC Prague",
+      "city": "Prague",
+      "url": "https://btcprague.com/",
+      "topics": ["bitcoin", "developer"]
+    },
+    {
+      "id": "tabconf",
+      "name": "TABConf",
+      "city": "Atlanta",
+      "url": "https://tabconf.com/",
+      "topics": ["bitcoin", "protocol", "developer"]
+    },
+    {
+      "id": "bitcoin-plus-plus-austin",
+      "name": "Bitcoin++ Austin",
+      "city": "Austin",
+      "url": "https://btcplusplus.dev/",
+      "topics": ["bitcoin", "developer tools", "protocol"]
+    },
+    {
+      "id": "toronto-bitcoin-meetups",
+      "name": "Toronto Bitcoin Meetups",
+      "city": "Toronto",
+      "url": "https://www.meetup.com/canadabitcoin/",
+      "topics": ["bitcoin", "cryptography"]
+    },
+    {
+      "id": "ethglobal-waterloo",
+      "name": "ETHGlobal Waterloo",
+      "city": "Waterloo",
+      "url": "https://ethglobal.com/",
+      "topics": ["ethereum", "zk", "developer"]
+    }
+  ]
+}

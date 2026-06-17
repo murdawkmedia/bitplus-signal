@@ -8,6 +8,8 @@
     "postedAt": "2026-06-17",
     "locationHint": "Toronto",
     "topics": ["bitcoin", "consensus", "protocol", "developer tools"],
+    "profileRefs": ["profile:toronto-protocol-dev"],
+    "conferenceRefs": ["toronto-bitcoin-meetups"],
     "visibility": "public"
   },
   {
@@ -19,6 +21,8 @@
     "postedAt": "2026-06-16",
     "locationHint": "Edmonton",
     "topics": ["bitcoin", "open source", "developer", "protocol"],
+    "profileRefs": ["profile:edmonton-builder"],
+    "conferenceRefs": ["btc-prague"],
     "visibility": "public"
   },
   {
@@ -30,6 +34,8 @@
     "postedAt": "2026-06-14",
     "locationHint": "Montreal",
     "topics": ["bitcoin", "cryptography", "consensus", "protocol"],
+    "profileRefs": ["profile:montreal-researcher"],
+    "conferenceRefs": ["tabconf"],
     "visibility": "public"
   },
   {
@@ -41,6 +47,8 @@
     "postedAt": "2026-06-12",
     "locationHint": "New York",
     "topics": ["bitcoin", "wallet", "protocol", "workshop"],
+    "profileRefs": ["profile:new-york-wallet-engineer"],
+    "conferenceRefs": ["bitcoin-plus-plus-austin"],
     "visibility": "public"
   },
   {
@@ -52,6 +60,8 @@
     "postedAt": "2026-06-10",
     "locationHint": "Vancouver",
     "topics": ["bitcoin", "dev", "developer tools", "workshop"],
+    "profileRefs": ["profile:vancouver-builder"],
+    "conferenceRefs": ["ethglobal-waterloo"],
     "visibility": "public"
   },
   {
@@ -63,6 +73,7 @@
     "postedAt": "2026-06-16",
     "locationHint": "Toronto",
     "topics": ["bitcoin", "conference"],
+    "profileRefs": ["profile:toronto-protocol-dev"],
     "visibility": "dm"
   }
 ]

@@ -17,15 +17,13 @@ interface NostrEventLike {
 export async function scanNostr(options: NostrScanOptions): Promise<PublicSignal[]> {
   const { SimplePool } = (await import("nostr-tools")) as unknown as {
     SimplePool: new () => {
-      querySync: (relays: string[], filters: unknown[]) => Promise<NostrEventLike[]>;
+      querySync: (relays: string[], filter: unknown) => Promise<NostrEventLike[]>;
       close: (relays: string[]) => void;
     };
   };
   const pool = new SimplePool();
   try {
-    const events = await pool.querySync(options.relays, [
-      { kinds: [1], search: options.query, limit: options.limit }
-    ]);
+    const events = await pool.querySync(options.relays, { kinds: [1], search: options.query, limit: options.limit });
     return normalizeSignals(
       events.map((event) => ({
         platform: "nostr",
@@ -42,4 +40,3 @@ export async function scanNostr(options: NostrScanOptions): Promise<PublicSignal
     pool.close(options.relays);
   }
 }
-

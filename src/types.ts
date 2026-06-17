@@ -30,7 +30,34 @@ export const PublicSignalSchema = z.object({
   postedAt: z.string().optional().default(""),
   locationHint: z.string().optional().default("unknown"),
   topics: z.array(z.string()).optional().default([]),
+  profileRefs: z.array(z.string()).optional().default([]),
+  conferenceRefs: z.array(z.string()).optional().default([]),
   visibility: VisibilitySchema
+});
+
+export const TrustProfileSchema = z.object({
+  id: z.string().min(1),
+  label: z.string().min(1),
+  platform: z.string().min(1),
+  trustSeed: z.boolean().optional().default(false),
+  follows: z.array(z.string()).optional().default([]),
+  followedBy: z.array(z.string()).optional().default([]),
+  conferenceRefs: z.array(z.string()).optional().default([]),
+  topics: z.array(z.string()).optional().default([]),
+  locationHints: z.array(z.string()).optional().default([])
+});
+
+export const TrustConferenceSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  city: z.string().optional().default(""),
+  url: z.string().optional().default(""),
+  topics: z.array(z.string()).optional().default([])
+});
+
+export const TrustGraphSchema = z.object({
+  profiles: z.array(TrustProfileSchema).optional().default([]),
+  conferences: z.array(TrustConferenceSchema).optional().default([])
 });
 
 export const BuildMetaSchema = z.object({
@@ -44,6 +71,9 @@ export const BuildMetaSchema = z.object({
 export type ConferenceEvent = z.infer<typeof ConferenceEventSchema>;
 export type PublicSignal = z.infer<typeof PublicSignalSchema>;
 export type BuildMeta = z.infer<typeof BuildMetaSchema>;
+export type TrustProfile = z.infer<typeof TrustProfileSchema>;
+export type TrustConference = z.infer<typeof TrustConferenceSchema>;
+export type TrustGraph = z.infer<typeof TrustGraphSchema>;
 
 export type GateClass = "public_ok" | "public_ambiguous" | "blocked_private";
 export type TravelMatch = "local" | "direct_flight_seed" | "same_region" | "unknown";
@@ -68,10 +98,12 @@ export interface SignalMatch {
   topicMatch: string[];
   travelMatch: TravelMatch;
   gate: GateClass;
+  trustScore: number;
+  conferenceAffinityScore: number;
+  trustReasons: string[];
   score: number;
   scoreBreakdown: string;
   approvalStatus: "needs_human_review" | "blocked_private";
   reachPath: string;
   draftPublicReply: string;
 }
-
