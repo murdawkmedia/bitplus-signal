@@ -105,9 +105,92 @@ function datesLabel(event: ConferenceEvent): string {
   return `${event.startDate} to ${event.endDate}`;
 }
 
+function includesAny(text: string, words: string[]): boolean {
+  return words.some((word) => text.includes(word));
+}
+
+function eventMention(event: ConferenceEvent): string {
+  return event.city.toLowerCase() === "toronto" ? "BTC++ Toronto" : event.name;
+}
+
+function rowFingerprint(signal: PublicSignal): number {
+  return Array.from(`${signal.id || ""}${signal.sourceUrl}${signal.publicName}`)
+    .reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
+}
+
+function publicName(signal: PublicSignal, fallback: string): string {
+  return signal.publicName?.trim() || fallback;
+}
+
+function nostrGraphSummary(signal: PublicSignal): string {
+  const incoming = signal.excerpt.match(/followed by (\d+) seed-adjacent/i)?.[1];
+  const outgoing = signal.excerpt.match(/follows (\d+) public/i)?.[1];
+  if (incoming && outgoing) return `${incoming} seed-adjacent connection${incoming === "1" ? "" : "s"} and ${outgoing} public follows`;
+  if (incoming) return `${incoming} seed-adjacent connection${incoming === "1" ? "" : "s"}`;
+  const variants = [
+    "a public Nostr graph overlap",
+    "a seed-adjacent Nostr overlap",
+    "a Bitcoin-builder Nostr overlap"
+  ];
+  return variants[rowFingerprint(signal) % variants.length];
+}
+
 function draft(signal: PublicSignal, event: ConferenceEvent, matches: string[]): string {
-  const topics = matches.slice(0, 3).join(", ") || event.edition;
-  return `Public draft, human review required: This looks right up the ${event.name} alley. ${event.name} is the ${event.edition} edition in ${event.city}, ${event.country} (${datesLabel(event)}), with a focus around ${topics}. Details: ${event.url}`;
+  const topics = signal.topics ?? [];
+  const conferenceRefs = signal.conferenceRefs ?? [];
+  const text = clean(`${signal.platform} ${signal.sourceLane} ${signal.excerpt} ${topics.join(" ")} ${conferenceRefs.join(" ")}`);
+  const eventName = eventMention(event);
+  const name = publicName(signal, "this public signal");
+
+  if (signal.sourceLane === "adjacent_event_official") {
+    if (includesAny(text, ["btc++", "btcplusplus", "btcpp", "bitcoin++"])) {
+      return `Good home base for the ${eventName} conversation. We are keeping the emphasis on Bitcoin protocol, consensus, and useful technical discussion rather than just broadcasting a link.`;
+    }
+    if (includesAny(text, ["hackathon", "hackathons", "waterloo", "mississauga", "jamhacks", "conhacks", "bearhacks", "hack canada"])) {
+      return `${name} looks like real builder energy close to Toronto. If teams from there are drifting toward Bitcoin, self-custody, privacy, or protocol work, ${eventName} should be a natural next conversation.`;
+    }
+    if (includesAny(text, ["ethereum", "web3", "defi", "blockchain futurist", "ethwomen", "ethtoronto"])) {
+      return `${name} should pull in a lot of Web3 builders. From the BTC++ side, the interesting overlap is where open systems, custody, privacy, and protocol design meet.`;
+    }
+    return `${name} feels like a strong nearby signal for serious software people. ${eventName} is coming at it from the Bitcoin protocol and consensus angle, so there is useful overlap without needing the hard sell.`;
+  }
+
+  if (signal.sourceLane === "nostr_graph" || (signal.platform === "nostr" && text.includes("trust graph"))) {
+    return `Seeing ${nostrGraphSummary(signal)} around Bitcoin builders. If Toronto is on your radar this summer, ${eventName} is where we are trying to get more protocol and consensus people into the same room.`;
+  }
+
+  if (includesAny(text, ["btc++", "btcplusplus", "btcpp", "bitcoin++"])) {
+    if (includesAny(text, ["ticket", "tickets"])) {
+      return `Appreciate the ticket nudge. For us the useful part is getting the right builders into the BTC++ Toronto conversation around Bitcoin protocol, consensus, and tradeoffs worth debating.`;
+    }
+    if (includesAny(text, ["presentation", "slides", "talk"])) {
+      return `That presentation tease is exactly the kind of technical breadcrumb we like seeing before BTC++ Toronto. Curious where the protocol or consensus angle lands once it is in the room.`;
+    }
+    if (signal.excerpt.trim().length <= 12) {
+      return `Caught the quiet ${eventName} signal. We are keeping the focus on builders and the technical questions around Bitcoin consensus rather than blasting links everywhere.`;
+    }
+    return `Appreciate the ${eventName} mention. We are trying to keep the conversation useful for builders, especially around Bitcoin protocol, consensus, and the questions worth arguing through in person.`;
+  }
+
+  if (includesAny(text, ["stablecoin", "stablecoins", "cbdc", "tokenized", "payments", "settlement"])) {
+    return `This is a good thread. The stablecoins, privacy, and accountability angle is exactly where protocol people can add useful nuance. ${eventName} is more Bitcoin and consensus focused, but this is the kind of conversation we want near it.`;
+  }
+
+  if (includesAny(text, ["hackathon", "hackathons", "shipped", "shipping", "prototype", "build weekend"])) {
+    return `Love seeing hackathon builders shipping in the region. If any of those teams are getting pulled toward Bitcoin, self-custody, privacy, or protocol work, ${eventName} should be an interesting room to know about.`;
+  }
+
+  if (includesAny(text, ["ethereum", "web3", "defi", "zk", "zero knowledge", "blockchain futurist", "ethwomen", "ethtoronto"])) {
+    return `Appreciate the builder energy here. The Bitcoin side is wrestling with a lot of the same open-systems questions from a different direction; ${eventName} will be a good place for the protocol-curious crowd to compare notes.`;
+  }
+
+  if (includesAny(text, ["privacy", "cryptography", "security", "open source", "open-source", "ai", "developer tools"])) {
+    const topic = matches.find((match) => ["privacy", "cryptography", "open source", "developer", "dev", "protocol", "consensus"].includes(match)) || "open technical work";
+    return `This is the kind of ${topic} conversation we like seeing around Toronto. ${eventName} is focused on the deeper Bitcoin protocol side, so the overlap with builders here feels pretty natural.`;
+  }
+
+  const matchedTopics = matches.slice(0, 2).join(" and ") || event.edition;
+  return `Interesting signal for the builder crowd. The ${matchedTopics} overlap is what caught our eye, and ${eventName} is meant to be a place for that kind of technical conversation without the hype cycle.`;
 }
 
 export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent, graph?: TrustGraph): SignalMatch {

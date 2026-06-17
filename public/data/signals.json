@@ -41,7 +41,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W30+C0-B0=94",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://x.com/btcplusplus/status/2066605743495619001",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, developer. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Caught the quiet BTC++ Toronto signal. We are keeping the focus on builders and the technical questions around Bitcoin consensus rather than blasting links everywhere."
   },
   {
     "matchId": "sig-adjacent-btcpp-toronto-btcpp-toronto-2026",
@@ -87,7 +87,7 @@
     "scoreBreakdown": "v2:T35+R30+F15+E10+W0+C0-B0=90",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://btcpp.dev/toronto",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Good home base for the BTC++ Toronto conversation. We are keeping the emphasis on Bitcoin protocol, consensus, and useful technical discussion rather than just broadcasting a link."
   },
   {
     "matchId": "sig-adjacent-ndc-toronto-btcpp-toronto-2026",
@@ -131,7 +131,7 @@
     "scoreBreakdown": "v2:T35+R30+F15+E10+W0+C0-B0=90",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://ndctoronto.com/",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around open source, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "NDC Toronto feels like a strong nearby signal for serious software people. BTC++ Toronto is coming at it from the Bitcoin protocol and consensus angle, so there is useful overlap without needing the hard sell."
   },
   {
     "matchId": "sig-adjacent-toronto-tech-week-btcpp-toronto-2026",
@@ -175,7 +175,7 @@
     "scoreBreakdown": "v2:T35+R30+F15+E10+W0+C0-B0=90",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://www.torontotechweek.com/",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around open source, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Toronto Tech Week feels like a strong nearby signal for serious software people. BTC++ Toronto is coming at it from the Bitcoin protocol and consensus angle, so there is useful overlap without needing the hard sell."
   },
   {
     "matchId": "sig-adjacent-ethtoronto-btcpp-toronto-2026",
@@ -220,7 +220,7 @@
     "scoreBreakdown": "v2:T35+R30+F15+E10+W0+C0-B0=90",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://www.ethtoronto.ca/",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around developer, dev, hackathon. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "ETHToronto looks like real builder energy close to Toronto. If teams from there are drifting toward Bitcoin, self-custody, privacy, or protocol work, BTC++ Toronto should be a natural next conversation."
   },
   {
     "matchId": "sig-adjacent-blockchain-futurist-btcpp-toronto-2026",
@@ -264,7 +264,7 @@
     "scoreBreakdown": "v2:T35+R30+F15+E10+W0+C0-B0=90",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://futuristconference.com/",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around developer, dev, defi. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Blockchain Futurist Conference should pull in a lot of Web3 builders. From the BTC++ side, the interesting overlap is where open systems, custody, privacy, and protocol design meet."
   },
   {
     "matchId": "sig-adjacent-ethwomen-btcpp-toronto-2026",
@@ -308,7 +308,7 @@
     "scoreBreakdown": "v2:T35+R30+F15+E10+W0+C0-B0=90",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://www.ethwomen.com/",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around developer, dev, ethereum. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "ETHWomen should pull in a lot of Web3 builders. From the BTC++ side, the interesting overlap is where open systems, custody, privacy, and protocol design meet."
   },
   {
     "matchId": "sig-nostr-6e9b372ed5420c38f729c61095fedaa31894eebcab-btcpp-toronto-2026",
@@ -352,7 +352,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub1d6dnwtk4ggxr3aefccgftlk65vvffm4u4dnj3ckzpxkvktf9ye7qlznv7s",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 9 seed-adjacent connections and 1885 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-1e067bfb58820576df3daf7cb051d4411b80a0b8fa-btcpp-toronto-2026",
@@ -396,7 +396,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub1rcr8h76csgzhdhea4a7tq5w5gydcpg9clgf0cffu6z45rnc6yp5sj7cfuz",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 8 seed-adjacent connections and 1828 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-339db62c91c8cfa8f085f89f115f1ad95df10ce749-btcpp-toronto-2026",
@@ -440,7 +440,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub1xwwmvty3er863uy9lz03zhc6m9wlzr88f9esywdkq4xjg5en9yyqktl3nz",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 6 seed-adjacent connections and 1616 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-7bc3506a0e3031fc9d194b4deb327cb73e0beb56be-btcpp-toronto-2026",
@@ -484,7 +484,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub100p4q6swxqcle8gefdx7kvnukulqh66khcg8jgvx9sc4fn9k2teq2npn2p",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 2 seed-adjacent connections and 1491 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-aa1f96f685d0ac3e28a52feb87a20399a91afb3ac3-btcpp-toronto-2026",
@@ -528,7 +528,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub14g0eda596zkru2999l4c0gsrnx5347e6cvfh4l4hdxxlejvmc32qfv3trj",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 4 seed-adjacent connections and 1345 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-15f70ebd30f69b85bba87c3ec45645300dc2835a6d-btcpp-toronto-2026",
@@ -572,7 +572,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub1zhmsa0fs76dctwag0slvg4j9xqxu9q66dkkzxh7ls9pu4d0f9qkqgvs67x",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 4 seed-adjacent connections and 965 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-3c7aee7ad0cd6d8e3ddf2ab8e23815353fcce3cce5-btcpp-toronto-2026",
@@ -616,7 +616,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub183awu7kse4kcu0wl92uwywq4x5luec7vu55dfnn4q4j5aw7w8dhsuaqvuq",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 2 seed-adjacent connections and 816 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-f2046ca32ca0bcbf61bce3ed55c97fbdc63e90987a-btcpp-toronto-2026",
@@ -660,7 +660,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub17gzxegev5z7t7cduu0k4tjtlhhrrayyc0t8egacwlnjwqh7j43rqk9cv8l",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 2 seed-adjacent connections and 807 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-84fede4c35eb36028b56b4832beeaf91ff9864dd75-btcpp-toronto-2026",
@@ -704,7 +704,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub1snldunp4avmq9z6kkjpjhm40j8lesexawkv6tfejjwl5ccqe598s8sjqkx",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 3 seed-adjacent connections and 799 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-bb7c7a92f5819faafa91a375d88898a8d60c0dbb3c-btcpp-toronto-2026",
@@ -748,7 +748,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W22+C0-B0=86",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub1hd784yh4sx0647535d6a3zyc4rtqcrdm8ny83rx7nmtskn0d6vss2x9d24",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 3 seed-adjacent connections and 788 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-3f770d65d3a764a9c5cb503ae123e62ec7598ad035-btcpp-toronto-2026",
@@ -792,7 +792,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W20+C0-B0=84",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 43 seed-adjacent connections and 1280 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "sig-nostr-efcaeffafd9c673bd44cf1c1b50cffbf2291ec900c-btcpp-toronto-2026",
@@ -836,7 +836,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W20+C0-B0=84",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://njump.me/npub1al9wl7han3nnh4zv78qm2r8lhu3frmysps948ctxdzzkfztu06hswjuds8",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, nostr. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Seeing 8 seed-adjacent connections and 910 public follows around Bitcoin builders. If Toronto is on your radar this summer, BTC++ Toronto is where we are trying to get more protocol and consensus people into the same room."
   },
   {
     "matchId": "2066597742151860604-btcpp-toronto-2026",
@@ -878,7 +878,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W0+C0-B0=64",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://x.com/niftynei/status/2066597742151860604",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, developer. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Appreciate the ticket nudge. For us the useful part is getting the right builders into the BTC++ Toronto conversation around Bitcoin protocol, consensus, and tradeoffs worth debating."
   },
   {
     "matchId": "2065107647683072215-btcpp-toronto-2026",
@@ -920,7 +920,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W0+C0-B0=64",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://x.com/conduition_io/status/2065107647683072215",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around bitcoin, btc, developer. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "That presentation tease is exactly the kind of technical breadcrumb we like seeing before BTC++ Toronto. Curious where the protocol or consensus angle lands once it is in the room."
   },
   {
     "matchId": "sig-adjacent-jamhacks-btcpp-toronto-2026",
@@ -965,7 +965,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W0+C0-B0=64",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://www.jamhacks.ca/",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around open source, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "JAMHacks 10 looks like real builder energy close to Toronto. If teams from there are drifting toward Bitcoin, self-custody, privacy, or protocol work, BTC++ Toronto should be a natural next conversation."
   },
   {
     "matchId": "sig-adjacent-mlh-conhacks-btcpp-toronto-2026",
@@ -1010,7 +1010,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W0+C0-B0=64",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://www.mlh.com/seasons/2026/events",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around open source, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "MLH 2026 Ontario Hackathons looks like real builder energy close to Toronto. If teams from there are drifting toward Bitcoin, self-custody, privacy, or protocol work, BTC++ Toronto should be a natural next conversation."
   },
   {
     "matchId": "sig-adjacent-hack-canada-btcpp-toronto-2026",
@@ -1055,7 +1055,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W0+C0-B0=64",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://hackcanada.org/",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around open source, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Hack Canada looks like real builder energy close to Toronto. If teams from there are drifting toward Bitcoin, self-custody, privacy, or protocol work, BTC++ Toronto should be a natural next conversation."
   },
   {
     "matchId": "sig-adjacent-waterloo-tech-week-btcpp-toronto-2026",
@@ -1099,7 +1099,7 @@
     "scoreBreakdown": "v2:T35+R4+F15+E10+W0+C0-B0=64",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://waterlootechweek.ca/",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around open source, developer, dev. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "Waterloo Tech Week looks like real builder energy close to Toronto. If teams from there are drifting toward Bitcoin, self-custody, privacy, or protocol work, BTC++ Toronto should be a natural next conversation."
   },
   {
     "matchId": "sig-dce9a6cc7c-btcpp-toronto-2026",
@@ -1140,6 +1140,6 @@
     "scoreBreakdown": "v2:T35+R4+F10+E10+W0+C0-B0=59",
     "approvalStatus": "needs_human_review",
     "reachPath": "https://www.linkedin.com/posts/aliaboudaya_who-picks-up-the-phone-when-a-transaction-activity-7467247415541182464-qB10",
-    "draftPublicReply": "Public draft, human review required: This looks right up the BTC++ Toronto alley. BTC++ Toronto is the consensus edition in Toronto, Canada (2026-07-22 to 2026-07-24), with a focus around developer, dev, privacy. Details: https://btcplusplus.dev/conf/toronto"
+    "draftPublicReply": "This is a good thread. The stablecoins, privacy, and accountability angle is exactly where protocol people can add useful nuance. BTC++ Toronto is more Bitcoin and consensus focused, but this is the kind of conversation we want near it."
   }
 ]

@@ -51,6 +51,113 @@ describe("scoring", () => {
     expect(blocked.reachPath).toBe("");
   });
 
+  it("writes tailored BTC++ public comments without direct event links", () => {
+    const stablecoin = scoreSignalForEvent(signal({
+      platform: "linkedin",
+      publicName: "Ali",
+      excerpt: "Toronto Tech Week panel on stablecoins, CBDCs, privacy, and who answers when payments break.",
+      topics: ["privacy", "developer tools"],
+      sourceUrl: "https://www.linkedin.com/posts/example"
+    }), toronto);
+    const hackathon = scoreSignalForEvent(signal({
+      publicName: "Waterloo builders",
+      excerpt: "Waterloo hackathon teams shipped open-source AI and developer tools all weekend.",
+      topics: ["hackathon", "open source"],
+      sourceUrl: "https://example.com/hackathon"
+    }), toronto);
+
+    expect(stablecoin.draftPublicReply).toContain("stablecoins");
+    expect(stablecoin.draftPublicReply).toContain("privacy");
+    expect(hackathon.draftPublicReply).toContain("hackathon");
+    expect(hackathon.draftPublicReply).toContain("builders");
+    expect(stablecoin.draftPublicReply).not.toBe(hackathon.draftPublicReply);
+    for (const draft of [stablecoin.draftPublicReply, hackathon.draftPublicReply]) {
+      expect(draft).toContain("BTC++");
+      expect(draft).not.toContain("Public draft");
+      expect(draft).not.toContain("Details:");
+      expect(draft).not.toContain("http");
+    }
+  });
+
+  it("uses a softer trust-graph draft for Nostr profile signals", () => {
+    const nostr = scoreSignalForEvent(signal({
+      platform: "nostr",
+      publicName: "nostr:abc",
+      excerpt: "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds.",
+      topics: ["bitcoin", "developer tools"],
+      profileRefs: ["nostr:abc"],
+      sourceLane: "nostr_graph"
+    }), toronto);
+
+    expect(nostr.draftPublicReply).toContain("Nostr");
+    expect(nostr.draftPublicReply).toContain("overlap");
+    expect(nostr.draftPublicReply).not.toContain("http");
+    expect(nostr.draftPublicReply).not.toContain("Details:");
+  });
+
+  it("keeps drafts distinct for similar public rows", () => {
+    const ndc = scoreSignalForEvent(signal({
+      id: "sig-ndc",
+      platform: "official_web",
+      publicName: "NDC Toronto",
+      sourceLane: "adjacent_event_official",
+      excerpt: "NDC Toronto software developers talked security, AI, architecture, and tooling.",
+      topics: ["security", "AI", "developer tools"]
+    }), toronto);
+    const waterloo = scoreSignalForEvent(signal({
+      id: "sig-waterloo",
+      platform: "official_web",
+      publicName: "Waterloo Tech Week",
+      sourceLane: "adjacent_event_official",
+      excerpt: "Waterloo Tech Week celebrates Waterloo innovation, tech talent, and builder community.",
+      topics: ["open source", "AI", "builder"]
+    }), toronto);
+    const nostrA = scoreSignalForEvent(signal({
+      id: "sig-nostr-a",
+      platform: "nostr",
+      publicName: "nostr:a",
+      sourceLane: "nostr_graph",
+      excerpt: "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds.",
+      topics: ["bitcoin", "developer tools"]
+    }), toronto);
+    const nostrB = scoreSignalForEvent(signal({
+      id: "sig-nostr-b",
+      platform: "nostr",
+      publicName: "nostr:b",
+      sourceLane: "nostr_graph",
+      excerpt: "Reviewed real public-data candidate from the public Nostr trust graph near BTC++ Toronto seeds.",
+      topics: ["bitcoin", "developer tools"]
+    }), toronto);
+
+    expect(ndc.draftPublicReply).toContain("NDC Toronto");
+    expect(waterloo.draftPublicReply).toContain("Waterloo Tech Week");
+    expect(ndc.draftPublicReply).not.toBe(waterloo.draftPublicReply);
+    expect(nostrA.draftPublicReply).not.toBe(nostrB.draftPublicReply);
+  });
+
+  it("varies direct BTC++ mention drafts by post content", () => {
+    const ticket = scoreSignalForEvent(signal({
+      platform: "x",
+      publicName: "@niftynei",
+      excerpt: "@btcplusplus tickets -> https://t.co/example",
+      topics: ["BTC++ Toronto", "bitcoin"],
+      conferenceRefs: ["btcpp-toronto-2026"]
+    }), toronto);
+    const presentation = scoreSignalForEvent(signal({
+      platform: "x",
+      publicName: "@conduition_io",
+      excerpt: "had this left over from a presentation i'm working on for @btcplusplus Toronto",
+      topics: ["BTC++ Toronto", "developer tools"],
+      conferenceRefs: ["btcpp-toronto-2026"]
+    }), toronto);
+
+    expect(ticket.draftPublicReply).toContain("ticket");
+    expect(presentation.draftPublicReply).toContain("presentation");
+    expect(ticket.draftPublicReply).not.toBe(presentation.draftPublicReply);
+    expect(ticket.draftPublicReply).not.toContain("http");
+    expect(presentation.draftPublicReply).not.toContain("http");
+  });
+
   it("keeps top two event matches per signal", () => {
     const events = [toronto, { ...toronto, id: "toronto-2", name: "Second Toronto" }];
     const rows = buildMatches(events, [signal({})]);
