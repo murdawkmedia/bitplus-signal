@@ -21,3 +21,9 @@ be relevant. It is not a spam engine.
 
 Rows with `visibility` set to `private`, `dm`, or `login_gated` are blocked. Blocked
 rows may be used only as aggregate content inspiration; they never receive a draft.
+
+## Public Repo Data Rule
+
+The public repository should contain event metadata, source plans, code, tests,
+and synthetic sample rows. Put live public-source leads under `data/real/` or in a
+reviewed CRM, then explicitly approve any row before publishing it.

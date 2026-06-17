@@ -1,7 +1,7 @@
 {
   "builtAt": "2026-06-17T00:00:00.000Z",
-  "eventCount": 4,
+  "eventCount": 1,
   "signalInputCount": 6,
-  "matchCount": 12,
+  "matchCount": 6,
   "sourceMode": "csv-json-imports-plus-nostr"
 }

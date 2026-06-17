@@ -1,37 +1,5 @@
 [
   {
-    "id": "btcpp-nairobi-2026",
-    "series": "BTC++",
-    "name": "BTC++ Nairobi",
-    "edition": "open source",
-    "city": "Nairobi",
-    "country": "Kenya",
-    "region": "africa",
-    "venue": "Pride Inn Azure",
-    "startDate": "2026-06-17",
-    "endDate": "2026-06-19",
-    "url": "https://btcplusplus.dev/conf/nairobi",
-    "tags": [
-      "bitcoin",
-      "open source",
-      "africa",
-      "developer tools"
-    ],
-    "airports": [
-      "NBO"
-    ],
-    "directFlightFrom": [
-      "addis ababa",
-      "cairo",
-      "doha",
-      "dubai",
-      "istanbul",
-      "johannesburg",
-      "london",
-      "paris"
-    ]
-  },
-  {
     "id": "btcpp-toronto-2026",
     "series": "BTC++",
     "name": "BTC++ Toronto",
@@ -74,89 +42,6 @@
       "vancouver",
       "washington",
       "winnipeg"
-    ]
-  },
-  {
-    "id": "btcpp-berlin-2026",
-    "series": "BTC++",
-    "name": "BTC++ Berlin",
-    "edition": "payments",
-    "city": "Berlin",
-    "country": "Germany",
-    "region": "europe",
-    "venue": "w3.hub",
-    "startDate": "2026-10-01",
-    "endDate": "2026-10-03",
-    "url": "https://btcplusplus.dev/conf/berlin26",
-    "tags": [
-      "bitcoin",
-      "payments",
-      "lightning",
-      "developer tools"
-    ],
-    "airports": [
-      "BER"
-    ],
-    "directFlightFrom": [
-      "amsterdam",
-      "barcelona",
-      "copenhagen",
-      "dublin",
-      "helsinki",
-      "istanbul",
-      "lisbon",
-      "london",
-      "madrid",
-      "milan",
-      "oslo",
-      "paris",
-      "riga",
-      "rome",
-      "stockholm",
-      "vienna",
-      "warsaw",
-      "zurich"
-    ]
-  },
-  {
-    "id": "btcpp-seoul-2026",
-    "series": "BTC++",
-    "name": "BTC++ Seoul",
-    "edition": "privacy",
-    "city": "Seoul",
-    "country": "South Korea",
-    "region": "asia_pacific",
-    "venue": "Page Project",
-    "startDate": "2026-11-05",
-    "endDate": "2026-11-06",
-    "url": "https://btcplusplus.dev",
-    "tags": [
-      "bitcoin",
-      "privacy",
-      "cryptography",
-      "developer tools"
-    ],
-    "airports": [
-      "ICN",
-      "GMP"
-    ],
-    "directFlightFrom": [
-      "bangkok",
-      "beijing",
-      "cebu",
-      "fukuoka",
-      "hong kong",
-      "jakarta",
-      "kuala lumpur",
-      "los angeles",
-      "manila",
-      "osaka",
-      "san francisco",
-      "shanghai",
-      "singapore",
-      "taipei",
-      "tokyo",
-      "vancouver"
     ]
   }
 ]

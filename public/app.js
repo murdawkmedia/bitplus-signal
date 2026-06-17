@@ -42,6 +42,12 @@ function gateLabel(value) {
   return '<span class="gate-ok">Public</span>';
 }
 
+function reachPathHtml(value) {
+  if (!value) return "Blocked by gate.";
+  if (!String(value).startsWith("http")) return esc(value);
+  return `<a href="${esc(value)}" target="_blank" rel="noopener">${esc(value)}</a>`;
+}
+
 function filtered() {
   const q = state.q.toLowerCase();
   return state.signals.filter((row) => {
@@ -95,7 +101,7 @@ function openDrawer(row) {
     <p><span class="score ${scoreClass(row.score)}">${esc(row.score)}</span> ${esc(row.scoreBreakdown)}</p>
     <p>${esc(travelLabel(row.travelMatch))} from ${esc(row.locationHint || "unknown")}.</p>
     <h3>Public reach path</h3>
-    <p>${row.reachPath ? `<a href="${esc(row.reachPath)}" target="_blank" rel="noopener">${esc(row.reachPath)}</a>` : "Blocked by gate."}</p>
+    <p>${reachPathHtml(row.reachPath)}</p>
     <h3>Draft</h3>
     <p class="draft">${esc(row.draftPublicReply || "No draft generated.")}</p>
     <h3>Event</h3>
@@ -133,4 +139,3 @@ load().catch((error) => {
   $("statline").textContent = "Data load failed";
   $("rows").innerHTML = `<tr><td colspan="6">${esc(error.message || error)}</td></tr>`;
 });
-

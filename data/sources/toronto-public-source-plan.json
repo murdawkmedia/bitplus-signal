@@ -1,0 +1,87 @@
+{
+  "targetEventId": "btcpp-toronto-2026",
+  "targetEventName": "BTC++ Toronto",
+  "realDataPolicy": "Commit event/source metadata and synthetic fixtures only. Put real public lead imports under data/real/ and review before publishing.",
+  "eventFacts": {
+    "officialUrl": "https://btcplusplus.dev/conf/toronto",
+    "city": "Toronto",
+    "country": "Canada",
+    "venue": "The Great Hall",
+    "starts": "2026-07-22",
+    "ends": "2026-07-24",
+    "edition": "consensus"
+  },
+  "prioritySignals": [
+    "local Toronto or GTA Bitcoin developers",
+    "Canadian Bitcoin protocol, cryptography, wallet, or node contributors",
+    "builders in direct-flight seed cities such as Edmonton, Calgary, Vancouver, Montreal, Ottawa, Winnipeg, New York, Chicago, Boston, Seattle, San Francisco, Austin, and London",
+    "people already discussing consensus, protocol review, node policy, ossification, Bitcoin Core, wallets, Lightning, privacy, or open-source Bitcoin tooling",
+    "public attendees or side-event seekers around Toronto crypto events on July 21-24, 2026"
+  ],
+  "blockedSignals": [
+    "private DMs",
+    "login-gated or private Facebook groups",
+    "harvested emails or phone numbers",
+    "unreviewed ticket discount, speaker, sponsor, visa, or travel claims",
+    "automated replies, follows, likes, or form submissions"
+  ],
+  "lanes": [
+    {
+      "name": "Official BTC++ page",
+      "mode": "public_web",
+      "urls": ["https://btcplusplus.dev/conf/toronto"],
+      "useFor": "event facts, official language, ticket URL, topic framing"
+    },
+    {
+      "name": "Nostr public notes",
+      "mode": "public_relay_search",
+      "queries": [
+        "BTC++ Toronto",
+        "bitcoin consensus Toronto",
+        "Bitcoin protocol conference Canada",
+        "Bitcoin Core Toronto",
+        "bitcoin developer Toronto"
+      ],
+      "useFor": "public notes with reachable nostr:note provenance"
+    },
+    {
+      "name": "Reddit public web search",
+      "mode": "public_web_search",
+      "queries": [
+        "site:reddit.com/r/Bitcoin Toronto bitcoin developer conference July 2026",
+        "site:reddit.com/r/BitcoinCA Toronto Bitcoin meetup BTC++",
+        "site:reddit.com consensus bitcoin conference Canada July 2026"
+      ],
+      "useFor": "public posts only; no logged-in-only threads"
+    },
+    {
+      "name": "X public search",
+      "mode": "manual_or_api_search",
+      "queries": [
+        "\"BTC++ Toronto\"",
+        "\"bitcoin++\" Toronto",
+        "\"bitcoin consensus\" Toronto",
+        "\"Bitcoin protocol\" Canada conference"
+      ],
+      "useFor": "public posts with source URLs; no automated engagement"
+    },
+    {
+      "name": "Toronto Bitcoin communities",
+      "mode": "public_web",
+      "urls": [
+        "https://www.meetup.com/canadabitcoin/",
+        "https://www.reddit.com/r/BitcoinCA/comments/1mj8iq5/bitcoin_toronto_meetup_tonight/"
+      ],
+      "useFor": "community context and public event discovery, not member scraping"
+    },
+    {
+      "name": "Adjacent Toronto crypto events",
+      "mode": "public_web",
+      "urls": [
+        "https://futuristconference.com/",
+        "https://www.proofofconference.com/conferences/bitcoin-plus-plus-canada-2026.html"
+      ],
+      "useFor": "near-date audience context; outreach must distinguish BTC++ as a technical Bitcoin/protocol event"
+    }
+  ]
+}

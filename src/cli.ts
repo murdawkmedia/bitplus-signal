@@ -19,11 +19,13 @@ program
   .requiredOption("--events <file>", "Conference event JSON file")
   .requiredOption("--signals <file>", "Public signal CSV or JSON file")
   .requiredOption("--out <dir>", "Output directory for static JSON")
-  .action(async (options: { events: string; signals: string; out: string }) => {
+  .option("--event-id <id>", "Only build matches for one event")
+  .action(async (options: { events: string; signals: string; out: string; eventId?: string }) => {
     const meta = await buildStaticData({
       eventsFile: options.events,
       signalsFile: options.signals,
-      outDir: options.out
+      outDir: options.out,
+      eventId: options.eventId
     });
     console.log(`Built ${meta.matchCount} matches from ${meta.signalInputCount} public signals.`);
   });

@@ -4,6 +4,9 @@ Bitplus Signal is a public-intent finder for BTC++ and technical conference comm
 scores public posts, notes, and imported leads against upcoming conferences, then
 generates human-reviewed public reply drafts.
 
+The default demo now targets BTC++ Toronto: consensus edition, July 22-24, 2026
+at The Great Hall in Toronto, Canada.
+
 The first event pack is BTC++ 2026:
 
 - Nairobi, open source edition, June 17-19, 2026
@@ -13,9 +16,17 @@ The first event pack is BTC++ 2026:
 
 Sources:
 
+- BTC++ Toronto: https://btcplusplus.dev/conf/toronto
 - BTC++ home: https://btcplusplus.dev
 - BTC++ GitHub: https://github.com/btcplusplus
 - OpenRouter GLM 5.1 model id: `z-ai/glm-5.1`
+
+## Data Reality
+
+- Real data in the public repo: BTC++ event metadata and public source plans.
+- Synthetic data in the public repo: demo signal rows under `data/samples/`.
+- Real lead imports: store under `data/real/` or a reviewed CRM. `data/real/` is
+  ignored by git so public-source leads do not get published by accident.
 
 ## Safety Model
 
@@ -53,8 +64,9 @@ Build static data:
 ```powershell
 node dist/cli.js build `
   --events data/events/btcplusplus-2026.json `
-  --signals data/samples/signals.json `
-  --out public/data
+  --signals data/samples/toronto-signals.json `
+  --out public/data `
+  --event-id btcpp-toronto-2026
 ```
 
 Import public signals from CSV or JSON:
@@ -68,6 +80,8 @@ Search public Nostr relays:
 ```powershell
 node dist/cli.js scan-nostr --query "bitcoin++" --out data/samples/nostr.json
 ```
+
+Toronto target notes live in [`docs/TORONTO-TARGET.md`](docs/TORONTO-TARGET.md).
 
 ## Data Contract
 

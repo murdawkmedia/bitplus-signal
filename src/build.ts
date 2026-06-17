@@ -7,10 +7,17 @@ export interface BuildOptions {
   eventsFile: string;
   signalsFile: string;
   outDir: string;
+  eventId?: string;
 }
 
 export async function buildStaticData(options: BuildOptions): Promise<BuildMeta> {
-  const events = await readEvents(options.eventsFile);
+  const allEvents = await readEvents(options.eventsFile);
+  const events = options.eventId
+    ? allEvents.filter((event) => event.id === options.eventId)
+    : allEvents;
+  if (options.eventId && events.length === 0) {
+    throw new Error(`Unknown event id: ${options.eventId}`);
+  }
   const signals = await readSignals(options.signalsFile);
   const matches = buildMatches(events, signals);
   const meta: BuildMeta = {

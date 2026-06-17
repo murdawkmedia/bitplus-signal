@@ -1,0 +1,68 @@
+[
+  {
+    "id": "sample-toronto-local-consensus",
+    "platform": "sample",
+    "sourceUrl": "sample://toronto/local-consensus",
+    "publicName": "synthetic Toronto protocol dev",
+    "excerpt": "Toronto Bitcoin developer asking which July events focus on consensus changes, node policy, and protocol review instead of general crypto marketing.",
+    "postedAt": "2026-06-17",
+    "locationHint": "Toronto",
+    "topics": ["bitcoin", "consensus", "protocol", "developer tools"],
+    "visibility": "public"
+  },
+  {
+    "id": "sample-edmonton-direct-flight",
+    "platform": "sample",
+    "sourceUrl": "sample://toronto/edmonton-direct-flight",
+    "publicName": "synthetic Edmonton builder",
+    "excerpt": "Open-source Bitcoin contributor in Edmonton looking for a Canada-based developer conference reachable without a messy travel day.",
+    "postedAt": "2026-06-16",
+    "locationHint": "Edmonton",
+    "topics": ["bitcoin", "open source", "developer", "protocol"],
+    "visibility": "public"
+  },
+  {
+    "id": "sample-montreal-consensus",
+    "platform": "sample",
+    "sourceUrl": "sample://toronto/montreal-consensus",
+    "publicName": "synthetic Montreal researcher",
+    "excerpt": "Montreal cryptography researcher wants protocol-heavy Bitcoin events in Canada, especially anything with consensus and responsible ossification talks.",
+    "postedAt": "2026-06-14",
+    "locationHint": "Montreal",
+    "topics": ["bitcoin", "cryptography", "consensus", "protocol"],
+    "visibility": "public"
+  },
+  {
+    "id": "sample-new-york-protocol",
+    "platform": "sample",
+    "sourceUrl": "sample://toronto/new-york-protocol",
+    "publicName": "synthetic New York wallet engineer",
+    "excerpt": "Wallet engineer near New York is looking for deep Bitcoin protocol workshops after too many broad Web3 conference panels.",
+    "postedAt": "2026-06-12",
+    "locationHint": "New York",
+    "topics": ["bitcoin", "wallet", "protocol", "workshop"],
+    "visibility": "public"
+  },
+  {
+    "id": "sample-vancouver-builder",
+    "platform": "sample",
+    "sourceUrl": "sample://toronto/vancouver-builder",
+    "publicName": "synthetic Vancouver builder",
+    "excerpt": "Vancouver builder wants to meet other Bitcoin devs working on node tooling, review culture, and long-form technical sessions this summer.",
+    "postedAt": "2026-06-10",
+    "locationHint": "Vancouver",
+    "topics": ["bitcoin", "dev", "developer tools", "workshop"],
+    "visibility": "public"
+  },
+  {
+    "id": "sample-blocked-dm",
+    "platform": "sample",
+    "sourceUrl": "sample://toronto/blocked-dm",
+    "publicName": "synthetic blocked private message",
+    "excerpt": "Private DM asking whether a Bitcoin conference is worth attending.",
+    "postedAt": "2026-06-16",
+    "locationHint": "Toronto",
+    "topics": ["bitcoin", "conference"],
+    "visibility": "dm"
+  }
+]
