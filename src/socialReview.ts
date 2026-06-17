@@ -1,4 +1,5 @@
-import { PublicSignal } from "./types.js";
+import { classifyGeoAudience } from "./geoAudience.js";
+import { ConferenceEvent, PublicSignal } from "./types.js";
 
 export interface SocialReviewOptions {
   referenceDate?: string;
@@ -13,6 +14,7 @@ export interface BlockedSocialSignal {
     | "blocked_private"
     | "outside_date_window"
     | "duplicate_source"
+    | "far_scope_requires_bitcoin"
     | "low_target_quality";
 }
 
@@ -42,6 +44,25 @@ const LOCAL_REGIONAL_PATTERN = /\b(toronto|mississauga|brampton|hamilton|kitchen
 const THEME_PATTERN = /\b(bitcoin|ethereum|web3|crypto|cryptography|privacy|security|freedom tech|open source|open-source|open systems|ai|zk|zero knowledge|nostr|self custody|protocol|consensus|hackathon|developer|developers|builder|builders|software|devtools?|cipherpunk|cypherpunk)\b/i;
 
 const LOW_QUALITY_PATTERN = /\b(price|prices|trading|trader|traders|chart|charts|etf|inflow|inflows|outflow|outflows|market cap|moon|pump|dump|bullish|bearish|signal(s)?|token launch|airdrop)\b/i;
+
+const BITCOIN_FREEDOM_PATTERN = /\b(bitcoin|btc|lightning|nostr|self[-\s]?custody|bitcoin core|core dev|protocol|consensus|node policy|wallet|privacy|cryptography|censorship resistance|freedom tech|cipherpunk|cypherpunk)\b/i;
+
+const TORONTO_REVIEW_EVENT: ConferenceEvent = {
+  id: "btcpp-toronto-2026",
+  series: "BTC++",
+  name: "BTC++ Toronto",
+  edition: "consensus",
+  city: "Toronto",
+  country: "Canada",
+  region: "north_america",
+  venue: "The Great Hall",
+  startDate: "2026-07-22",
+  endDate: "2026-07-24",
+  url: "https://btcplusplus.dev/conf/toronto",
+  tags: ["bitcoin", "consensus", "protocol", "developer tools"],
+  airports: ["YYZ", "YTZ"],
+  directFlightFrom: ["atlanta", "austin", "boston", "calgary", "chicago", "dallas", "denver", "edmonton", "halifax", "london", "los angeles", "miami", "montreal", "new york", "ottawa", "san francisco", "seattle", "vancouver", "washington", "winnipeg"]
+};
 
 const PRIVATE_VISIBILITIES = new Set<PublicSignal["visibility"]>(["private", "dm", "login_gated"]);
 
@@ -100,32 +121,49 @@ function matchedEventRefs(text: string): string[] {
     .map((event) => event.ref);
 }
 
-function enrichSignal(signal: PublicSignal, refs: string[]): PublicSignal {
+function enrichSignal(signal: PublicSignal, refs: string[], audienceTag: string): PublicSignal {
   return {
     ...signal,
     topics: unique([
       ...signal.topics,
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      audienceTag
     ]),
     conferenceRefs: unique([...signal.conferenceRefs, ...refs])
   };
 }
 
-function highFit(signal: PublicSignal): { accepted: true; signal: PublicSignal } | { accepted: false; reason: "low_target_quality" } {
+function highFit(signal: PublicSignal): { accepted: true; signal: PublicSignal } | { accepted: false; reason: "far_scope_requires_bitcoin" | "low_target_quality" } {
   const text = signalText(signal);
   const refs = matchedEventRefs(eventText(signal));
+  const geo = classifyGeoAudience(signal, TORONTO_REVIEW_EVENT);
   const direct = refs.includes("btcpp-toronto-2026");
   const eventAdjacent = refs.some((ref) => ref.startsWith("adjacent:"));
   const regional = LOCAL_REGIONAL_PATTERN.test(text);
   const themed = THEME_PATTERN.test(text);
   const lowQuality = LOW_QUALITY_PATTERN.test(text) && !direct && !eventAdjacent;
+  const broadAllowed = geo.topicPolicy === "broad_allowed";
+  const bitcoinFreedomSpecific = BITCOIN_FREEDOM_PATTERN.test(text);
+  const localOrNear = geo.geoTier === "local_area" || geo.geoTier === "near_direct_3h";
+  const farBitcoinSpecific = !broadAllowed && bitcoinFreedomSpecific;
 
-  if (lowQuality || !(direct || eventAdjacent || (regional && themed))) {
+  if (lowQuality || !(direct || eventAdjacent || ((regional || localOrNear) && themed) || farBitcoinSpecific)) {
     return { accepted: false, reason: "low_target_quality" };
   }
 
-  return { accepted: true, signal: enrichSignal(signal, refs) };
+  if (!broadAllowed && !direct && !bitcoinFreedomSpecific) {
+    return { accepted: false, reason: "far_scope_requires_bitcoin" };
+  }
+
+  if (!(direct || eventAdjacent || ((regional || localOrNear) && themed) || farBitcoinSpecific)) {
+    return { accepted: false, reason: "low_target_quality" };
+  }
+
+  return {
+    accepted: true,
+    signal: enrichSignal(signal, refs, broadAllowed ? "broad-builder-near" : "bitcoin-only-far")
+  };
 }
 
 function reviewWithinWindow(signals: PublicSignal[], options: Required<SocialReviewOptions>): SocialReviewResult {

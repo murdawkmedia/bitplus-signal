@@ -36,6 +36,23 @@ Prioritize public signals from:
   Bitcoin tooling.
 - Public side-event seekers around Toronto crypto events on July 21-24, 2026.
 
+## Geo And Audience Policy
+
+Bitplus Signal now separates location fit from audience breadth:
+
+- Toronto, GTA, Ontario, nearby drive-region, and curated under-three-hour
+  direct-flight seeds can include the broader builder-crypto audience: Bitcoin,
+  Ethereum/Web3, privacy, AI/open-source, security, hackathons, and developer
+  tooling.
+- Longer direct-flight, far, international, or unknown-location rows stay in the
+  console only when the signal is Bitcoin/freedom-tech specific: Bitcoin,
+  Lightning, Nostr, self-custody, protocol, consensus, privacy, cryptography, or
+  censorship resistance.
+- The three-hour band is a targeting heuristic, not a live airline schedule or
+  travel promise.
+- Unknown Nostr/social rows are kept visible as Bitcoin-only/needs-location-
+  review instead of being silently removed.
+
 ## Operating Rules
 
 - Public provenance links only.

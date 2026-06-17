@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildMatches, gateSignal, scoreSignalForEvent, travelMatch } from "../src/scoring.js";
+import { buildMatches, classifyGeoAudience, gateSignal, scoreSignalForEvent, travelMatch } from "../src/scoring.js";
 import { ConferenceEvent, PublicSignal, TrustGraph } from "../src/types.js";
 
 const toronto: ConferenceEvent = {
@@ -16,7 +16,7 @@ const toronto: ConferenceEvent = {
   url: "https://btcplusplus.dev/conf/toronto",
   tags: ["bitcoin", "consensus", "protocol"],
   airports: ["YYZ"],
-  directFlightFrom: ["edmonton", "new york"]
+  directFlightFrom: ["edmonton", "new york", "san francisco"]
 };
 
 function signal(overrides: Partial<PublicSignal>): PublicSignal {
@@ -41,6 +41,47 @@ describe("scoring", () => {
     expect(travelMatch(signal({ locationHint: "Toronto" }), toronto)).toBe("local");
     expect(travelMatch(signal({ locationHint: "Edmonton" }), toronto)).toBe("direct_flight_seed");
     expect(local.score).toBeGreaterThan(direct.score);
+  });
+
+  it("classifies Toronto-area and near-direct cities for broad organizer targeting", () => {
+    const waterloo = classifyGeoAudience(signal({ locationHint: "Kitchener-Waterloo" }), toronto);
+    const boston = classifyGeoAudience(signal({ locationHint: "Boston, MA" }), toronto);
+
+    expect(waterloo.geoTier).toBe("local_area");
+    expect(waterloo.audienceScope).toBe("broad_builder_crypto");
+    expect(waterloo.topicPolicy).toBe("broad_allowed");
+    expect(boston.geoTier).toBe("near_direct_3h");
+    expect(boston.audienceScope).toBe("broad_builder_crypto");
+  });
+
+  it("classifies long-haul, alias, and unknown rows as bitcoin-only targeting", () => {
+    const austin = classifyGeoAudience(signal({ locationHint: "ATX" }), toronto);
+    const vancouver = classifyGeoAudience(signal({ locationHint: "Vancouver" }), toronto);
+    const unknown = classifyGeoAudience(signal({ locationHint: "🌎🌏🌍" }), toronto);
+
+    expect(austin).toMatchObject({
+      normalizedLocation: "austin",
+      geoTier: "long_direct_or_far",
+      audienceScope: "bitcoin_only"
+    });
+    expect(vancouver.geoTier).toBe("long_direct_or_far");
+    expect(vancouver.audienceScope).toBe("bitcoin_only");
+    expect(unknown.geoTier).toBe("unknown_location");
+    expect(unknown.audienceScope).toBe("bitcoin_only");
+    expect(unknown.topicPolicy).toBe("needs_location_review");
+  });
+
+  it("adds geo and audience policy to generated matches", () => {
+    const row = scoreSignalForEvent(signal({
+      locationHint: "San Francisco",
+      excerpt: "Bitcoin Core policy and consensus review notes.",
+      topics: ["bitcoin", "consensus"]
+    }), toronto);
+
+    expect(row.geoTier).toBe("long_direct_or_far");
+    expect(row.audienceScope).toBe("bitcoin_only");
+    expect(row.geoReason).toContain("longer");
+    expect(row.scoreBreakdown).toContain("G");
   });
 
   it("blocks private and DM rows from draft generation", () => {

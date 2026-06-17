@@ -59,6 +59,34 @@ describe("social review gate", () => {
     expect(result.published[0].locationHint).toBe("Waterloo");
   });
 
+  it("blocks far broad-builder rows unless they are bitcoin or freedom-tech specific", () => {
+    const result = reviewSocialSignals([
+      signal({
+        sourceUrl: "https://example.com/vancouver-broad",
+        locationHint: "Vancouver",
+        excerpt: "Toronto Tech Week hackathon recap for Web3, AI, and developer tooling.",
+        topics: ["hackathon", "web3", "open source", "developer tools"]
+      })
+    ]);
+
+    expect(result.published).toHaveLength(0);
+    expect(result.blocked[0]).toMatchObject({ reason: "far_scope_requires_bitcoin" });
+  });
+
+  it("keeps far bitcoin and protocol rows eligible for bitcoin-only targeting", () => {
+    const result = reviewSocialSignals([
+      signal({
+        sourceUrl: "https://example.com/vancouver-bitcoin",
+        locationHint: "Vancouver",
+        excerpt: "Bitcoin Core policy review group comparing consensus tradeoffs and self custody tooling.",
+        topics: ["bitcoin", "consensus", "self custody", "developer tools"]
+      })
+    ]);
+
+    expect(result.published).toHaveLength(1);
+    expect(result.published[0].topics).toContain("bitcoin-only-far");
+  });
+
   it("blocks generic trading news even when it mentions bitcoin", () => {
     const result = reviewSocialSignals([
       signal({

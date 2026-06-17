@@ -91,6 +91,9 @@ export type TrustGraph = z.infer<typeof TrustGraphSchema>;
 
 export type GateClass = "public_ok" | "public_ambiguous" | "blocked_private";
 export type TravelMatch = "local" | "direct_flight_seed" | "same_region" | "unknown";
+export type GeoTier = "local_area" | "near_direct_3h" | "long_direct_or_far" | "unknown_location";
+export type AudienceScope = "broad_builder_crypto" | "bitcoin_only";
+export type TopicPolicy = "broad_allowed" | "bitcoin_required" | "needs_location_review";
 export type DataMode = z.infer<typeof DataModeSchema>;
 
 export interface SignalMatch {
@@ -112,6 +115,11 @@ export interface SignalMatch {
   topics: string[];
   topicMatch: string[];
   travelMatch: TravelMatch;
+  geoTier: GeoTier;
+  audienceScope: AudienceScope;
+  topicPolicy: TopicPolicy;
+  normalizedLocation: string;
+  geoReason: string;
   gate: GateClass;
   dataMode: DataMode;
   sourceLane: string;

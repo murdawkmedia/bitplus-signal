@@ -6,7 +6,10 @@ import {
   TrustGraph,
   TravelMatch
 } from "./types.js";
+import { classifyGeoAudience } from "./geoAudience.js";
 import { trustSignalForEvent } from "./trust.js";
+
+export { classifyGeoAudience } from "./geoAudience.js";
 
 const TOPIC_KEYWORDS = [
   "bitcoin",
@@ -69,16 +72,20 @@ export function topicMatches(signal: PublicSignal, event: ConferenceEvent): stri
 export function travelMatch(signal: PublicSignal, event: ConferenceEvent): TravelMatch {
   const hint = clean(signal.locationHint || "");
   if (!hint || hint === "unknown") return "unknown";
-  if (hint.includes(clean(event.city)) || hint.includes(clean(event.country))) return "local";
-  if (event.directFlightFrom.some((city) => hint.includes(clean(city)))) return "direct_flight_seed";
+  const geo = classifyGeoAudience(signal, event);
+  if (geo.geoTier === "local_area") return "local";
+  if (geo.geoTier === "near_direct_3h" || event.directFlightFrom.some((city) => geo.normalizedLocation === clean(city))) {
+    return "direct_flight_seed";
+  }
   if ((REGION_HINTS[event.region] ?? []).some((regionHint) => hint.includes(regionHint))) return "same_region";
   return "unknown";
 }
 
-function travelScore(match: TravelMatch): number {
-  if (match === "local") return 30;
-  if (match === "direct_flight_seed") return 24;
-  if (match === "same_region") return 12;
+function geoScore(geoTier: ReturnType<typeof classifyGeoAudience>["geoTier"], match: TravelMatch): number {
+  if (geoTier === "local_area") return 30;
+  if (geoTier === "near_direct_3h") return 24;
+  if (geoTier === "long_direct_or_far") return 10;
+  if (match === "same_region") return 8;
   return 4;
 }
 
@@ -197,15 +204,16 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
   const gate = gateSignal(signal);
   const topics = topicMatches(signal, event);
   const travel = travelMatch(signal, event);
+  const geo = classifyGeoAudience(signal, event);
   const trust = gate === "blocked_private"
     ? { trustScore: 0, conferenceAffinityScore: 0, trustReasons: [] }
     : trustSignalForEvent(signal, event, graph);
   const topic = topicScore(topics);
-  const travelPoints = travelScore(travel);
+  const geoPoints = geoScore(geo.geoTier, travel);
   const fresh = freshnessScore(signal.postedAt);
   const engage = engagementScore(signal);
   const blockedPenalty = gate === "blocked_private" ? 100 : gate === "public_ambiguous" ? 12 : 0;
-  const score = Math.max(0, Math.min(100, topic + travelPoints + fresh + engage + trust.trustScore + trust.conferenceAffinityScore - blockedPenalty));
+  const score = Math.max(0, Math.min(100, topic + geoPoints + fresh + engage + trust.trustScore + trust.conferenceAffinityScore - blockedPenalty));
   const signalId = signal.id ?? "sig-unknown";
   const matchId = `${signalId}-${event.id}`;
   return {
@@ -227,6 +235,11 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
     topics: signal.topics,
     topicMatch: topics,
     travelMatch: travel,
+    geoTier: geo.geoTier,
+    audienceScope: geo.audienceScope,
+    topicPolicy: geo.topicPolicy,
+    normalizedLocation: geo.normalizedLocation,
+    geoReason: geo.geoReason,
     gate,
     dataMode: signal.dataMode,
     sourceLane: signal.sourceLane,
@@ -235,7 +248,7 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
     conferenceAffinityScore: trust.conferenceAffinityScore,
     trustReasons: trust.trustReasons,
     score,
-    scoreBreakdown: `v2:T${topic}+R${travelPoints}+F${fresh}+E${engage}+W${trust.trustScore}+C${trust.conferenceAffinityScore}-B${blockedPenalty}=${score}`,
+    scoreBreakdown: `v3:T${topic}+G${geoPoints}+F${fresh}+E${engage}+W${trust.trustScore}+C${trust.conferenceAffinityScore}-B${blockedPenalty}=${score}`,
     approvalStatus: gate === "blocked_private" ? "blocked_private" : "needs_human_review",
     reachPath: gate === "blocked_private" ? "" : signal.sourceUrl,
     draftPublicReply: gate === "blocked_private" ? "" : draft(signal, event, topics)

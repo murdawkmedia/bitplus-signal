@@ -21,29 +21,39 @@
   </header>
 
   <main>
-    <section class="rail" aria-label="Filters">
+    <section class="rail" id="filterRail" aria-label="Filters">
       <label>
         Event
         <select id="eventFilter"></select>
       </label>
       <label>
-        Source
-        <select id="platformFilter"></select>
-      </label>
-      <label>
-        Travel
-        <select id="travelFilter">
-          <option value="">Any travel fit</option>
-          <option value="local">Local</option>
-          <option value="direct_flight_seed">Direct-flight seed</option>
-          <option value="same_region">Same region</option>
-          <option value="unknown">Unknown</option>
-        </select>
-      </label>
-      <label>
         Search
         <input id="search" type="search" placeholder="consensus, Edmonton, protocol">
       </label>
+      <fieldset class="filter-group">
+        <legend>Platform</legend>
+        <div class="check-list" id="platformFilters"></div>
+      </fieldset>
+      <fieldset class="filter-group">
+        <legend>Source Lane</legend>
+        <div class="check-list" id="sourceLaneFilters"></div>
+      </fieldset>
+      <fieldset class="filter-group">
+        <legend>Geo</legend>
+        <div class="check-list" id="geoFilters"></div>
+      </fieldset>
+      <fieldset class="filter-group">
+        <legend>Audience</legend>
+        <div class="check-list" id="audienceFilters"></div>
+      </fieldset>
+      <fieldset class="filter-group">
+        <legend>Travel</legend>
+        <div class="check-list" id="travelFilters"></div>
+      </fieldset>
+      <fieldset class="filter-group wide">
+        <legend>Topic</legend>
+        <div class="check-list compact" id="topicFilters"></div>
+      </fieldset>
       <div class="source-panel" id="sourcePanel" aria-label="Source run summary"></div>
     </section>
 
