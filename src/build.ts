@@ -14,7 +14,7 @@ export async function buildStaticData(options: BuildOptions): Promise<BuildMeta>
   const signals = await readSignals(options.signalsFile);
   const matches = buildMatches(events, signals);
   const meta: BuildMeta = {
-    builtAt: new Date().toISOString(),
+    builtAt: process.env.BITPLUS_SIGNAL_BUILD_AT ?? "2026-06-17T00:00:00.000Z",
     eventCount: events.length,
     signalInputCount: signals.length,
     matchCount: matches.length,
@@ -26,4 +26,3 @@ export async function buildStaticData(options: BuildOptions): Promise<BuildMeta>
   await writeJson(path.join(options.outDir, "meta.json"), meta);
   return meta;
 }
-
