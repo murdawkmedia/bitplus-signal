@@ -42,4 +42,17 @@ describe("public dashboard organizer filters", () => {
     expect(app).not.toContain("state.platform && row.platform");
     expect(app).not.toContain("state.travel && row.travelMatch");
   });
+
+  it("surfaces source coverage for attempted blocked and zero-yield lanes", () => {
+    const html = fs.readFileSync("public/index.html", "utf8");
+    const app = fs.readFileSync("public/app.js", "utf8");
+
+    expect(html).toContain('id="sourceCoveragePanel"');
+    expect(app).toContain("renderSourceCoveragePanel");
+    expect(app).toContain("sourceCoverageRows");
+    expect(app).toContain("statusLabel");
+    expect(app).toContain("blocked_low_target_quality");
+    expect(app).toContain("blocked_missing_apify_token");
+    expect(app).toContain("zero_yield");
+  });
 });

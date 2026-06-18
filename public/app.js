@@ -107,6 +107,43 @@ function sourceLaneLabel(value) {
   return String(value || "unknown").replaceAll("_", " ");
 }
 
+function sourceFamily(sourceLane = "") {
+  if (sourceLane.startsWith("nostr")) return "Nostr";
+  if (sourceLane.includes("_x")) return "X";
+  if (sourceLane.includes("reddit")) return "Reddit";
+  if (sourceLane.includes("instagram")) return "Instagram";
+  if (sourceLane.includes("tiktok")) return "TikTok";
+  if (sourceLane.includes("facebook")) return "Facebook";
+  if (sourceLane.includes("linkedin")) return "LinkedIn";
+  if (sourceLane.includes("community")) return "Community";
+  if (sourceLane.includes("event") || sourceLane.includes("crossover")) return "Events";
+  return formatLabel(sourceLane || "Other");
+}
+
+function statusLabel(status = "") {
+  const value = String(status || "unknown");
+  if (value === "published_reviewed") return "Published";
+  if (value === "zero_yield") return "No public notes found";
+  if (value === "zero_yield_search_mismatch") return "Search mismatch";
+  if (value === "zero_yield_no_results_placeholders") return "No usable results";
+  if (value === "blocked_low_target_quality") return "Blocked: low fit";
+  if (value === "blocked_apify_usage_balance") return "Blocked: Apify balance";
+  if (value === "blocked_missing_apify_token") return "Not run: missing token";
+  return formatLabel(value);
+}
+
+function sourceCoverageRows() {
+  const lanes = state.sourceLog?.lanes || [];
+  return lanes.map((lane) => ({
+    ...lane,
+    family: sourceFamily(lane.sourceLane),
+    label: statusLabel(lane.status),
+    published: Number(lane.published || 0),
+    reviewed: Number(lane.reviewed || 0),
+    yielded: Number(lane.yielded || 0)
+  }));
+}
+
 function trustLabel(row) {
   const total = Number(row.trustScore || 0) + Number(row.conferenceAffinityScore || 0);
   if (!total) return '<span class="trust-zero">0</span>';
@@ -316,6 +353,46 @@ function renderSourcePanel() {
   `;
 }
 
+function renderSourceCoveragePanel() {
+  const panel = $("sourceCoveragePanel");
+  if (!panel) return;
+  const rows = sourceCoverageRows();
+  const families = new Map();
+  for (const row of rows) {
+    const current = families.get(row.family) ?? { published: 0, reviewed: 0, yielded: 0, blocked: 0, zero: 0, missing: 0 };
+    current.published += row.published;
+    current.reviewed += row.reviewed;
+    current.yielded += row.yielded;
+    if (String(row.status).startsWith("blocked")) current.blocked += 1;
+    if (String(row.status).startsWith("zero_yield")) current.zero += 1;
+    if (row.status === "blocked_missing_apify_token") current.missing += 1;
+    families.set(row.family, current);
+  }
+  const familyHtml = [...families.entries()].map(([family, counts]) => `
+    <div class="coverage-family">
+      <strong>${esc(family)}</strong>
+      <span>${esc(counts.published)} published / ${esc(counts.yielded)} yielded</span>
+      <em>${esc(counts.blocked)} blocked, ${esc(counts.zero)} zero, ${esc(counts.missing)} token</em>
+    </div>
+  `).join("");
+  panel.innerHTML = `
+    <details open>
+      <summary>Source coverage</summary>
+      <p class="coverage-note">Rows below show attempted lanes too, so missing platforms are visible even when nothing was safe to publish.</p>
+      <div class="coverage-families">${familyHtml}</div>
+      <div class="coverage-list">
+        ${rows.map((row) => `
+          <div class="coverage-lane ${esc(String(row.status || "unknown").replaceAll("_", "-"))}">
+            <span>${esc(row.family)} / ${esc(sourceLaneLabel(row.sourceLane))}</span>
+            <strong>${esc(row.label)}</strong>
+            <em>${esc(row.published)} published, ${esc(row.reviewed)} reviewed, ${esc(row.yielded)} yielded</em>
+          </div>
+        `).join("")}
+      </div>
+    </details>
+  `;
+}
+
 function renderTargeting(row) {
   return `
     <div class="targeting">
@@ -468,6 +545,7 @@ async function load() {
   state.sourceLog = sourceLog;
   populateFilters();
   renderSourcePanel();
+  renderSourceCoveragePanel();
   render();
 }
 
