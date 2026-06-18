@@ -105,6 +105,8 @@ trust slice to `data/reviewed/toronto-real-trust-slice.json`.
 
 Toronto target notes live in [`docs/TORONTO-TARGET.md`](docs/TORONTO-TARGET.md).
 Trust graph notes live in [`docs/TRUST-GRAPH.md`](docs/TRUST-GRAPH.md).
+The 3-minute pitch and door-to-door signal-map infographic live in
+[`docs/PITCH-3MIN.md`](docs/PITCH-3MIN.md).
 
 ## Data Contract
 
