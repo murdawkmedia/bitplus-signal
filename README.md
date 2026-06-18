@@ -107,6 +107,9 @@ Toronto target notes live in [`docs/TORONTO-TARGET.md`](docs/TORONTO-TARGET.md).
 Trust graph notes live in [`docs/TRUST-GRAPH.md`](docs/TRUST-GRAPH.md).
 The 3-minute pitch and door-to-door signal-map infographic live in
 [`docs/PITCH-3MIN.md`](docs/PITCH-3MIN.md).
+The fullscreen 16:10 judge deck lives at
+[`outputs/pitch-deck/bitplus-signal-fullscreen-pitch.pptx`](outputs/pitch-deck/bitplus-signal-fullscreen-pitch.pptx),
+with slide art direction in [`docs/DECK-PROMPTS.md`](docs/DECK-PROMPTS.md).
 
 ## Data Contract
 

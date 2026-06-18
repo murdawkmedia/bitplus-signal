@@ -47,6 +47,7 @@
     "review:social-historical": "tsx src/cli.ts review-social --base data/reviewed/toronto-real-signals.json --input data/reviewed/toronto-historical-public-signals.json data/real/apify-xquik-historical-backfill.json data/real/apify-reddit-historical-backfill.json data/real/apify-linkedin-historical-backfill.json data/real/apify-instagram-historical-backfill.json data/real/apify-tiktok-historical-backfill.json data/real/apify-facebook-historical-backfill.json --out data/reviewed/toronto-real-signals.json --blocked-out data/real/review-social-historical-blocked.json --reference-date 2026-06-17 --primary-window-days 180 --fallback-window-days 520 --fallback-threshold 10 --exclude-start-date 2026-04-18 --exclude-end-date 2026-06-17",
     "refresh:historical": "npm run scan:toronto:apify:historical && npm run review:social-historical && npm run build",
     "scan:private": "node scripts/private-scan.mjs",
+    "deck:build": "node scripts/build-pitch-deck.mjs",
     "verify": "npm run lint && npm test && npm run build && npm run scan:private"
   },
   "dependencies": {

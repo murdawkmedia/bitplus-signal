@@ -1,0 +1,17 @@
+Bitplus Signal fullscreen pitch deck QA
+
+Deck: bitplus-signal-fullscreen-pitch.pptx
+Slide size: 1707 x 1067 px, 16:10 landscape for Murphy's primary laptop display.
+Slide count: 8.
+
+Checks performed:
+- Rendered all slides to PNG under preview/.
+- Created contact sheet: bitplus-signal-fullscreen-pitch-contact-sheet.png.
+- Reviewed contact sheet for clipped titles, subtitle overlap, visible frame issues, and crowded cards.
+- Fixed shared header spacing after first QA pass.
+- Rebuilt final PPTX after the header fix.
+- Confirmed speaker notes are populated for each slide.
+- Confirmed deck content uses public repo facts only: 33 reviewed public signals, 6 source lanes, BTC++ Toronto July 22-24, 2026, and the documented safety rules.
+
+Known caveat:
+- Built-in Image 2.0 preview generation was used for direction, but the current Codex environment did not expose a reliable generated-image file path for direct PPTX embedding. The final deck therefore uses editable vector-style slide plates plus docs/DECK-PROMPTS.md as the Image 2.0 prompt ledger for every slide.

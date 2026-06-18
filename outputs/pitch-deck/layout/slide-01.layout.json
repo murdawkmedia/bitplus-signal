@@ -1,0 +1,1494 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/cicezg",
+    "id": "cicezg",
+    "slide": 1,
+    "layoutId": "76271d24-4386-4ec7-8d73-ebc857f07d78",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "1881b370-1b65-44ab-b8f0-5db0dbcab61d",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7EFD9",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1707,
+      "height": 1067
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Aptos",
+      "Georgia"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "76271d24-4386-4ec7-8d73-ebc857f07d78",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "1881b370-1b65-44ab-b8f0-5db0dbcab61d",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "1881b370-1b65-44ab-b8f0-5db0dbcab61d",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7qpg3ex0",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1707,
+        1067
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7EFD9",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0bi9s36h",
+      "id": "2",
+      "bbox": [
+        30,
+        30,
+        1647,
+        1007
+      ],
+      "geometry": "rect",
+      "lineColor": "#1F211C",
+      "lineWidth": 4
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pwb2hwfy",
+      "id": "3",
+      "bbox": [
+        48,
+        48,
+        1611,
+        971
+      ],
+      "geometry": "rect",
+      "lineColor": "#E8B942",
+      "lineWidth": 3
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ed8v6psf",
+      "id": "4",
+      "bbox": [
+        84,
+        1004,
+        1340,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#D8C592",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7y1kre1w",
+      "id": "5",
+      "bbox": [
+        84,
+        1018,
+        620,
+        26
+      ],
+      "geometry": "rect",
+      "text": "Bitplus Signal / BTC++ Toronto hackathon pitch",
+      "textPreview": "Bitplus Signal / BTC++ Toronto hackathon pitch",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "Aptos",
+        "color": "#6F6A58",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Bitplus Signal / BTC++ Toronto hackathon pitch"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Bitplus Signal / BTC++ Toronto hackathon pitch",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "typeface": "Aptos",
+            "color": "#6F6A58",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Bitplus Signal / BTC++ Toronto hackathon pitch",
+              "fontSize": 14,
+              "typeface": "Aptos",
+              "color": "#6F6A58",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wjudg7ad",
+      "id": "6",
+      "bbox": [
+        1510,
+        1008,
+        110,
+        34
+      ],
+      "geometry": "rect",
+      "text": "01",
+      "textPreview": "01",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "Aptos",
+        "color": "#B94D3E",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "Aptos",
+            "color": "#B94D3E",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01",
+              "fontSize": 20,
+              "typeface": "Aptos",
+              "color": "#B94D3E",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p4r65wju",
+      "id": "7",
+      "bbox": [
+        930,
+        310,
+        220,
+        310
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F2DCA8",
+      "lineColor": "#1F211C",
+      "lineWidth": 4
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih4byhgn",
+      "id": "8",
+      "bbox": [
+        958,
+        338,
+        160,
+        38
+      ],
+      "geometry": "rect",
+      "text": "ROUTE",
+      "textPreview": "ROUTE",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "Aptos",
+        "color": "#1F211C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ROUTE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ROUTE",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Aptos",
+            "color": "#1F211C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ROUTE",
+              "fontSize": 28,
+              "typeface": "Aptos",
+              "color": "#1F211C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72x4nap4",
+      "id": "9",
+      "bbox": [
+        960,
+        396,
+        156,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#2E6F72",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zqtcj6to",
+      "id": "10",
+      "bbox": [
+        960,
+        430,
+        156,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#6F6A58",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65wjudg7",
+      "id": "11",
+      "bbox": [
+        960,
+        464,
+        156,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#2E6F72",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwfyxobm",
+      "id": "12",
+      "bbox": [
+        960,
+        498,
+        156,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#6F6A58",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obm58z25",
+      "id": "13",
+      "bbox": [
+        960,
+        532,
+        156,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#2E6F72",
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zed8v6ps",
+      "id": "14",
+      "bbox": [
+        960,
+        566,
+        156,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#6F6A58",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6xkf6dcb",
+      "id": "15",
+      "bbox": [
+        1220,
+        372,
+        66,
+        66
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E8B942",
+      "lineColor": "#1F211C",
+      "lineWidth": 4
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hk3q5o7q",
+      "id": "16",
+      "bbox": [
+        1252,
+        438,
+        6,
+        142
+      ],
+      "geometry": "rect",
+      "fillColor": "#1F211C",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oza1gvy9",
+      "id": "17",
+      "bbox": [
+        1200,
+        490,
+        108,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#1F211C",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z61032ls",
+      "id": "18",
+      "bbox": [
+        1254,
+        578,
+        52,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#1F211C",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al87ed8b",
+      "id": "19",
+      "bbox": [
+        1206,
+        578,
+        52,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#1F211C",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih4byhgn",
+      "id": "20",
+      "bbox": [
+        1360,
+        350,
+        70,
+        238
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#7B4D2F",
+      "lineColor": "#1F211C",
+      "lineWidth": 4
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72x4nap4",
+      "id": "21",
+      "bbox": [
+        1410,
+        468,
+        12,
+        12
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E8B942",
+      "lineColor": "#1F211C",
+      "lineWidth": 2
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0nuxc3yl",
+      "id": "22",
+      "bbox": [
+        1040,
+        190,
+        460,
+        500
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFAF0",
+      "lineColor": "#1F211C",
+      "lineWidth": 4
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p8nqxs72",
+      "id": "23",
+      "bbox": [
+        1080,
+        230,
+        360,
+        36
+      ],
+      "geometry": "rect",
+      "text": "Top Opportunities",
+      "textPreview": "Top Opportunities",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "Aptos",
+        "color": "#174F52",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Top Opportunities"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Top Opportunities",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Aptos",
+            "color": "#174F52",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Top Opportunities",
+              "fontSize": 28,
+              "typeface": "Aptos",
+              "color": "#174F52",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itgfmlkj",
+      "id": "24",
+      "bbox": [
+        1080,
+        298,
+        380,
+        76
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#EAF4EE",
+      "lineColor": "#D8C592",
+      "lineWidth": 2
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ed8bat4",
+      "id": "25",
+      "bbox": [
+        1102,
+        312,
+        260,
+        24
+      ],
+      "geometry": "rect",
+      "text": "BTC++ Toronto",
+      "textPreview": "BTC++ Toronto",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "Aptos",
+        "color": "#1F211C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BTC++ Toronto"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BTC++ Toronto",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Aptos",
+            "color": "#1F211C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "BTC++ Toronto",
+              "fontSize": 21,
+              "typeface": "Aptos",
+              "color": "#1F211C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0z61032l",
+      "id": "26",
+      "bbox": [
+        1102,
+        340,
+        260,
+        20
+      ],
+      "geometry": "rect",
+      "text": "official event context",
+      "textPreview": "official event context",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "Aptos",
+        "color": "#6F6A58",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "official event context"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "official event context",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "typeface": "Aptos",
+            "color": "#6F6A58",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "official event context",
+              "fontSize": 15,
+              "typeface": "Aptos",
+              "color": "#6F6A58",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pkzupwb2",
+      "id": "27",
+      "bbox": [
+        1400,
+        320,
+        30,
+        30
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#2E6F72",
+      "lineColor": "#1F211C",
+      "lineWidth": 2
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i5sneloj",
+      "id": "28",
+      "bbox": [
+        1080,
+        406,
+        380,
+        76
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F8EED2",
+      "lineColor": "#D8C592",
+      "lineWidth": 2
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7qpg3ex0",
+      "id": "29",
+      "bbox": [
+        1102,
+        420,
+        260,
+        24
+      ],
+      "geometry": "rect",
+      "text": "NDC Toronto",
+      "textPreview": "NDC Toronto",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "Aptos",
+        "color": "#1F211C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "NDC Toronto"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "NDC Toronto",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Aptos",
+            "color": "#1F211C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "NDC Toronto",
+              "fontSize": 21,
+              "typeface": "Aptos",
+              "color": "#1F211C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xobm58z2",
+      "id": "30",
+      "bbox": [
+        1102,
+        448,
+        260,
+        20
+      ],
+      "geometry": "rect",
+      "text": "developer crossover",
+      "textPreview": "developer crossover",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "Aptos",
+        "color": "#6F6A58",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "developer crossover"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "developer crossover",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "typeface": "Aptos",
+            "color": "#6F6A58",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "developer crossover",
+              "fontSize": 15,
+              "typeface": "Aptos",
+              "color": "#6F6A58",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83itgfml",
+      "id": "31",
+      "bbox": [
+        1400,
+        428,
+        30,
+        30
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E8B942",
+      "lineColor": "#1F211C",
+      "lineWidth": 2
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fil0rqd4",
+      "id": "32",
+      "bbox": [
+        1080,
+        514,
+        380,
+        76
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F8EED2",
+      "lineColor": "#D8C592",
+      "lineWidth": 2
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxs72x4n",
+      "id": "33",
+      "bbox": [
+        1102,
+        528,
+        260,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Nostr builders",
+      "textPreview": "Nostr builders",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "Aptos",
+        "color": "#1F211C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Nostr builders"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Nostr builders",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Aptos",
+            "color": "#1F211C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Nostr builders",
+              "fontSize": 21,
+              "typeface": "Aptos",
+              "color": "#1F211C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x0nuxc3y",
+      "id": "34",
+      "bbox": [
+        1102,
+        556,
+        260,
+        20
+      ],
+      "geometry": "rect",
+      "text": "trust graph clue",
+      "textPreview": "trust graph clue",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "Aptos",
+        "color": "#6F6A58",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "trust graph clue"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "trust graph clue",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "typeface": "Aptos",
+            "color": "#6F6A58",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "trust graph clue",
+              "fontSize": 15,
+              "typeface": "Aptos",
+              "color": "#6F6A58",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fu18jqh",
+      "id": "35",
+      "bbox": [
+        1400,
+        536,
+        30,
+        30
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E8B942",
+      "lineColor": "#1F211C",
+      "lineWidth": 2
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fu18jqh0",
+      "id": "36",
+      "bbox": [
+        720,
+        520,
+        250,
+        8
+      ],
+      "geometry": "rect",
+      "fillColor": "#B94D3E",
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m94fu18j",
+      "id": "37",
+      "bbox": [
+        950,
+        500,
+        34,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#B94D3E",
+      "lineWidth": 0
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xc3ylc7u",
+      "id": "38",
+      "bbox": [
+        84,
+        190,
+        780,
+        92
+      ],
+      "geometry": "rect",
+      "text": "Bitplus Signal",
+      "textPreview": "Bitplus Signal",
+      "resolvedFontSize": 76,
+      "resolvedTextStyle": {
+        "fontSize": 76,
+        "typeface": "Georgia",
+        "color": "#1F211C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Bitplus Signal"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Bitplus Signal",
+          "resolvedTextStyle": {
+            "fontSize": 76,
+            "typeface": "Georgia",
+            "color": "#1F211C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Bitplus Signal",
+              "fontSize": 76,
+              "typeface": "Georgia",
+              "color": "#1F211C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4r65wjud",
+      "id": "39",
+      "bbox": [
+        92,
+        304,
+        650,
+        92
+      ],
+      "geometry": "rect",
+      "text": "Door-to-door fieldcraft for public conference signal mapping.",
+      "textPreview": "Door-to-door fieldcraft for public conference signal mapping.",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "Aptos",
+        "color": "#6F6A58",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Door-to-door fieldcraft for public conference signal"
+          },
+          {
+            "index": 2,
+            "text": "mapping."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Door-to-door fieldcraft for public conference signal mapping.",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "typeface": "Aptos",
+            "color": "#6F6A58",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Door-to-door fieldcraft for public conference signal mapping.",
+              "fontSize": 30,
+              "typeface": "Aptos",
+              "color": "#6F6A58",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvixczed",
+      "id": "40",
+      "bbox": [
+        92,
+        440,
+        220,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#2E6F72",
+      "lineColor": "#1F211C",
+      "lineWidth": 2
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5gbq1ory",
+      "id": "41",
+      "bbox": [
+        110,
+        450,
+        184,
+        24
+      ],
+      "geometry": "rect",
+      "text": "BTC++ Toronto",
+      "textPreview": "BTC++ Toronto",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "Aptos",
+        "color": "#1F211C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BTC++ Toronto"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BTC++ Toronto",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Aptos",
+            "color": "#1F211C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "BTC++ Toronto",
+              "fontSize": 17,
+              "typeface": "Aptos",
+              "color": "#1F211C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/upwb2hwf",
+      "id": "42",
+      "bbox": [
+        338,
+        450,
+        430,
+        28
+      ],
+      "geometry": "rect",
+      "text": "July 22-24, 2026 / The Great Hall",
+      "textPreview": "July 22-24, 2026 / The Great Hall",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "Aptos",
+        "color": "#1F211C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "July 22-24, 2026 / The Great Hall"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "July 22-24, 2026 / The Great Hall",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "Aptos",
+            "color": "#1F211C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "July 22-24, 2026 / The Great Hall",
+              "fontSize": 20,
+              "typeface": "Aptos",
+              "color": "#1F211C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nap4r65w",
+      "id": "43",
+      "bbox": [
+        92,
+        760,
+        760,
+        84
+      ],
+      "geometry": "rect",
+      "text": "A judge-ready open-source demo that turns scattered public intent into a short human review queue.",
+      "textPreview": "A judge-ready open-source demo that turns scattered public intent into a short human review queue.",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "fontSize": 27,
+        "typeface": "Aptos",
+        "color": "#1F211C",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A judge-ready open-source demo that turns scattered public intent"
+          },
+          {
+            "index": 2,
+            "text": "into a short human review queue."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A judge-ready open-source demo that turns scattered public intent into a short human review queue.",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Aptos",
+            "color": "#1F211C",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A judge-ready open-source demo that turns scattered public intent into a short human review queue.",
+              "fontSize": 27,
+              "typeface": "Aptos",
+              "color": "#1F211C",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
