@@ -119,4 +119,38 @@ describe("social review gate", () => {
     expect(result.published).toHaveLength(1);
     expect(result.blocked.some((row) => row.reason === "duplicate_source")).toBe(true);
   });
+
+  it("publishes event attendance, speaker, sponsor, and host intent posts", () => {
+    const result = reviewSocialSignals([
+      signal({
+        sourceUrl: "https://example.com/speaker",
+        excerpt: "I am speaking at Canada Crypto Week in Toronto about privacy and self custody.",
+        topics: ["privacy", "self custody", "speaker"],
+        locationHint: "Toronto"
+      }),
+      signal({
+        sourceUrl: "https://example.com/sponsor",
+        excerpt: "Our team is sponsoring a Blockchain Futurist side event for open-source builders.",
+        topics: ["open source", "builders", "sponsor"],
+        locationHint: "Toronto"
+      })
+    ], { fallbackThreshold: 1 });
+
+    expect(result.published).toHaveLength(2);
+    expect(result.published.every((row) => row.topics.includes("public-intent"))).toBe(true);
+  });
+
+  it("blocks generic adjacent-event mentions when no public intent is present", () => {
+    const result = reviewSocialSignals([
+      signal({
+        sourceUrl: "https://example.com/generic",
+        excerpt: "Canada Crypto Week is coming to Toronto and crypto markets are watching.",
+        topics: ["crypto"],
+        locationHint: "Toronto"
+      })
+    ]);
+
+    expect(result.published).toHaveLength(0);
+    expect(result.blocked[0]).toMatchObject({ reason: "low_target_quality" });
+  });
 });

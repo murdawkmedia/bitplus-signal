@@ -1,0 +1,8 @@
+{
+  "searchQuery": "BTC++ Toronto OR btcplusplus Toronto OR btcpp.dev Toronto OR bitcoin++ Toronto OR Canada Crypto Week Toronto OR Blockchain Futurist Toronto OR ETHToronto OR ETHWomen Toronto OR AI Futurist Toronto OR Toronto BitDevs OR Toronto Bitcoin Core OR Toronto Nostr OR Toronto privacy tech OR Toronto cryptography OR Toronto open source hackathon OR Waterloo hackathon crypto OR Mississauga hackathon Web3",
+  "maxPosts": 300,
+  "maxPostsPerSource": 300,
+  "sort": "new",
+  "includeComments": false,
+  "outputFormat": "default"
+}

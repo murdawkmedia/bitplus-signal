@@ -1,0 +1,29 @@
+{
+  "startUrls": [
+    "https://x.com/btcplusplus",
+    "https://x.com/Futurist_conf",
+    "https://x.com/Ethereum_Women"
+  ],
+  "searchTerms": [
+    "BTC++ Toronto",
+    "btcplusplus Toronto",
+    "btcpp.dev Toronto",
+    "bitcoin++ Toronto",
+    "Canada Crypto Week Toronto speaker",
+    "Blockchain Futurist Toronto side event",
+    "ETHToronto Toronto builders",
+    "ETHWomen Toronto sponsor",
+    "AI Futurist Toronto open source",
+    "Toronto BitDevs Bitcoin Core",
+    "Toronto Nostr self custody",
+    "Toronto privacy protocol consensus",
+    "Toronto hackathon cryptography",
+    "Waterloo hackathon Bitcoin privacy",
+    "Mississauga hackathon open source crypto",
+    "Hamilton Kitchener Toronto Web3 developer event"
+  ],
+  "maxItems": 300,
+  "includeSearchTerms": true,
+  "queryType": "Latest",
+  "lang": "en"
+}

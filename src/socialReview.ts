@@ -49,6 +49,18 @@ const LOW_QUALITY_PATTERN = /\b(price|prices|trading|trader|traders|chart|charts
 
 const BITCOIN_FREEDOM_PATTERN = /\b(bitcoin|btc|lightning|nostr|self[-\s]?custody|bitcoin core|core dev|protocol|consensus|node policy|wallet|privacy|cryptography|censorship resistance|freedom tech|cipherpunk|cypherpunk)\b/i;
 
+const PUBLIC_INTENT_PATTERN = /\b(attending|going to|speaking at|speaker|presenting|talking at|hosting|hosted by|host|side event|side events|sponsoring|sponsor|sponsored|booth|meet us|join us|we are at|we're at|we will be at|we'll be at|i am at|i'm at|building|shipping|demo|workshop|panel)\b/i;
+
+const CROSSOVER_REFS_REQUIRING_INTENT = new Set([
+  "adjacent:canada-crypto-week",
+  "adjacent:blockchain-futurist",
+  "adjacent:ethtoronto",
+  "adjacent:ethwomen",
+  "adjacent:ai-futurist"
+]);
+
+const EVENT_PAGE_LANES = new Set(["adjacent_event_official", "conference_window_crossover"]);
+
 const TORONTO_REVIEW_EVENT: ConferenceEvent = {
   id: "btcpp-toronto-2026",
   series: "BTC++",
@@ -123,14 +135,15 @@ function matchedEventRefs(text: string): string[] {
     .map((event) => event.ref);
 }
 
-function enrichSignal(signal: PublicSignal, refs: string[], audienceTag: string): PublicSignal {
+function enrichSignal(signal: PublicSignal, refs: string[], audienceTag: string, publicIntent: boolean): PublicSignal {
   return {
     ...signal,
     topics: unique([
       ...signal.topics,
       "builder-crypto-broad",
       "freedom-tech-adjacent",
-      audienceTag
+      audienceTag,
+      publicIntent ? "public-intent" : ""
     ]),
     conferenceRefs: unique([...signal.conferenceRefs, ...refs])
   };
@@ -145,12 +158,19 @@ function highFit(signal: PublicSignal): { accepted: true; signal: PublicSignal }
   const regional = LOCAL_REGIONAL_PATTERN.test(text);
   const themed = THEME_PATTERN.test(text);
   const lowQuality = LOW_QUALITY_PATTERN.test(text) && !direct && !eventAdjacent;
+  const publicIntent = PUBLIC_INTENT_PATTERN.test(text);
+  const eventPageSource = EVENT_PAGE_LANES.has(signal.sourceLane);
+  const crossoverRequiresIntent = refs.some((ref) => CROSSOVER_REFS_REQUIRING_INTENT.has(ref));
   const broadAllowed = geo.topicPolicy === "broad_allowed";
   const bitcoinFreedomSpecific = BITCOIN_FREEDOM_PATTERN.test(text);
   const localOrNear = geo.geoTier === "local_area" || geo.geoTier === "near_direct_3h";
   const farBitcoinSpecific = !broadAllowed && bitcoinFreedomSpecific;
 
   if (lowQuality || !(direct || eventAdjacent || ((regional || localOrNear) && themed) || farBitcoinSpecific)) {
+    return { accepted: false, reason: "low_target_quality" };
+  }
+
+  if (crossoverRequiresIntent && !eventPageSource && !publicIntent && !direct) {
     return { accepted: false, reason: "low_target_quality" };
   }
 
@@ -164,7 +184,7 @@ function highFit(signal: PublicSignal): { accepted: true; signal: PublicSignal }
 
   return {
     accepted: true,
-    signal: enrichSignal(signal, refs, broadAllowed ? "broad-builder-near" : "bitcoin-only-far")
+    signal: enrichSignal(signal, refs, broadAllowed ? "broad-builder-near" : "bitcoin-only-far", publicIntent)
   };
 }
 

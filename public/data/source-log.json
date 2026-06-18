@@ -9,6 +9,13 @@
     "rankingPreference": "builder/crypto broad; bitcoin/freedom-tech strongest; ethereum, web3, zk, AI, privacy, security, open-source, and hackathons allowed when local and technical",
     "reviewOutcome": "official adjacent-event seeds plus one public LinkedIn post published; broad Reddit hits blocked; X, TikTok, and Facebook canaries blocked by remaining Apify usage balance"
   },
+  "subscribedSocialSweep": {
+    "configuredAt": "2026-06-18",
+    "primaryWindow": "2026-05-18/2026-06-17",
+    "fallbackWindow": "2026-04-18/2026-06-17",
+    "rankingPreference": "builder/crypto broad with stronger promotion for public attendance, speaking, sponsoring, hosting, building, and official crossover event context",
+    "reviewOutcome": "configured but not executed in this shell because APIFY_TOKEN/APIFY_API_TOKEN was unavailable"
+  },
   "lanes": [
     {
       "sourceLane": "nostr_graph",
@@ -171,6 +178,60 @@
       "reviewed": 0,
       "published": 0,
       "status": "blocked_apify_usage_balance"
+    },
+    {
+      "sourceLane": "apify_x_subscribed",
+      "query": "Subscribed Xquik sweep for BTC++ Toronto plus Canada Crypto Week, Blockchain Futurist, ETHToronto, ETHWomen, AI Futurist, BitDevs, Nostr, privacy, protocol, consensus, and regional hackathons",
+      "rawSource": "data/real/apify-xquik-subscribed-sweep.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_reddit_subscribed",
+      "query": "Subscribed Reddit public search for BTC++ Toronto, crossover events, Toronto Bitcoin, Nostr, privacy, cryptography, open-source hackathons, Waterloo and Mississauga crypto builder terms",
+      "rawSource": "data/real/apify-reddit-subscribed-sweep.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_linkedin_subscribed",
+      "query": "Subscribed public/no-cookie LinkedIn search for BTC++ Toronto, crossover event speaker/sponsor/builders, BitDevs, Bitcoin Core, privacy, self-custody, protocol, consensus, and regional hackathons",
+      "rawSource": "data/real/apify-linkedin-subscribed-sweep.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_instagram_subscribed",
+      "query": "Subscribed public Instagram hashtag sweep for BTC++/Bitcoin++ Toronto, Canada Crypto Week, Blockchain Futurist, ETHToronto, ETHWomen, AI Futurist, Toronto Tech Week, Nostr, and self-custody",
+      "rawSource": "data/real/apify-instagram-subscribed-sweep.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_tiktok_subscribed",
+      "query": "Subscribed public TikTok search/hashtag sweep for BTC++ Toronto, Canada Crypto Week, Blockchain Futurist, ETHToronto, ETHWomen, AI Futurist, Bitcoin Core, Nostr, privacy tech, and regional hackathons",
+      "rawSource": "data/real/apify-tiktok-subscribed-sweep.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_facebook_subscribed",
+      "query": "Subscribed public Facebook page/search sweep for BTC++ Toronto, Canada Crypto Week, Blockchain Futurist, ETHToronto, ETHWomen, AI Futurist, Toronto Bitcoin, privacy tech, and crypto hackathon terms",
+      "rawSource": "data/real/apify-facebook-subscribed-sweep.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
     }
   ]
 }

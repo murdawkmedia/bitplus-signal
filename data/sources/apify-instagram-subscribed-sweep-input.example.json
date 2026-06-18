@@ -1,0 +1,8 @@
+{
+  "search": "#btcplusplus, #bitcoinplusplus, #torontobitcoin, #canadacryptoweek, #blockchainfuturist, #ethtoronto, #ethwomen, #aifuturist, #torontotechweek, #torontohackathon, #waterloohackathon, #nostr, #selfcustody",
+  "searchType": "hashtag",
+  "searchLimit": 16,
+  "resultsType": "posts",
+  "resultsLimit": 150,
+  "onlyPostsNewerThan": "2026-04-18"
+}

@@ -30,43 +30,68 @@
         Search
         <input id="search" type="search" placeholder="consensus, Edmonton, protocol">
       </label>
-      <fieldset class="filter-group">
-        <legend>Platform</legend>
-        <div class="check-list" id="platformFilters"></div>
-      </fieldset>
-      <fieldset class="filter-group">
-        <legend>Source Lane</legend>
-        <div class="check-list" id="sourceLaneFilters"></div>
-      </fieldset>
-      <fieldset class="filter-group">
-        <legend>Geo</legend>
-        <div class="check-list" id="geoFilters"></div>
-      </fieldset>
-      <fieldset class="filter-group">
-        <legend>Audience</legend>
-        <div class="check-list" id="audienceFilters"></div>
-      </fieldset>
-      <fieldset class="filter-group">
-        <legend>Evidence</legend>
-        <label class="check-row trust-toggle">
-          <input id="includeTrustCandidates" type="checkbox">
-          <span>Include trust candidates</span>
-          <em>off</em>
-        </label>
-        <div class="check-list" id="evidenceFilters"></div>
-      </fieldset>
-      <fieldset class="filter-group">
-        <legend>Travel</legend>
-        <div class="check-list" id="travelFilters"></div>
-      </fieldset>
-      <fieldset class="filter-group wide">
-        <legend>Topic</legend>
-        <div class="check-list compact" id="topicFilters"></div>
-      </fieldset>
+      <details id="advancedFilters" class="advanced-filters">
+        <summary>Advanced filters</summary>
+        <fieldset class="filter-group">
+          <legend>Platform</legend>
+          <div class="check-list" id="platformFilters"></div>
+        </fieldset>
+        <fieldset class="filter-group">
+          <legend>Source Lane</legend>
+          <div class="check-list" id="sourceLaneFilters"></div>
+        </fieldset>
+        <fieldset class="filter-group">
+          <legend>Geo</legend>
+          <div class="check-list" id="geoFilters"></div>
+        </fieldset>
+        <fieldset class="filter-group">
+          <legend>Audience</legend>
+          <div class="check-list" id="audienceFilters"></div>
+        </fieldset>
+        <fieldset class="filter-group">
+          <legend>Evidence</legend>
+          <label class="check-row trust-toggle">
+            <input id="includeTrustCandidates" type="checkbox">
+            <span>Include trust candidates</span>
+            <em>off</em>
+          </label>
+          <div class="check-list" id="evidenceFilters"></div>
+        </fieldset>
+        <fieldset class="filter-group">
+          <legend>Travel</legend>
+          <div class="check-list" id="travelFilters"></div>
+        </fieldset>
+        <fieldset class="filter-group wide">
+          <legend>Topic</legend>
+          <div class="check-list compact" id="topicFilters"></div>
+        </fieldset>
+      </details>
       <div class="source-panel" id="sourcePanel" aria-label="Source run summary"></div>
     </section>
 
     <section class="board" aria-label="Ranked public signals">
+      <section class="demo-panel" id="demoScriptPanel" aria-label="Demo script">
+        <div>
+          <span class="eyebrow">3 minute demo</span>
+          <h2>What should BTC++ Toronto look at next?</h2>
+        </div>
+        <ol>
+          <li>Start with top opportunities.</li>
+          <li>Open one row for provenance.</li>
+          <li>Review the suggested public reply.</li>
+          <li>Use Advanced only when narrowing by platform or source lane.</li>
+        </ol>
+      </section>
+      <section class="opportunities" aria-label="Top opportunities">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Default view</span>
+            <h2>Top Opportunities</h2>
+          </div>
+          <p>3 to 5 high-fit public rows worth human review before posting anything.</p>
+        </div>
+        <div class="opportunity-grid" id="topOpportunityCards"></div>
+      </section>
       <div class="board-toolbar">
         <div class="sort-status" id="sortStatus">Sort: score desc</div>
         <div class="board-actions">

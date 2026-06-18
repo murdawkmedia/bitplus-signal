@@ -1,0 +1,27 @@
+{
+  "searchQueries": [
+    "BTC++ Toronto",
+    "btcplusplus Toronto",
+    "btcpp.dev Toronto",
+    "bitcoin++ Toronto",
+    "Canada Crypto Week Toronto speaker sponsor",
+    "Blockchain Futurist Toronto side event builders",
+    "ETHToronto 2026 developers",
+    "ETHWomen Toronto Web3 builders",
+    "AI Futurist Toronto open source AI",
+    "Toronto BitDevs Bitcoin Core protocol",
+    "Toronto privacy cryptography meetup",
+    "Toronto self custody protocol consensus",
+    "Toronto Tech Week hackathon crypto",
+    "Waterloo hackathon crypto privacy",
+    "Mississauga hackathon open source blockchain"
+  ],
+  "maxPosts": 300,
+  "datePosted": "past-month",
+  "maxSearchPages": 12,
+  "providerOrder": "scrapecreators-first",
+  "enrichPostDetails": false,
+  "includeComments": false,
+  "outputMode": "compact",
+  "includeRawData": false
+}

@@ -81,6 +81,16 @@ function evidenceLabel(value) {
   }[value] || formatLabel(value);
 }
 
+function qualityLabel(value) {
+  return {
+    reply_target: "Reply target",
+    event_context: "Event context",
+    research_lead: "Research lead",
+    trust_candidate: "Trust candidate",
+    blocked: "Blocked"
+  }[value] || formatLabel(value);
+}
+
 function gateLabel(value) {
   if (value === "blocked_private") return '<span class="gate-blocked">Blocked</span>';
   if (value === "public_ambiguous") return '<span class="gate-blocked">Review gate</span>';
@@ -121,6 +131,45 @@ function rowEvidenceLevel(row) {
   return row.evidenceLevel || (row.sourceLane === "nostr_graph" ? "trust_candidate" : "public_content");
 }
 
+function rowQualityClass(row) {
+  if (row.qualityClass) return row.qualityClass;
+  if (row.gate === "blocked_private") return "blocked";
+  if (rowEvidenceLevel(row) === "trust_candidate") return "trust_candidate";
+  if (["official_event_page", "crossover_event_page"].includes(rowEvidenceLevel(row))) return "event_context";
+  return row.draftPublicReply ? "reply_target" : "research_lead";
+}
+
+function whyItMatters(row) {
+  const qualityClass = rowQualityClass(row);
+  if (qualityClass === "reply_target") {
+    return "Public post with enough context for a human-reviewed BTC++ account reply.";
+  }
+  if (qualityClass === "event_context") {
+    return "Official or crossover event context that can reveal nearby builder audiences.";
+  }
+  if (qualityClass === "research_lead") {
+    return "Useful public signal, but it needs one more evidence pass before outreach.";
+  }
+  if (qualityClass === "trust_candidate") {
+    return "Trust-graph clue only. Hidden by default and no draft is generated.";
+  }
+  return "Blocked by safety or source-quality policy.";
+}
+
+function confidenceLabel(row) {
+  const score = Number(row.score || 0);
+  if (score >= 80) return "High";
+  if (score >= 60) return "Good";
+  if (score >= 35) return "Review";
+  return "Low";
+}
+
+function truncate(value, length = 180) {
+  const text = String(value || "").trim();
+  if (text.length <= length) return text;
+  return `${text.slice(0, length - 1).trim()}...`;
+}
+
 function matchesSet(set, value) {
   return set.size === 0 || set.has(String(value || ""));
 }
@@ -152,7 +201,8 @@ function filtered() {
       row.sourceLane,
       rowGeoTier(row),
       rowAudienceScope(row),
-      rowEvidenceLevel(row)
+      rowEvidenceLevel(row),
+      rowQualityClass(row)
     ].some((value) => String(value || "").toLowerCase().includes(q));
   });
 }
@@ -176,6 +226,24 @@ function sortedRows() {
     if (typeof left === "number" && typeof right === "number") return (left - right) * dir;
     return String(left).localeCompare(String(right)) * dir;
   });
+}
+
+function topOpportunities(rows = sortedRows()) {
+  const priority = {
+    reply_target: 0,
+    event_context: 1,
+    research_lead: 2,
+    trust_candidate: 3,
+    blocked: 4
+  };
+  return [...rows]
+    .filter((row) => !["trust_candidate", "blocked"].includes(rowQualityClass(row)))
+    .sort((a, b) => {
+      const qualityDelta = (priority[rowQualityClass(a)] ?? 9) - (priority[rowQualityClass(b)] ?? 9);
+      if (qualityDelta) return qualityDelta;
+      return Number(b.score || 0) - Number(a.score || 0);
+    })
+    .slice(0, 5);
 }
 
 function updateSortUi() {
@@ -254,8 +322,37 @@ function renderTargeting(row) {
       <span>${esc(geoLabel(rowGeoTier(row)))}</span>
       <span>${esc(audienceLabel(rowAudienceScope(row)))}</span>
       <span>${esc(evidenceLabel(rowEvidenceLevel(row)))}</span>
+      <span>${esc(qualityLabel(rowQualityClass(row)))}</span>
     </div>
   `;
+}
+
+function renderOpportunityCards(rows) {
+  const host = $("topOpportunityCards");
+  if (!host) return;
+  const opportunities = topOpportunities(rows);
+  host.innerHTML = opportunities.map((row, index) => `
+    <article class="opportunity-card" data-card-index="${index}">
+      <div class="card-top">
+        <span class="score ${scoreClass(row.score)}">${esc(row.score)}</span>
+        <div>
+          <h3>${esc(row.publicName || row.platform || "Public signal")}</h3>
+          <p>${esc(row.platform)} / ${esc(sourceLaneLabel(row.sourceLane))}</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span>${esc(qualityLabel(rowQualityClass(row)))}</span>
+        <span>${esc(confidenceLabel(row))} confidence</span>
+        <span>${esc(geoLabel(rowGeoTier(row)))}</span>
+      </div>
+      <p><strong>Why:</strong> ${esc(whyItMatters(row))}</p>
+      <p>${esc(truncate(row.excerpt, 210))}</p>
+      <div class="suggested-reply">
+        <span>Suggested public reply</span>
+        <p>${esc(truncate(row.draftPublicReply || "No draft generated until a public reply target is confirmed.", 220))}</p>
+      </div>
+    </article>
+  `).join("") || '<div class="empty-card">No high-fit public opportunities match these filters.</div>';
 }
 
 function render() {
@@ -263,6 +360,7 @@ function render() {
   $("statline").textContent = `${rows.length} shown / ${state.signals.length} matches - ${state.meta?.realSignalCount || 0} real - ${state.meta?.sampleSignalCount || 0} sample`;
   $("empty").hidden = rows.length !== 0;
   updateSortUi();
+  renderOpportunityCards(rows);
   $("rows").innerHTML = rows.map((row, index) => `
     <tr data-index="${index}">
       <td><span class="score ${scoreClass(row.score)}">${esc(row.score)}</span></td>
@@ -306,6 +404,7 @@ function exportCsv() {
     ["geo_tier", (row) => rowGeoTier(row)],
     ["audience_scope", (row) => rowAudienceScope(row)],
     ["evidence_level", (row) => rowEvidenceLevel(row)],
+    ["quality_class", (row) => rowQualityClass(row)],
     ["topics", (row) => (row.topicMatch || []).join("; ")],
     ["travel", (row) => row.travelMatch],
     ["gate", (row) => row.gate],
@@ -339,7 +438,8 @@ function openDrawer(row) {
     <p class="draft">${esc(row.excerpt)}</p>
     <h3>Score</h3>
     <p><span class="score ${scoreClass(row.score)}">${esc(row.score)}</span> ${esc(row.scoreBreakdown)}</p>
-    <p>${esc(geoLabel(rowGeoTier(row)))} / ${esc(audienceLabel(rowAudienceScope(row)))} / ${esc(evidenceLabel(rowEvidenceLevel(row)))} from ${esc(row.locationHint || "unknown")}.</p>
+    <p>${esc(geoLabel(rowGeoTier(row)))} / ${esc(audienceLabel(rowAudienceScope(row)))} / ${esc(evidenceLabel(rowEvidenceLevel(row)))} / ${esc(qualityLabel(rowQualityClass(row)))} from ${esc(row.locationHint || "unknown")}.</p>
+    <p class="draft">${esc(whyItMatters(row))}</p>
     <p class="draft">${esc(row.geoReason || "No geo policy reason recorded.")}</p>
     <h3>Trust proximity</h3>
     <p><span class="trust-score">${esc((row.trustScore || 0) + (row.conferenceAffinityScore || 0))}</span> W${esc(row.trustScore || 0)} C${esc(row.conferenceAffinityScore || 0)}</p>
@@ -407,6 +507,11 @@ $("rows").addEventListener("click", (event) => {
   const tr = event.target.closest("tr[data-index]");
   if (!tr) return;
   openDrawer(sortedRows()[Number(tr.dataset.index)]);
+});
+$("topOpportunityCards").addEventListener("click", (event) => {
+  const card = event.target.closest("[data-card-index]");
+  if (!card) return;
+  openDrawer(topOpportunities()[Number(card.dataset.cardIndex)]);
 });
 $("closeDrawer").addEventListener("click", () => document.body.classList.remove("drawer-open"));
 $("scrim").addEventListener("click", () => document.body.classList.remove("drawer-open"));

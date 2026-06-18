@@ -3,6 +3,7 @@ import {
   EvidenceLevel,
   GateClass,
   PublicSignal,
+  QualityClass,
   SignalMatch,
   TrustGraph,
   TravelMatch
@@ -118,6 +119,14 @@ function evidenceLevel(signal: PublicSignal): EvidenceLevel {
 
 function evidencePenalty(level: EvidenceLevel): number {
   return level === "trust_candidate" ? 50 : 0;
+}
+
+function qualityClass(level: EvidenceLevel, gate: GateClass, draftText: string): QualityClass {
+  if (gate === "blocked_private") return "blocked";
+  if (level === "trust_candidate") return "trust_candidate";
+  if (level === "official_event_page" || level === "crossover_event_page") return "event_context";
+  if (draftText.trim()) return "reply_target";
+  return "research_lead";
 }
 
 function datesLabel(event: ConferenceEvent): string {
@@ -240,6 +249,7 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
   const score = Math.max(0, Math.min(100, topic + geoPoints + fresh + engage + trust.trustScore + trust.conferenceAffinityScore - blockedPenalty - evidencePoints));
   const signalId = signal.id ?? "sig-unknown";
   const matchId = `${signalId}-${event.id}`;
+  const draftPublicReply = gate === "blocked_private" || evidence === "trust_candidate" ? "" : draft(signal, event, topics);
   return {
     matchId,
     signalId,
@@ -265,6 +275,7 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
     normalizedLocation: geo.normalizedLocation,
     geoReason: geo.geoReason,
     evidenceLevel: evidence,
+    qualityClass: qualityClass(evidence, gate, draftPublicReply),
     gate,
     dataMode: signal.dataMode,
     sourceLane: signal.sourceLane,
@@ -276,7 +287,7 @@ export function scoreSignalForEvent(signal: PublicSignal, event: ConferenceEvent
     scoreBreakdown: `v4:T${topic}+G${geoPoints}+F${fresh}+E${engage}+W${trust.trustScore}+C${trust.conferenceAffinityScore}-B${blockedPenalty}-Q${evidencePoints}=${score}`,
     approvalStatus: gate === "blocked_private" ? "blocked_private" : "needs_human_review",
     reachPath: gate === "blocked_private" ? "" : signal.sourceUrl,
-    draftPublicReply: gate === "blocked_private" || evidence === "trust_candidate" ? "" : draft(signal, event, topics)
+    draftPublicReply
   };
 }
 

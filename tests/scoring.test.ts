@@ -148,6 +148,7 @@ describe("scoring", () => {
     }), toronto);
 
     expect(graphOnly.evidenceLevel).toBe("trust_candidate");
+    expect(graphOnly.qualityClass).toBe("trust_candidate");
     expect(graphOnly.draftPublicReply).toBe("");
     expect(graphOnly.score).toBeLessThan(55);
     expect(graphOnly.scoreBreakdown).toContain("Q");
@@ -168,8 +169,24 @@ describe("scoring", () => {
     }), toronto);
 
     expect(crossover.evidenceLevel).toBe("crossover_event_page");
+    expect(crossover.qualityClass).toBe("event_context");
     expect(crossover.geoTier).toBe("local_area");
     expect(crossover.draftPublicReply).toContain("Canada Crypto Week");
+  });
+
+  it("classifies public social posts with drafts as reply targets", () => {
+    const replyTarget = scoreSignalForEvent(signal({
+      platform: "linkedin",
+      publicName: "Toronto Side Event Host",
+      sourceUrl: "https://www.linkedin.com/posts/example",
+      excerpt: "We are hosting a Toronto side event during Canada Crypto Week for Bitcoin self custody builders.",
+      locationHint: "Toronto",
+      topics: ["bitcoin", "self custody", "side events"]
+    }), toronto);
+
+    expect(replyTarget.evidenceLevel).toBe("public_content");
+    expect(replyTarget.qualityClass).toBe("reply_target");
+    expect(replyTarget.draftPublicReply.length).toBeGreaterThan(20);
   });
 
   it("keeps drafts distinct for similar public rows", () => {

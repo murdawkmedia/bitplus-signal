@@ -2,6 +2,19 @@ import fs from "node:fs";
 import { describe, expect, it } from "vitest";
 
 describe("public dashboard organizer filters", () => {
+  it("defaults to judge-friendly opportunity cards before advanced filters", () => {
+    const html = fs.readFileSync("public/index.html", "utf8");
+    const app = fs.readFileSync("public/app.js", "utf8");
+
+    expect(html).toContain('id="topOpportunityCards"');
+    expect(html).toContain('id="demoScriptPanel"');
+    expect(html).toContain("<details");
+    expect(html).toContain('id="advancedFilters"');
+    expect(app).toContain("topOpportunities");
+    expect(app).toContain("renderOpportunityCards");
+    expect(app).toContain("qualityClass");
+  });
+
   it("exposes checkbox filter groups for organizer slicing", () => {
     const html = fs.readFileSync("public/index.html", "utf8");
 

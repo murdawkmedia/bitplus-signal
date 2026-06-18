@@ -1,0 +1,35 @@
+{
+  "searchQueries": [
+    "BTC++ Toronto",
+    "btcplusplus Toronto",
+    "bitcoin++ Toronto",
+    "Canada Crypto Week Toronto",
+    "Blockchain Futurist Toronto",
+    "ETHToronto builders",
+    "ETHWomen Toronto",
+    "AI Futurist Toronto",
+    "Toronto Bitcoin Core",
+    "Toronto Nostr",
+    "Toronto privacy tech",
+    "Toronto hackathon crypto",
+    "Waterloo hackathon crypto"
+  ],
+  "hashtags": [
+    "btcplusplus",
+    "bitcoinplusplus",
+    "canadacryptoweek",
+    "blockchainfuturist",
+    "ethtoronto",
+    "ethwomen",
+    "aifuturist",
+    "torontotechweek",
+    "nostr",
+    "selfcustody"
+  ],
+  "resultsPerPage": 10,
+  "maxItems": 150,
+  "shouldDownloadVideos": false,
+  "shouldDownloadCovers": false,
+  "shouldDownloadSubtitles": false,
+  "shouldDownloadSlideshowImages": false
+}
