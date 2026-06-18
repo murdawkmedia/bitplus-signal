@@ -820,5 +820,68 @@
     "sourceLane": "community_context",
     "provenanceNote": "public Meetup community page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
     "visibility": "public"
+  },
+  {
+    "id": "2066605743495619001",
+    "platform": "x",
+    "sourceUrl": "https://x.com/btcplusplus/status/2066605743495619001",
+    "publicName": "@btcplusplus",
+    "excerpt": "👀",
+    "postedAt": "Mon Jun 15 19:36:19 +0000 2026",
+    "locationHint": "🌎🌏🌍",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "x:btcplusplus"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "apify_x",
+    "provenanceNote": "reviewed public Apify X scraper output",
+    "visibility": "public"
+  },
+  {
+    "id": "2066597742151860604",
+    "platform": "x",
+    "sourceUrl": "https://x.com/niftynei/status/2066597742151860604",
+    "publicName": "@niftynei",
+    "excerpt": "@btcplusplus tickets -> https://t.co/kWT8BBT5tw",
+    "postedAt": "Mon Jun 15 19:04:31 +0000 2026",
+    "locationHint": " ATX",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "x:niftynei"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "apify_x",
+    "provenanceNote": "reviewed public Apify X scraper output",
+    "visibility": "public"
+  },
+  {
+    "id": "2065107647683072215",
+    "platform": "x",
+    "sourceUrl": "https://x.com/conduition_io/status/2065107647683072215",
+    "publicName": "@conduition_io",
+    "excerpt": "had this left over from a presentation i'm working on for @btcplusplus Toronto https://t.co/OG0LUA08zp",
+    "postedAt": "Thu Jun 11 16:23:25 +0000 2026",
+    "locationHint": "unknown",
+    "topics": [
+      "bitcoin",
+      "developer tools"
+    ],
+    "profileRefs": [
+      "x:conduition_io"
+    ],
+    "conferenceRefs": [],
+    "dataMode": "real_public",
+    "sourceLane": "apify_x",
+    "provenanceNote": "reviewed public Apify X scraper output",
+    "visibility": "public"
   }
 ]
