@@ -6,6 +6,8 @@ export interface SocialReviewOptions {
   primaryWindowDays?: number;
   fallbackWindowDays?: number;
   fallbackThreshold?: number;
+  excludeStartDate?: string;
+  excludeEndDate?: string;
 }
 
 export interface BlockedSocialSignal {
@@ -13,6 +15,7 @@ export interface BlockedSocialSignal {
   reason:
     | "blocked_private"
     | "outside_date_window"
+    | "excluded_date_window"
     | "duplicate_source"
     | "far_scope_requires_bitcoin"
     | "low_target_quality";
@@ -38,14 +41,22 @@ const ADJACENT_EVENTS: Array<{ pattern: RegExp; ref: string }> = [
   { pattern: /\bcanada crypto week\b/i, ref: "adjacent:canada-crypto-week" },
   { pattern: /\bai futurist\b/i, ref: "adjacent:ai-futurist" },
   { pattern: /\bethwomen\b/i, ref: "adjacent:ethwomen" },
-  { pattern: /\btoronto bitcoin\b|\bbitdevs\b/i, ref: "adjacent:toronto-bitcoin" }
+  { pattern: /\btoronto bitcoin\b|\bbitdevs\b/i, ref: "adjacent:toronto-bitcoin" },
+  { pattern: /\bieee toronto blockchain meetup\b|\bblockchain technical community\b/i, ref: "adjacent:toronto-blockchain" },
+  { pattern: /\bai tinkerers toronto\b|\bmozilla\b.*\bopen source ai\b/i, ref: "adjacent:ai-tinkerers-toronto" },
+  { pattern: /\bopen source in finance forum\b|\bosff\b/i, ref: "adjacent:open-source-finance" },
+  { pattern: /\bdorahacks\b|\bopenclaw hack toronto\b/i, ref: "adjacent:toronto-hackathon" },
+  { pattern: /\bfinancial cryptography\b|\bfc'?26\b/i, ref: "adjacent:financial-cryptography" },
+  { pattern: /\bbitcoin bay\b/i, ref: "adjacent:bitcoin-bay" },
+  { pattern: /\btoronto bitcoin meetups?\b/i, ref: "adjacent:toronto-bitcoin" },
+  { pattern: /\bdefi toronto\b/i, ref: "adjacent:defi-toronto" }
 ];
 
 const LOCAL_REGIONAL_PATTERN = /\b(toronto|mississauga|brampton|hamilton|kitchener|waterloo|guelph|london|windsor|niagara|markham|richmond hill|oakville|burlington|barrie|kingston|ottawa|buffalo|rochester|detroit|cleveland)\b/i;
 
 const THEME_PATTERN = /\b(bitcoin|ethereum|web3|crypto|cryptography|privacy|security|freedom tech|open source|open-source|open systems|ai|zk|zero knowledge|nostr|self custody|protocol|consensus|hackathon|developer|developers|builder|builders|software|devtools?|cipherpunk|cypherpunk)\b/i;
 
-const LOW_QUALITY_PATTERN = /\b(price|prices|trading|trader|traders|chart|charts|etf|inflow|inflows|outflow|outflows|market cap|moon|pump|dump|bullish|bearish|signal(s)?|token launch|airdrop)\b/i;
+const LOW_QUALITY_PATTERN = /\b(price|prices|trading|trader|traders|chart|charts|etf|inflow|inflows|outflow|outflows|market cap|moon|moons|moonshot|pump|dump|bullish|bearish|signal(s)?|token launch|airdrop|scam|legit|breakdown analysis|long dd|game studio|crypto winter|cryptomooncalls|ravencoin)\b/i;
 
 const BITCOIN_FREEDOM_PATTERN = /\b(bitcoin|btc|lightning|nostr|self[-\s]?custody|bitcoin core|core dev|protocol|consensus|node policy|wallet|privacy|cryptography|censorship resistance|freedom tech|cipherpunk|cypherpunk)\b/i;
 
@@ -59,7 +70,7 @@ const CROSSOVER_REFS_REQUIRING_INTENT = new Set([
   "adjacent:ai-futurist"
 ]);
 
-const EVENT_PAGE_LANES = new Set(["adjacent_event_official", "conference_window_crossover"]);
+const EVENT_PAGE_LANES = new Set(["adjacent_event_official", "conference_window_crossover", "historical_event_context", "community_context"]);
 
 const TORONTO_REVIEW_EVENT: ConferenceEvent = {
   id: "btcpp-toronto-2026",
@@ -84,7 +95,6 @@ function normalizeSourceUrl(url: string): string {
   const trimmed = url.trim();
   try {
     const parsed = new URL(trimmed);
-    parsed.hash = "";
     parsed.search = "";
     parsed.pathname = parsed.pathname.replace(/\/+$/, "");
     return parsed.toString().toLowerCase();
@@ -123,6 +133,15 @@ function dateInWindow(postedAt: string, referenceDate: string, windowDays: numbe
   const start = new Date(reference);
   start.setUTCDate(start.getUTCDate() - windowDays);
   return posted >= start && posted <= reference;
+}
+
+function dateInRange(postedAt: string, startDate: string, endDate: string): boolean {
+  if (!postedAt || !startDate || !endDate) return false;
+  const posted = new Date(postedAt);
+  const start = new Date(`${startDate}T00:00:00.000Z`);
+  const end = new Date(`${endDate}T23:59:59.999Z`);
+  if ([posted.getTime(), start.getTime(), end.getTime()].some((time) => Number.isNaN(time))) return false;
+  return posted >= start && posted <= end;
 }
 
 function unique(values: string[]): string[] {
@@ -204,6 +223,11 @@ function reviewWithinWindow(signals: PublicSignal[], options: Required<SocialRev
       continue;
     }
 
+    if (dateInRange(signal.postedAt, options.excludeStartDate, options.excludeEndDate)) {
+      blocked.push({ signal, reason: "excluded_date_window" });
+      continue;
+    }
+
     const key = normalizeSourceUrl(signal.sourceUrl);
     if (seenUrls.has(key)) {
       blocked.push({ signal, reason: "duplicate_source" });
@@ -232,7 +256,9 @@ export function reviewSocialSignals(signals: PublicSignal[], rawOptions: SocialR
     referenceDate: rawOptions.referenceDate ?? "2026-06-17",
     primaryWindowDays: rawOptions.primaryWindowDays ?? 30,
     fallbackWindowDays: rawOptions.fallbackWindowDays ?? 60,
-    fallbackThreshold: rawOptions.fallbackThreshold ?? 10
+    fallbackThreshold: rawOptions.fallbackThreshold ?? 10,
+    excludeStartDate: rawOptions.excludeStartDate ?? "",
+    excludeEndDate: rawOptions.excludeEndDate ?? ""
   };
 
   const primary = reviewWithinWindow(signals, options);

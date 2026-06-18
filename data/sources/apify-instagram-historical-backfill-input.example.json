@@ -1,0 +1,8 @@
+{
+  "search": "#btcplusplus, #bitcoinplusplus, #torontobitcoin, #torontobitdevs, #torontonostr, #selfcustody, #aitinkererstoronto, #openclaw, #torontohackathon",
+  "searchType": "hashtag",
+  "searchLimit": 12,
+  "resultsType": "posts",
+  "resultsLimit": 150,
+  "onlyPostsNewerThan": "2026-01-01"
+}

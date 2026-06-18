@@ -1,0 +1,22 @@
+{
+  "startUrls": [
+    "https://x.com/btcplusplus",
+    "https://x.com/Futurist_conf",
+    "https://x.com/Ethereum_Women"
+  ],
+  "searchTerms": [
+    "BTC++ Toronto since:2026-01-01 until:2026-04-18",
+    "btcplusplus Toronto since:2026-01-01 until:2026-04-18",
+    "bitcoin++ Toronto since:2026-01-01 until:2026-04-18",
+    "Toronto BitDevs Bitcoin Core since:2026-01-01 until:2026-04-18",
+    "Toronto Nostr self custody since:2026-01-01 until:2026-04-18",
+    "Toronto privacy protocol consensus since:2026-01-01 until:2026-04-18",
+    "OpenClaw Hack Toronto AI Agents Payments since:2026-01-01 until:2026-04-18",
+    "AI Tinkerers Toronto Mozilla open source AI since:2026-01-01 until:2026-04-18",
+    "Toronto open source finance forum since:2026-01-01 until:2026-04-18"
+  ],
+  "maxItems": 300,
+  "includeSearchTerms": true,
+  "queryType": "Latest",
+  "lang": "en"
+}

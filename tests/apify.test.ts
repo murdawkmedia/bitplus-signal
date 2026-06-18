@@ -72,6 +72,7 @@ describe("apify imports", () => {
       provenanceNote: "reviewed public Apify Reddit scraper output",
       visibility: "public"
     });
+    expect(rows[0].topics).toEqual(["r/Bitcoin"]);
   });
 
   it("normalizes Xquik actor tweets into reviewed public source-lane rows", () => {

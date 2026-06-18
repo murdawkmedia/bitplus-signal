@@ -202,7 +202,7 @@ function withRedditDefaults(item: RawItem): RawItem {
     excerpt,
     postedAt: item.createdAt ?? item.created_at ?? item.date,
     locationHint: item.locationHint ?? "unknown",
-    topics: ["bitcoin", "developer tools", subreddit ? `r/${subreddit}` : ""].filter(Boolean),
+    topics: item.topics ?? item.tags ?? [subreddit ? `r/${subreddit}` : ""].filter(Boolean),
     profileRefs: item.profileRefs ?? item.profile_refs ?? [],
     conferenceRefs: item.conferenceRefs ?? item.conference_refs ?? [],
     dataMode: "real_public",

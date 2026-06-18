@@ -1,0 +1,50 @@
+[
+  {
+    "id": "sig-community-bitcoin-bay",
+    "platform": "meetup",
+    "sourceUrl": "https://www.meetup.com/the-bitcoin-bay/",
+    "publicName": "The Bitcoin Bay",
+    "excerpt": "The Bitcoin Bay is a Toronto Bitcoin and crypto community with 6,700+ members, current topics around Bitcoin technology, applications, blockchain basics, Bitcoin-related business activity, and local meetups in Toronto and Mississauga.",
+    "postedAt": "2026-04-17T12:00:00.000Z",
+    "locationHint": "Toronto; Mississauga",
+    "topics": ["bitcoin", "blockchain", "developer tools", "community", "payments"],
+    "profileRefs": [],
+    "conferenceRefs": ["adjacent:bitcoin-bay", "adjacent:toronto-bitcoin"],
+    "dataMode": "real_public",
+    "sourceLane": "community_context",
+    "provenanceNote": "public Meetup community page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-community-toronto-bitcoin-meetups",
+    "platform": "meetup",
+    "sourceUrl": "https://www.meetup.com/canadabitcoin/",
+    "publicName": "Toronto Bitcoin Meetups",
+    "excerpt": "Toronto Bitcoin Meetups is a 3,600+ member GTA community for bitcoiners, techies, entrepreneurs, students, lawyers, bankers, hobbyists, and people interested in Bitcoin innovation across Canada.",
+    "postedAt": "2026-04-17T12:00:00.000Z",
+    "locationHint": "Toronto",
+    "topics": ["bitcoin", "cryptography", "distributed systems", "smart contracts", "developer tools", "community"],
+    "profileRefs": [],
+    "conferenceRefs": ["adjacent:toronto-bitcoin"],
+    "dataMode": "real_public",
+    "sourceLane": "community_context",
+    "provenanceNote": "public Meetup community page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-community-defi-toronto",
+    "platform": "meetup",
+    "sourceUrl": "https://www.meetup.com/defi-toronto/",
+    "publicName": "DeFi Toronto",
+    "excerpt": "DeFi Toronto is a 3,000+ member Toronto community that has hosted founders from Aave, MakerDAO, dYdX, Element Finance, and other DeFi projects, and invites hackers and developers to demo DeFi protocols.",
+    "postedAt": "2026-04-17T12:00:00.000Z",
+    "locationHint": "Toronto",
+    "topics": ["DeFi", "Ethereum", "Web3", "developer tools", "protocol", "community"],
+    "profileRefs": [],
+    "conferenceRefs": ["adjacent:defi-toronto"],
+    "dataMode": "real_public",
+    "sourceLane": "community_context",
+    "provenanceNote": "public Meetup community page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  }
+]

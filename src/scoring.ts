@@ -113,7 +113,7 @@ function engagementScore(signal: PublicSignal): number {
 function evidenceLevel(signal: PublicSignal): EvidenceLevel {
   if (signal.sourceLane === "nostr_graph") return "trust_candidate";
   if (signal.sourceLane === "conference_window_crossover") return "crossover_event_page";
-  if (signal.sourceLane === "adjacent_event_official") return "official_event_page";
+  if (signal.sourceLane === "adjacent_event_official" || signal.sourceLane === "historical_event_context" || signal.sourceLane === "community_context") return "official_event_page";
   return "public_content";
 }
 

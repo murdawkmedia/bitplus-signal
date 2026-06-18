@@ -120,6 +120,28 @@ describe("social review gate", () => {
     expect(result.blocked.some((row) => row.reason === "duplicate_source")).toBe(true);
   });
 
+  it("keeps distinct public page anchors when they represent separate source sections", () => {
+    const result = reviewSocialSignals([
+      signal({
+        sourceUrl: "https://futuristconference.com/",
+        excerpt: "Blockchain Futurist Toronto event page for Web3, AI, crypto, and developer builders.",
+        topics: ["Web3", "AI", "developer tools"],
+        sourceLane: "adjacent_event_official",
+        locationHint: "Toronto"
+      }),
+      signal({
+        sourceUrl: "https://futuristconference.com/#ai-futurist",
+        excerpt: "AI Futurist Toronto section with AI demos and open systems builders.",
+        topics: ["AI", "open systems", "developer tools"],
+        sourceLane: "conference_window_crossover",
+        locationHint: "Toronto"
+      })
+    ], { fallbackThreshold: 1 });
+
+    expect(result.published).toHaveLength(2);
+    expect(result.blocked.some((row) => row.reason === "duplicate_source")).toBe(false);
+  });
+
   it("publishes event attendance, speaker, sponsor, and host intent posts", () => {
     const result = reviewSocialSignals([
       signal({
@@ -152,5 +174,53 @@ describe("social review gate", () => {
 
     expect(result.published).toHaveLength(0);
     expect(result.blocked[0]).toMatchObject({ reason: "low_target_quality" });
+  });
+
+  it("blocks generic Reddit crypto chatter even when a scraper supplied broad crypto topics", () => {
+    const result = reviewSocialSignals([
+      signal({
+        platform: "reddit",
+        sourceUrl: "https://www.reddit.com/r/CryptoCurrency/comments/example/moonshot/",
+        publicName: "u/example",
+        excerpt: "Let's investigate a moonshot together. Breakdown analysis and long DD.",
+        postedAt: "2026-06-01T12:00:00.000Z",
+        locationHint: "unknown",
+        topics: ["bitcoin", "developer tools", "r/CryptoCurrency"],
+        sourceLane: "apify_reddit"
+      })
+    ]);
+
+    expect(result.published).toHaveLength(0);
+    expect(result.blocked[0]).toMatchObject({ reason: "low_target_quality" });
+  });
+
+  it("can backfill older rows while excluding the already-pulled window", () => {
+    const result = reviewSocialSignals([
+      signal({
+        sourceUrl: "https://example.com/march-openclaw",
+        postedAt: "2026-03-29T12:00:00.000Z",
+        excerpt: "DoraHacks listed OpenClaw Hack Toronto Students: AI Agents and Payments for Toronto builders.",
+        topics: ["hackathon", "AI", "payments"],
+        locationHint: "Toronto"
+      }),
+      signal({
+        sourceUrl: "https://example.com/june-duplicate-window",
+        postedAt: "2026-06-01T12:00:00.000Z",
+        excerpt: "Toronto Tech Week hackathon for Ethereum, privacy, and open source AI builders.",
+        topics: ["hackathon", "ethereum", "privacy"],
+        locationHint: "Toronto"
+      })
+    ], {
+      referenceDate: "2026-06-17",
+      primaryWindowDays: 180,
+      fallbackWindowDays: 520,
+      fallbackThreshold: 1,
+      excludeStartDate: "2026-04-18",
+      excludeEndDate: "2026-06-17"
+    });
+
+    expect(result.published).toHaveLength(1);
+    expect(result.published[0].sourceUrl).toBe("https://example.com/march-openclaw");
+    expect(result.blocked.some((row) => row.reason === "excluded_date_window")).toBe(true);
   });
 });

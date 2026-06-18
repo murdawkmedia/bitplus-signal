@@ -10,6 +10,15 @@ const inputFiles = [
   ["data/sources/apify-facebook-subscribed-sweep-input.example.json", 150]
 ] as const;
 
+const historicalInputFiles = [
+  ["data/sources/apify-xquik-historical-backfill-input.example.json", 300],
+  ["data/sources/apify-reddit-historical-backfill-input.example.json", 300],
+  ["data/sources/apify-linkedin-historical-backfill-input.example.json", 300],
+  ["data/sources/apify-instagram-historical-backfill-input.example.json", 150],
+  ["data/sources/apify-tiktok-historical-backfill-input.example.json", 150],
+  ["data/sources/apify-facebook-historical-backfill-input.example.json", 150]
+] as const;
+
 function maxItemValue(value: unknown): number {
   if (!value || typeof value !== "object" || Array.isArray(value)) return 0;
   const record = value as Record<string, unknown>;
@@ -35,5 +44,19 @@ describe("subscribed Apify sweep config", () => {
     expect(packageJson.scripts["scan:toronto:apify:subscribed"]).toContain("scan:toronto:apify:x-subscribed");
     expect(packageJson.scripts["review:social-subscribed"]).toContain("review-social");
     expect(packageJson.scripts["refresh:subscribed"]).toContain("review:social-subscribed");
+  });
+
+  it("adds older backfill input packs that skip the current reviewed window at review time", () => {
+    for (const [file, cap] of historicalInputFiles) {
+      const input = JSON.parse(fs.readFileSync(file, "utf8"));
+      expect(maxItemValue(input)).toBeGreaterThan(0);
+      expect(maxItemValue(input)).toBeLessThanOrEqual(cap);
+      expect(JSON.stringify(input).toLowerCase()).toContain("toronto");
+    }
+
+    const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
+    expect(packageJson.scripts["review:social-historical"]).toContain("--exclude-start-date 2026-04-18");
+    expect(packageJson.scripts["review:social-historical"]).toContain("--exclude-end-date 2026-06-17");
+    expect(packageJson.scripts["refresh:historical"]).toContain("review:social-historical");
   });
 });

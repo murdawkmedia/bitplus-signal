@@ -1,0 +1,8 @@
+{
+  "searchQuery": "BTC++ Toronto OR btcplusplus Toronto OR bitcoin++ Toronto OR Toronto BitDevs OR Toronto Bitcoin Core OR Toronto Nostr OR Toronto privacy protocol OR OpenClaw Hack Toronto OR AI Tinkerers Toronto Mozilla OR Toronto open source finance forum",
+  "maxPosts": 300,
+  "maxPostsPerSource": 300,
+  "sort": "new",
+  "includeComments": false,
+  "outputFormat": "default"
+}

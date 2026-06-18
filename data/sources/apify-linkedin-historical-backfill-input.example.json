@@ -1,0 +1,21 @@
+{
+  "searchQueries": [
+    "BTC++ Toronto January February March April 2026",
+    "btcplusplus Toronto January February March April 2026",
+    "Toronto BitDevs Bitcoin Core protocol March 2026",
+    "Toronto Nostr self custody March 2026",
+    "OpenClaw Hack Toronto Students AI Agents Payments",
+    "AI Tinkerers Toronto Mozilla open source AI March 2026",
+    "Toronto Open Source in Finance Forum April 2026",
+    "IEEE Toronto Blockchain Meetup protocol DePIN",
+    "Financial Cryptography 2026 cryptography security payments"
+  ],
+  "maxPosts": 300,
+  "datePosted": "past-6-months",
+  "maxSearchPages": 12,
+  "providerOrder": "scrapecreators-first",
+  "enrichPostDetails": false,
+  "includeComments": false,
+  "outputMode": "compact",
+  "includeRawData": false
+}

@@ -1,0 +1,25 @@
+{
+  "startUrls": [
+    {
+      "url": "https://www.facebook.com/BlockchainFuturistConference"
+    },
+    {
+      "url": "https://www.facebook.com/ETHWomen"
+    },
+    {
+      "url": "https://www.facebook.com/ndcconferences"
+    }
+  ],
+  "searchTerms": [
+    "BTC++ Toronto",
+    "Toronto Bitcoin meetup",
+    "Toronto BitDevs",
+    "Toronto Nostr",
+    "OpenClaw Hack Toronto",
+    "AI Tinkerers Toronto",
+    "Toronto open source finance forum",
+    "IEEE Toronto Blockchain Meetup"
+  ],
+  "resultsLimit": 150,
+  "onlyPostsNewerThan": "2026-01-01"
+}

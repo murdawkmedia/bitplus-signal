@@ -252,78 +252,6 @@
     "visibility": "public"
   },
   {
-    "id": "2066605743495619001",
-    "platform": "x",
-    "sourceUrl": "https://x.com/btcplusplus/status/2066605743495619001",
-    "publicName": "@btcplusplus",
-    "excerpt": "👀",
-    "postedAt": "Mon Jun 15 19:36:19 +0000 2026",
-    "locationHint": "🌎🌏🌍",
-    "topics": [
-      "bitcoin",
-      "developer tools",
-      "BTC++ Toronto"
-    ],
-    "profileRefs": [
-      "x:btcplusplus"
-    ],
-    "conferenceRefs": [
-      "btcpp-toronto-2026"
-    ],
-    "dataMode": "real_public",
-    "sourceLane": "apify_x",
-    "provenanceNote": "reviewed public Apify X scraper output",
-    "visibility": "public"
-  },
-  {
-    "id": "2066597742151860604",
-    "platform": "x",
-    "sourceUrl": "https://x.com/niftynei/status/2066597742151860604",
-    "publicName": "@niftynei",
-    "excerpt": "@btcplusplus tickets -> https://t.co/kWT8BBT5tw",
-    "postedAt": "Mon Jun 15 19:04:31 +0000 2026",
-    "locationHint": " ATX",
-    "topics": [
-      "bitcoin",
-      "developer tools",
-      "BTC++ Toronto"
-    ],
-    "profileRefs": [
-      "x:niftynei"
-    ],
-    "conferenceRefs": [
-      "btcpp-toronto-2026"
-    ],
-    "dataMode": "real_public",
-    "sourceLane": "apify_x",
-    "provenanceNote": "reviewed public Apify X scraper output",
-    "visibility": "public"
-  },
-  {
-    "id": "2065107647683072215",
-    "platform": "x",
-    "sourceUrl": "https://x.com/conduition_io/status/2065107647683072215",
-    "publicName": "@conduition_io",
-    "excerpt": "had this left over from a presentation i'm working on for @btcplusplus Toronto https://t.co/OG0LUA08zp",
-    "postedAt": "Thu Jun 11 16:23:25 +0000 2026",
-    "locationHint": "unknown",
-    "topics": [
-      "bitcoin",
-      "developer tools",
-      "BTC++ Toronto"
-    ],
-    "profileRefs": [
-      "x:conduition_io"
-    ],
-    "conferenceRefs": [
-      "btcpp-toronto-2026"
-    ],
-    "dataMode": "real_public",
-    "sourceLane": "apify_x",
-    "provenanceNote": "reviewed public Apify X scraper output",
-    "visibility": "public"
-  },
-  {
     "id": "sig-adjacent-btcpp-toronto",
     "platform": "official_web",
     "sourceUrl": "https://btcpp.dev/toronto",
@@ -337,7 +265,8 @@
       "protocol",
       "developer tools",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -363,7 +292,8 @@
       "AI",
       "open source",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -388,7 +318,9 @@
       "AI",
       "builder",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near",
+      "public-intent"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -413,7 +345,9 @@
       "open source",
       "builder",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near",
+      "public-intent"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -438,7 +372,8 @@
       "builder",
       "open source",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -465,7 +400,8 @@
       "builder",
       "open source",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -490,7 +426,8 @@
       "hackathon",
       "developer tools",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -516,7 +453,8 @@
       "AI",
       "developer tools",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -540,7 +478,11 @@
       "crypto",
       "AI",
       "side events",
-      "developer tools"
+      "developer tools",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near",
+      "public-intent"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -564,7 +506,11 @@
       "AI",
       "open systems",
       "developer tools",
-      "side events"
+      "side events",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near",
+      "public-intent"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -590,7 +536,8 @@
       "builder",
       "developer tools",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -615,7 +562,8 @@
       "AI",
       "builder",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "broad-builder-near"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -637,7 +585,8 @@
     "topics": [
       "developer tools",
       "builder-crypto-broad",
-      "freedom-tech-adjacent"
+      "freedom-tech-adjacent",
+      "bitcoin-only-far"
     ],
     "profileRefs": [],
     "conferenceRefs": [
@@ -646,6 +595,230 @@
     "dataMode": "real_public",
     "sourceLane": "apify_linkedin",
     "provenanceNote": "reviewed public Apify LinkedIn scraper output",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-historical-ieee-toronto-blockchain-2025",
+    "platform": "official_web",
+    "sourceUrl": "https://events.vtools.ieee.org/m/469574",
+    "publicName": "IEEE Toronto Blockchain Meetup",
+    "excerpt": "IEEE Toronto's Blockchain Technical Community meetup described an engineering-focused Toronto gathering where builders of new protocols and apps shared knowledge, developed standards, and collaborated on disruptive industry solutions, with DePIN and blockchain lifecycle talks.",
+    "postedAt": "2025-02-19T05:00:00.000Z",
+    "locationHint": "Toronto",
+    "topics": [
+      "blockchain",
+      "protocol",
+      "DePIN",
+      "developer tools",
+      "standards",
+      "engineering",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:toronto-blockchain"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "historical_event_context",
+    "provenanceNote": "public IEEE vTools event page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-historical-ai-tinkerers-mozilla-2026",
+    "platform": "official_web",
+    "sourceUrl": "https://toronto.aitinkerers.org/p/ai-tinkerers-toronto-march-hosted-by-mozilla",
+    "publicName": "AI Tinkerers Toronto x Mozilla",
+    "excerpt": "AI Tinkerers Toronto hosted a March 25, 2026 Mozilla meetup for open-source AI builders, technical demos, agentic code review via MCP, local PII redaction pipelines, sovereign AI systems, and open-source developer tooling.",
+    "postedAt": "2026-03-25T21:00:00.000Z",
+    "locationHint": "Toronto",
+    "topics": [
+      "AI",
+      "open source",
+      "developer tools",
+      "MCP",
+      "privacy",
+      "builder",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:ai-tinkerers-toronto"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "historical_event_context",
+    "provenanceNote": "public AI Tinkerers Toronto event page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-historical-osff-toronto-2026",
+    "platform": "official_web",
+    "sourceUrl": "https://workbrew.com/events/toronto-ossf-2026",
+    "publicName": "Toronto Open Source in Finance Forum",
+    "excerpt": "The Toronto Open Source in Finance Forum connected leaders in financial services, technology, and open-source innovation around secure developer environments, compliance, visibility, and trusted software delivery.",
+    "postedAt": "2026-04-14T12:00:00.000Z",
+    "locationHint": "Toronto",
+    "topics": [
+      "open source",
+      "finance",
+      "security",
+      "developer tools",
+      "compliance",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:open-source-finance"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "historical_event_context",
+    "provenanceNote": "public Workbrew event page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-historical-dorahacks-openclaw-toronto-2026",
+    "platform": "linkedin",
+    "sourceUrl": "https://www.linkedin.com/pulse/hackathon-newsletter-march-2026-iv-dorahacks-dorahacks-a1i2c",
+    "publicName": "DoraHacks March 2026 Hackathon Newsletter",
+    "excerpt": "DoraHacks' public March 2026 newsletter listed OpenClaw Hack Toronto Students: AI Agents and Payments as a Toronto, Ontario, Canada IRL/hybrid hackathon, alongside Web3, AI, stablecoin, and developer hackathon opportunities.",
+    "postedAt": "2026-03-29T12:00:00.000Z",
+    "locationHint": "Toronto",
+    "topics": [
+      "hackathon",
+      "AI",
+      "payments",
+      "Web3",
+      "developer tools",
+      "builder",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:toronto-hackathon"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "historical_event_context",
+    "provenanceNote": "public LinkedIn article reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-historical-financial-cryptography-2026",
+    "platform": "official_web",
+    "sourceUrl": "https://ifca.ai/fc26/",
+    "publicName": "Financial Cryptography 2026",
+    "excerpt": "Financial Cryptography 2026 ran March 2-6, 2026 as an international forum for cryptography, security, transactions, systems, implementers, policy-makers, technical demonstrations, and workshops.",
+    "postedAt": "2026-03-02T12:00:00.000Z",
+    "locationHint": "St. Kitts",
+    "topics": [
+      "cryptography",
+      "security",
+      "payments",
+      "policy",
+      "technical demonstrations",
+      "developer tools",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "bitcoin-only-far"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:financial-cryptography"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "historical_event_context",
+    "provenanceNote": "public IFCA event page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-community-bitcoin-bay",
+    "platform": "meetup",
+    "sourceUrl": "https://www.meetup.com/the-bitcoin-bay/",
+    "publicName": "The Bitcoin Bay",
+    "excerpt": "The Bitcoin Bay is a Toronto Bitcoin and crypto community with 6,700+ members, current topics around Bitcoin technology, applications, blockchain basics, Bitcoin-related business activity, and local meetups in Toronto and Mississauga.",
+    "postedAt": "2026-04-17T12:00:00.000Z",
+    "locationHint": "Toronto; Mississauga",
+    "topics": [
+      "bitcoin",
+      "blockchain",
+      "developer tools",
+      "community",
+      "payments",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:bitcoin-bay",
+      "adjacent:toronto-bitcoin"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "community_context",
+    "provenanceNote": "public Meetup community page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-community-toronto-bitcoin-meetups",
+    "platform": "meetup",
+    "sourceUrl": "https://www.meetup.com/canadabitcoin/",
+    "publicName": "Toronto Bitcoin Meetups",
+    "excerpt": "Toronto Bitcoin Meetups is a 3,600+ member GTA community for bitcoiners, techies, entrepreneurs, students, lawyers, bankers, hobbyists, and people interested in Bitcoin innovation across Canada.",
+    "postedAt": "2026-04-17T12:00:00.000Z",
+    "locationHint": "Toronto",
+    "topics": [
+      "bitcoin",
+      "cryptography",
+      "distributed systems",
+      "smart contracts",
+      "developer tools",
+      "community",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:toronto-bitcoin"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "community_context",
+    "provenanceNote": "public Meetup community page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
+    "visibility": "public"
+  },
+  {
+    "id": "sig-community-defi-toronto",
+    "platform": "meetup",
+    "sourceUrl": "https://www.meetup.com/defi-toronto/",
+    "publicName": "DeFi Toronto",
+    "excerpt": "DeFi Toronto is a 3,000+ member Toronto community that has hosted founders from Aave, MakerDAO, dYdX, Element Finance, and other DeFi projects, and invites hackers and developers to demo DeFi protocols.",
+    "postedAt": "2026-04-17T12:00:00.000Z",
+    "locationHint": "Toronto",
+    "topics": [
+      "DeFi",
+      "Ethereum",
+      "Web3",
+      "developer tools",
+      "protocol",
+      "community",
+      "builder-crypto-broad",
+      "freedom-tech-adjacent",
+      "broad-builder-near",
+      "public-intent"
+    ],
+    "profileRefs": [],
+    "conferenceRefs": [
+      "adjacent:defi-toronto"
+    ],
+    "dataMode": "real_public",
+    "sourceLane": "community_context",
+    "provenanceNote": "public Meetup community page reviewed 2026-06-18; outside the 2026-04-18/2026-06-17 pulled window",
     "visibility": "public"
   }
 ]

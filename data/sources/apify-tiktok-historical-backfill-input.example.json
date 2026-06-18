@@ -1,0 +1,29 @@
+{
+  "searchQueries": [
+    "BTC++ Toronto",
+    "btcplusplus Toronto",
+    "bitcoin++ Toronto",
+    "Toronto Bitcoin Core",
+    "Toronto Nostr",
+    "Toronto privacy protocol",
+    "OpenClaw Hack Toronto",
+    "AI Tinkerers Toronto",
+    "Toronto open source finance"
+  ],
+  "hashtags": [
+    "btcplusplus",
+    "bitcoinplusplus",
+    "torontobitcoin",
+    "nostr",
+    "selfcustody",
+    "aitinkererstoronto",
+    "openclaw",
+    "torontohackathon"
+  ],
+  "resultsPerPage": 10,
+  "maxItems": 150,
+  "shouldDownloadVideos": false,
+  "shouldDownloadCovers": false,
+  "shouldDownloadSubtitles": false,
+  "shouldDownloadSlideshowImages": false
+}

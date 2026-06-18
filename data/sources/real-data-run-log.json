@@ -16,6 +16,19 @@
     "rankingPreference": "builder/crypto broad with stronger promotion for public attendance, speaking, sponsoring, hosting, building, and official crossover event context",
     "reviewOutcome": "configured but not executed in this shell because APIFY_TOKEN/APIFY_API_TOKEN was unavailable"
   },
+  "historicalBackfill": {
+    "configuredAt": "2026-06-18",
+    "includedWindow": "2025-01-14/2026-04-17",
+    "excludedWindow": "2026-04-18/2026-06-17",
+    "rankingPreference": "older public event-context rows only when they are technical, local/near-local, Bitcoin/freedom-tech specific, or strong cryptography/security context",
+    "reviewOutcome": "5 reviewed public web rows published; paid Apify historical sweep configured but not executed in this shell because APIFY_TOKEN/APIFY_API_TOKEN was unavailable"
+  },
+  "communityContextBackfill": {
+    "configuredAt": "2026-06-18",
+    "includedWindow": "outside 2026-04-18/2026-06-17",
+    "rankingPreference": "local Toronto/GTA public communities with Bitcoin, DeFi, developer, protocol, or builder relevance",
+    "reviewOutcome": "3 reviewed public Meetup community rows published"
+  },
   "lanes": [
     {
       "sourceLane": "nostr_graph",
@@ -228,6 +241,78 @@
       "sourceLane": "apify_facebook_subscribed",
       "query": "Subscribed public Facebook page/search sweep for BTC++ Toronto, Canada Crypto Week, Blockchain Futurist, ETHToronto, ETHWomen, AI Futurist, Toronto Bitcoin, privacy tech, and crypto hackathon terms",
       "rawSource": "data/real/apify-facebook-subscribed-sweep.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "historical_event_context",
+      "query": "Public web older-window context outside 2026-04-18/2026-06-17: IEEE Toronto Blockchain Meetup, AI Tinkerers Toronto x Mozilla, Toronto Open Source in Finance Forum, DoraHacks OpenClaw Hack Toronto listing, and Financial Cryptography 2026",
+      "rawSource": "data/reviewed/toronto-historical-public-signals.json",
+      "yielded": 5,
+      "reviewed": 5,
+      "published": 5,
+      "status": "published_reviewed"
+    },
+    {
+      "sourceLane": "community_context",
+      "query": "Public Toronto/GTA community context outside the prior pulled window: The Bitcoin Bay, Toronto Bitcoin Meetups, and DeFi Toronto",
+      "rawSource": "data/reviewed/toronto-community-public-signals.json",
+      "yielded": 3,
+      "reviewed": 3,
+      "published": 3,
+      "status": "published_reviewed"
+    },
+    {
+      "sourceLane": "apify_x_historical",
+      "query": "Historical Xquik sweep for BTC++ Toronto, BitDevs, Nostr, privacy, OpenClaw Hack Toronto, AI Tinkerers Toronto, and open-source finance terms, excluding 2026-04-18/2026-06-17 at review time",
+      "rawSource": "data/real/apify-xquik-historical-backfill.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_reddit_historical",
+      "query": "Historical Reddit sweep for BTC++ Toronto, BitDevs, Bitcoin Core, Nostr, privacy protocol, OpenClaw Hack Toronto, AI Tinkerers Toronto, and open-source finance terms, excluding 2026-04-18/2026-06-17 at review time",
+      "rawSource": "data/real/apify-reddit-historical-backfill.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_linkedin_historical",
+      "query": "Historical LinkedIn sweep for BTC++ Toronto, BitDevs, Nostr, OpenClaw Hack Toronto, AI Tinkerers Toronto, Toronto Open Source in Finance Forum, IEEE Toronto Blockchain Meetup, and Financial Cryptography 2026, excluding 2026-04-18/2026-06-17 at review time",
+      "rawSource": "data/real/apify-linkedin-historical-backfill.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_instagram_historical",
+      "query": "Historical Instagram public hashtag sweep for BTC++/Bitcoin++ Toronto, Toronto Bitcoin, Nostr, self-custody, AI Tinkerers Toronto, OpenClaw, and Toronto hackathon terms, excluding 2026-04-18/2026-06-17 at review time",
+      "rawSource": "data/real/apify-instagram-historical-backfill.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_tiktok_historical",
+      "query": "Historical TikTok public search/hashtag sweep for BTC++ Toronto, Bitcoin Core, Nostr, privacy protocol, OpenClaw Hack Toronto, AI Tinkerers Toronto, and open-source finance terms, excluding 2026-04-18/2026-06-17 at review time",
+      "rawSource": "data/real/apify-tiktok-historical-backfill.json",
+      "yielded": 0,
+      "reviewed": 0,
+      "published": 0,
+      "status": "blocked_missing_apify_token"
+    },
+    {
+      "sourceLane": "apify_facebook_historical",
+      "query": "Historical Facebook public page/search sweep for BTC++ Toronto, Toronto Bitcoin, BitDevs, Nostr, OpenClaw Hack Toronto, AI Tinkerers Toronto, open-source finance, and IEEE Toronto Blockchain Meetup terms, excluding 2026-04-18/2026-06-17 at review time",
+      "rawSource": "data/real/apify-facebook-historical-backfill.json",
       "yielded": 0,
       "reviewed": 0,
       "published": 0,

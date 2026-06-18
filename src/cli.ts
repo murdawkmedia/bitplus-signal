@@ -197,6 +197,8 @@ program
   .option("--primary-window-days <number>", "Primary lookback days", "30")
   .option("--fallback-window-days <number>", "Fallback lookback days", "60")
   .option("--fallback-threshold <number>", "Use fallback when primary published count is below this", "10")
+  .option("--exclude-start-date <date>", "Exclude rows on or after this date")
+  .option("--exclude-end-date <date>", "Exclude rows on or before this date")
   .action(async (options: {
     input: string[];
     out: string;
@@ -206,6 +208,8 @@ program
     primaryWindowDays: string;
     fallbackWindowDays: string;
     fallbackThreshold: string;
+    excludeStartDate?: string;
+    excludeEndDate?: string;
   }) => {
     const base = options.base ? await readSignals(options.base) : [];
     const socialRows = (await Promise.all(options.input.map((file) => readSignals(file)))).flat();
@@ -213,7 +217,9 @@ program
       referenceDate: options.referenceDate,
       primaryWindowDays: Number.parseInt(options.primaryWindowDays, 10),
       fallbackWindowDays: Number.parseInt(options.fallbackWindowDays, 10),
-      fallbackThreshold: Number.parseInt(options.fallbackThreshold, 10)
+      fallbackThreshold: Number.parseInt(options.fallbackThreshold, 10),
+      excludeStartDate: options.excludeStartDate,
+      excludeEndDate: options.excludeEndDate
     });
     const merged = dedupeSignalsBySourceUrl([...base, ...result.published]);
     await writeJson(options.out, merged);
